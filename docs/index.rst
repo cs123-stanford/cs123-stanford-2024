@@ -1,7 +1,7 @@
 CS 123: A Hands-On Introduction to Building AI-Enabled Robots
 #######################################################
 
-.. figure:: _static/pupper-hero.jpg
+.. figure:: _static/pupper_splash.jpg
     :align: center
     :alt: Pupper
 
