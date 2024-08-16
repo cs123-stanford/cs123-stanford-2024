@@ -5,7 +5,7 @@ Lab 1: ROS Introduction and Hello PD
 Part 0. Setup
 ___________________________
 
-#. For this class, you will be doing all your coding and development on Raspberry Pi 5s a minimalistic quad-core single-board computer oftentimes used in robotics projects. The Raspberry Pi will serve as the brain for our Pupper robot, communicating with the electronics board, motor drivers, and camera among other functions. The TAs should distribute a Raspberry Pi 5, pre-flashed micro SD card, a computer monitor, USB keyboard and mouse, power cable, and HDMI cable. 
+#. For this class, you will be doing all your coding and development on Raspberry Pi 5s, a minimalistic quad-core single-board computer oftentimes used in robotics projects. The Raspberry Pi will serve as the brain for our Pupper robot, communicating with the electronics board, motor drivers, and camera among other functions. The TAs should distribute a Raspberry Pi 5, pre-flashed micro SD card, a computer monitor, USB keyboard and mouse, power cable, and HDMI cable. 
 #. Insert the micro SD card to the slot on the back of the Raspberry Pi. Plug in the USB keyboard and mouse to the USB terminals and connect to the monitor via the HDMI cable and port. Power on the Raspberry Pi with the power cable and see that the desktop turns on. 
 #. Make sure that your Raspberry Pi can connect to the class WiFi router, if you are having issues, ask a TA. 
 
