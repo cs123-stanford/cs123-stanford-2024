@@ -22,22 +22,16 @@ This course offers a hands-on introduction to AI-powered robotics. Unlike most i
 
 *“Empowering robots with AI is essential to make them smart and useful in people’s daily life. It is one of the most important research directions in both academia and industry. This class teaches the most relevant skills, gives students hand-on experiences, and prepares them for a career in the area of AI and robotics.”* - Jie Tan, Staff Research Scientist at Google DeepMind
 
-**Time:** Monday 1:30-4:20
+**Time:** TBA
 
-**Location:** Gates B02, *in-person attendance required*
+**Location:** TBA, *in-person attendance required*
 
 **TA Sessions:**
 
-* 9-10:30am Tuesday (Gates B02): Jaden and Brandon
-
-* 7:30-9pm Wednesday (Gates B02): Jaden and Ankush
-
-* 7:30-9pm Thursday (Gates B02): Gabrael and Sydney
-
-* 2-3:30pm Friday (Gates B02): Gabrael
+* TBA
 
 **Office Hours:**
-4-5PM Wednesday (Gates 368): Karen
+TBA
 
 **Prerequisites:**
 
@@ -63,19 +57,19 @@ Schedule
 +==================+===================================================+===========================================+==================+===================================+
 | Week 1: 9/25     | :doc:`../schedule/lectures/fall-23/lec-1`         |                                           |                  |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 2: 10/2     | :doc:`../schedule/lectures/fall-23/lec-2`         | :doc:`../schedule/labs/fall-23/lab-1`     | 10/9             |                                   |
+| Week 2: 10/2     | :doc:`../schedule/lectures/fall-23/lec-2`         | :doc:`../schedule/labs/fall-23/lab-1`     | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 3: 10/9     | :doc:`../schedule/lectures/fall-23/lec-3`         | :doc:`../schedule/labs/fall-23/lab-2`     | 10/16            |                                   |
+| Week 3: 10/9     | :doc:`../schedule/lectures/fall-23/lec-3`         | :doc:`../schedule/labs/fall-23/lab-2`     | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 4: 10/16    | :doc:`../schedule/lectures/fall-23/lec-4`         | :doc:`../schedule/labs/fall-23/lab-3`     | 10/23            |                                   |
+| Week 4: 10/16    | :doc:`../schedule/lectures/fall-23/lec-4`         | :doc:`../schedule/labs/fall-23/lab-3`     | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 5: 10/23    | :doc:`../schedule/lectures/fall-23/lec-5`         | :doc:`../schedule/labs/fall-23/lab-4`     | 10/30            |                                   |
+| Week 5: 10/23    | :doc:`../schedule/lectures/fall-23/lec-5`         | :doc:`../schedule/labs/fall-23/lab-4`     | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 6: 10/30    | :doc:`../schedule/lectures/fall-23/lec-6`         | :doc:`../schedule/labs/fall-23/lab-5`     | 11/6             |                                   |
+| Week 6: 10/30    | :doc:`../schedule/lectures/fall-23/lec-6`         | :doc:`../schedule/labs/fall-23/lab-5`     | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 7: 11/6     | No Lecture! Open Lab Time                         | :doc:`../schedule/labs/fall-23/lab-4`     | 11/13            |                                   |
+| Week 7: 11/6     | No Lecture! Open Lab Time                         | :doc:`../schedule/labs/fall-23/lab-4`     | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 8: 11/13    | :doc:`../schedule/lectures/fall-23/lec-7`         | :doc:`../schedule/labs/fall-23/lab-6`     | 11/20            | Begin Final Project Proposals     |
+| Week 8: 11/13    | :doc:`../schedule/lectures/fall-23/lec-7`         | :doc:`../schedule/labs/fall-23/lab-6`     | TBA              | Begin Final Project Proposals     |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
 | Week of 11/20    | Thanksgiving Break!                               |                                           |                  | Meet with TAs about Final Project |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
