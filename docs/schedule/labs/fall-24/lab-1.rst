@@ -1,6 +1,8 @@
-Lab 1: Hello PD
-================================
-*Goal: Build a robot arm that you can program PD control on.*
+Lab 1: ROS Introduction and Hello PD
+====================================
+*Goal: Build a robot arm that you can program PD control on using ROS2.*
+
+
 
 Step 0. Setup
 ^^^^^^^^^^^^^^
