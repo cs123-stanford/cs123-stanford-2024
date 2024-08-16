@@ -2,18 +2,11 @@ Lab 1: ROS Introduction and Hello PD
 ====================================
 *Goal: Build a robot arm that you can program PD control on using ROS2.*
 
-Part 1: ROS Introduction
+Part 0. Setup
 ___________________________
 
-For this class, and for many robots you will interface with as a roboticist, we use ROS, or Robot Operating System. ROS allows us to build robotic applications by  providing tools, libraries, and conventions that allow different parts of the robot to interact with each other. 
-
-Navigate to :doc:`../../lectures/fall-24/ros_intro` to get acquainted with the basics of ROS. Keep this guide handy to be a ROS cheat sheet that you can refer to throughout the course. 
-
-Step 0. Setup
-^^^^^^^^^^^^^^
 #. Install Git for your OS. `Windows <https://git-scm.com/download/win>`_, `Mac <https://git-scm.com/download/mac>`_, `Linux <https://git-scm.com/download/linux>`_ (keep in mind if you are using Debian, Ubuntu, etc). We will use Git for retrieving starter code, and version control. 
 #. Install `VSCode <https://code.visualstudio.com/Download>`_. VSCode is a convenient IDE where you will do your code development. 
-#. Install the PlatformIO extension for VSCode, a native Arduino/Teensyduino development IDE for VSCode. (Might take several minutes on Windows - check the bottom bar in VSCode for status)
 
 .. raw:: html
 
@@ -22,6 +15,17 @@ Step 0. Setup
     </div>
 
 |
+
+Part 1: ROS Introduction
+___________________________
+
+For this class, and for many robots you will interface with as a roboticist, we use ROS, or Robot Operating System. ROS allows us to build robotic applications by  providing tools, libraries, and conventions that allow different parts of the robot to interact with each other. 
+
+Navigate to :doc:`../../lectures/fall-24/ros_intro` to get acquainted with the basics of ROS. Keep this guide handy to be a ROS cheat sheet that you can refer to throughout the course. 
+
+
+
+
 
 Step 1. Assemble motor to base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
