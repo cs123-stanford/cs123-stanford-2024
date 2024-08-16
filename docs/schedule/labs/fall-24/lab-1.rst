@@ -2,7 +2,12 @@ Lab 1: ROS Introduction and Hello PD
 ====================================
 *Goal: Build a robot arm that you can program PD control on using ROS2.*
 
+Part 1: ROS Introduction
+___________________________
 
+For this class, and for many robots you will interface with as a roboticist, we use ROS, or Robot Operating System. ROS allows us to build robotic applications by  providing tools, libraries, and conventions that allow different parts of the robot to interact with each other. 
+
+Navigate to (ROS Intro page) to get acquainted with the basics of ROS. Keep this guide handy to be a ROS cheat sheet that you can refer to throughout the course. 
 
 Step 0. Setup
 ^^^^^^^^^^^^^^
