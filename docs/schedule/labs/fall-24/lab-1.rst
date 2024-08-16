@@ -5,23 +5,15 @@ Lab 1: ROS Introduction and Hello PD
 Part 0. Setup
 ___________________________
 
-#. Install Git for your OS. `Windows <https://git-scm.com/download/win>`_, `Mac <https://git-scm.com/download/mac>`_, `Linux <https://git-scm.com/download/linux>`_ (keep in mind if you are using Debian, Ubuntu, etc). We will use Git for retrieving starter code, and version control. 
-#. Install `VSCode <https://code.visualstudio.com/Download>`_. VSCode is a convenient IDE where you will do your code development. 
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/LKH2Drp_evc" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-|
+#. For this class, you will be doing all your coding and development on Raspberry Pi 5s a minimalistic quad-core single-board computer oftentimes used in robotics projects. The Raspberry Pi will serve as the brain for our Pupper robot, communicating with the electronics board, motor drivers, and camera among other functions. The TAs should distribute a Raspberry Pi 5, pre-flashed micro SD card, a computer monitor, USB keyboard and mouse, power cable, and HDMI cable. 
+#. Insert the micro SD card to the slot on the back of the Raspberry Pi. Plug in the USB keyboard and mouse to the USB terminals and connect to the monitor via the HDMI cable and port. Power on the Raspberry Pi with the power cable and see that the desktop turns on. 
+#. Make sure that your Raspberry Pi can connect to the class WiFi router, if you are having issues, ask a TA. 
 
 Part 1: ROS Introduction
 ___________________________
 
-For this class, and for many robots you will interface with as a roboticist, we use ROS, or Robot Operating System. ROS allows us to build robotic applications by  providing tools, libraries, and conventions that allow different parts of the robot to interact with each other. 
-
-Navigate to :doc:`../../lectures/fall-24/ros_intro` to get acquainted with the basics of ROS. Keep this guide handy to be a ROS cheat sheet that you can refer to throughout the course. 
+#. For this class, and for many robots you will interface with as a roboticist, we use ROS, or Robot Operating System. ROS allows us to build robotic applications by  providing tools, libraries, and conventions that allow different parts of the robot to interact with each other. 
+#. Navigate to :doc:`../../lectures/fall-24/ros_intro` to get acquainted with the basics of ROS. Keep this guide handy to be a ROS cheat sheet that you can refer to throughout the course. You may do this on your personal laptops or the Raspberry Pi. 
 
 
 
