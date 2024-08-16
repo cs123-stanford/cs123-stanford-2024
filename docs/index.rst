@@ -11,8 +11,8 @@ CS 123: A Hands-On Introduction to Building AI-Enabled Robots
 
 * Instructors: `Prof. Karen Liu <https://tml.stanford.edu/people/karen-liu>`_ (Stanford CS), `Jie Tan <https://www.jie-tan.net/>`_ (Google DeepMind), `Stuart Bowers <https://handsonrobotics.org/>`_ (Hands-On Robotics)
 * Co-Instructors: `Wenhao Yu <https://wenhaoyu.weebly.com/>`_ (Google DeepMind), `Tingnan Zhang <https://www.linkedin.com/in/tingnanzhang/>`_ (Google DeepMind)
-* Head TAs: `Jaden Clark <https://jadenvc.github.io/>`_ (CS 2024), `Gabrael Levine <https://www.gabrael.io/>`_ (MS CS 2024)
-* TAs: `Ankush Dhawan <https://www.linkedin.com/in/ankush-dhawan/>`_ (EE 2024), `Sydney Yan <https://www.linkedin.com/in/sydney-yan-35b97a1ab/>`_ (EE 2025), `Brandon Vu <https://www.linkedin.com/in/brandon-t-vu/>`_ (CS 2024)
+* Head TAs: `Ankush Dhawan <https://www.linkedin.com/in/ankush-dhawan/>`_ (MS EE 2025), `Zipeng Fu <https://www.gabrael.io/>`_ (PhD CS 2025)
+* TAs: `Jaden Clark <https://jadenvc.github.io/>`_ (CS 2024), `Josh Francis <https://www.linkedin.com/in/josh--francis/>`_ (CS 2024), `Akemi Sabatier <https://www.linkedin.com/in/akemisab/>`_ (ME 2026), `Zara Rutherford <https://www.linkedin.com/in/zara-rutherford-2a18a31b2/?originalSubdomain=be>`_ (EE 2026), 
 
 **Overview:**
 
