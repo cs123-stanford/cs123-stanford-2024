@@ -38,9 +38,13 @@ ___________________
 #. ros2 run <package> <file>: Runs the node defined in the specified file
 #. ros2 topic list: Display a list of all active topics currently available in the ROS 2 environment
 #. ros2 topic echo <topic_name>: Displays the messages being published on a specific topic in real-time. It's a way to "listen in" on the data being transmitted over a topic, which is useful for debugging, monitoring, or just understanding what data is being exchanged in the system.
+#. ros2 topic info <topic_name>: Provides detailed information about a specific topic, including its type, publishers, and subscribers.
+#. ros2 topic pub <topic_name> <msg_type> <msg_data>: Publishes a message to a specified topic manually.
+#. ros2 pkg list: Lists all available ROS 2 packages.
 #. colcon build <package>: Builds the specified package after changes have been made. You must do this every time you make a change before running the Ros2 program again
 #. source install/setup.bash: Configure your shell environment to use the ROS packages, nodes, and tools that were built in your workspace. This is necessary because ROS relies on environment variables to find the correct package paths and dependencies.
 #. source ~/.bashrc: All the custom configurations and environment variables defined in your .bashrc are re-applied to your current session. This is inherently performed when you open a new terminal window, but ROS2 is sometimes buggy and doing this may resolve some issues.
+#. source /opt/ros/<distro>/setup.bash: Sources the global ROS 2 setup file for a specific distribution.
 
 ROS Debugging Tips
 __________________
