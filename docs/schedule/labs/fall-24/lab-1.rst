@@ -43,117 +43,49 @@ Step 1: Setup Lab 1 Code Base
 
 **NOTE: Notice that all the code for the pupper runs under the workspace ``ros2_ws``. Every lab will have a package that you will clone into the ``src`` directory of the workspace, and you will build the package from inside the main workspace folder.**
 
-
 2. Open the workspace in VSCode
 
 ``code ~/ros2_ws``
 
+3. Examine where in the code the motor angle and velocity are read in ``<lab1_package/lab_1.py>``. Examine where the motor is commanded.
+
+**NOTE** In ROS2 code, there are two central functions to pay attention to. There are publishers and subscribers of topics defined in the ``__init__`` section of the node definition. Publishers publish a message to a topic, and subscribers listen to the messages that are sent to that topic. Callback functions are run when new information is published to a topic. Pay attention to how these publishers and subscribers interface in a ROS program.  
+
+**DELIVERABLE: Before running your code, write what you understand about the publishers and subscribers in your lab document. What gets sent and received on each message publish? How does this correspond to what is physically commanded in the motor?**
+
 Step 2: Run Starter Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To run the starter code, we launch the lab1 launch file. The launch file runs the nodes that are specified in its launch description. 
+
+1. In lab_1_launch.py, complete the launch description to launch the node that is defined in lab_1.py. 
+
+2. Run your code, and make sure that PD control is enabled on the leg you have just built. 
 
 ``cd ~/ros2_ws``
 
 ``ros2 launch <lab1_package_name> <lab1_launch.py>``
 
-Step 2: Run Bang-Bang Control
+**NOTE: Top stop your ros2 program, you can run CTRL+C, just like terminating a regular command line run program**
+
+Step 3: Run Bang-Bang Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Step 3. Write P proportional control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Step 4. Write PD position control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Step 5. Experiment with different parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Note: Some of these steps will cause the output disc to go unstable and violently shake, be prepared!
-
-For each of these situations (except the ones that go unstable), rotate the disc around with your hand to get a physical sense for the PD behavior. Report on your findings for each of these in your lab document.
-
-#. Keeping Kd constant (0), experiment with Kp = -100 and Kp = 5000. Discuss with your partner how each feels. Report how Kp and stiffness related?
-#. Keeping Kp constant (1000), experiment with different Kd values from -10 to 1000. Report what happens.
-#. Report what happens when Kp is too high. Try Kp=50000 and Kd=100.
-#. Report what happens when Kd is too high. Try Kp=0 and Kd=100000.
-#. Report what happens with just moderate damping. Try Kp=0 and Kd=100. 
-
-**DELIVERABLE: Report your findings in your lab document**
-
-The expected behavior is that higher Kp values will make the position control more stiff while higher Kd values will make the motor slower to achieve the desired position.
-If either gain is too high or is negative, the motor will go unstable.
-
-Step 6. Experiment with different loop rates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Report on your findings for each of these in your lab document
-#. Examine where the code is checking if it's time to issue another control update.
-#. Change the update rate to 4Hz with Kp=1000 and Kd=100 to observe instability. Reminder, 1Hz = 1/seconds. 
-
-**DELIVERABLE: Report how increasing/decreasing the update frequency affects the controller's performance.**
-
-**WARNING, decreasing the update frequency by too much can cause dangerous behavior.**
-
-Step 7. Program periodic motion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Set the update rate back to 200Hz (5ms interval).
-2. Program the motor to track a sinusoidal position, like the psuedocode below. 
-
-.. code-block:: c++
-
-    float time = millis() / 1000.0
-    position_target = sin(time)
-
-3. Play around with different frequencies. How high can you raise the frequency before the motor no longer moves as much as you expect? 
-
-**DELIVERABLE: Take a video to upload to Gradescope with your submission of periodic motion**
-
-Fun fact, the maximum frequency you can go before the motor moves to only 71% (-3dB) of the intended motion is called the bandwidth.
-
-Congrats on finishing your first lab!
-
-
-
-#. Examine where in the code the motor angle and velocity are read in ``src/main.cpp``. Examine where the motor is commanded.
-
-**NOTE** In Arduino/Teensyduino code, there are two central functions to pay attention to. First, there is the ``setup()`` function, which runs once when the code is uploaded to the microcontroller, and sets up the configuration. Next, there is the ``loop()`` function, which runs continuously, like a ``while True`` loop before you stop the code. Most other functions, while still important, can be considered helper functions. Pay particular attention to the ``updateCmd()`` and ``updateState()`` functions, which update a ``MotorState`` object that is defined in a struct. 
-
-**DELIVERABLE: Before running your code, write what you understand about the ``loop()`` function for this code in your Lab Document. What gets updated on each iteration? How does updating a MotorState object correspond to actually changing the physical commanded current of the motor?**
-
-.. figure:: ../../../_static/platformio_arrow.jpg
-    :align: center
-
-    Click the alien icon in the left bar to open the PlatformIO menu. (The UPLOAD button uploads the code to the Teensy microcontroller. The MONITOR button allows you to see the output from the Teensy. UPLOAD AND MONITOR accomplishes both at once).  
-
-#. Upload starter code to Teensy (right arrow icon in blue bar of VSCode or click the ant icon, then upload)
-#. Open the serial monitor in VSCode (icon that looks like a plug in bottom bar of VSCode or click ant icon, then monitor)
-#. Click into the serial monitor area and then press the key **s** to make the Teensy start printing out the angle and velocity of the connected motor.
-#. Press ``s`` again to stop the program (use this in place of ^C, to start and stop the program). If you want to rerun the code, upload again or unplug and replug your computer from the Teensy.
-
-.. figure:: ../../../_static/example-output.png
-    :align: center
-    
-    Example output from serial monitor.
-
-Step 6. Run bang-bang control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+TODO: UPDATE THIS FOR ROS2 CODE
 #. Examine the function ``bang_bang_control()`` in ``src/main.cpp`` and understand what it does. It is called in the ``updateCmd()`` function. ``updateCmd()`` is then called every iteration of ``loop()``.
 #. Uncomment the bang-bang code in ``updateCmd()`` and upload.
 #. Observe the effects of changing the current command to something else. Reminder, bang_bang_control returns a commanded current.
 #. *FEEL* how the controller behaves. Move the dial by hand and see how the controller reacts.
 
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/cskc04Jdz80" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
+TODO: INSERT VIDEO OF EXAMPLE BANG-BANG CONTROL
 *Example bang-bang control.*
 
 **DELIVERABLE: Take a video of your bang bang control to upload to Gradescope with your submission**
 
-Step 7. Write P proportional control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 4. Write P proportional control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TODO: UPDATE FOR ROS2 PUPPER
+
 #. Comment out the bang-bang controller. 
 #. Take a look at the pd_control function in ``src/main.cpp``. Notice that there are two parts summed together: proportional_control and derivative_control. They are the individual terms of the PD control law. 
 #. Complete the proportional_control function in ``src/main.cpp``. Your function should return an electrical current command (100mA, 200mA etc) using the PD control law using the following update equation. In this case, we are not conducting any damping on the control current, so leave that as 0. 
@@ -173,8 +105,10 @@ Questions:
 
 **DELIVERABLE: Answer these last two questions in your lab document**
 
-Step 8. Write PD position control
+Step 5. Write PD position control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO: UPDATE FOR ROS2 PUPPER
 
 #. Next, complete the derivative_control in ``src/main.cpp``. This should work with your proportional_control in pd_control to create a more full PD controller. Again, follow the above update equation, outputting an electrical current in ``tau``.
 
@@ -187,9 +121,11 @@ Questions:
 
 **DELIVERABLE: Answer the above questions in your lab document, and report your chosen Kp and Kd values. Take a video of your working PD controller to upload to Gradescope**
 
-
-Step 9. Experiment with different parameters
+Step 6. Experiment with different parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO: UPDATE FOR ROS2 PUPPER
+
 Note: Some of these steps will cause the output disc to go unstable and violently shake, be prepared!
 
 For each of these situations (except the ones that go unstable), rotate the disc around with your hand to get a physical sense for the PD behavior. Report on your findings for each of these in your lab document.
@@ -205,8 +141,10 @@ For each of these situations (except the ones that go unstable), rotate the disc
 The expected behavior is that higher Kp values will make the position control more stiff while higher Kd values will make the motor slower to achieve the desired position.
 If either gain is too high or is negative, the motor will go unstable.
 
-Step 10. Experiment with different loop rates
+Step 7. Experiment with different loop rates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO: UPDATE FOR ROS2 PUPPER
 
 Report on your findings for each of these in your lab document
 #. Examine where the code is checking if it's time to issue another control update.
@@ -216,8 +154,10 @@ Report on your findings for each of these in your lab document
 
 **WARNING, decreasing the update frequency by too much can cause dangerous behavior.**
 
-Step 11. Program periodic motion
+Step 8. Program periodic motion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO: UPDATE FOR ROS2 PUPPER
 
 1. Set the update rate back to 200Hz (5ms interval).
 2. Program the motor to track a sinusoidal position, like the psuedocode below. 
