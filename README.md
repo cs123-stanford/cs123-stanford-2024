@@ -5,7 +5,7 @@ Hosts the course website for Stanford course CS123 https://cs-123-stanford-2024.
 - Instructors: Prof. Karen Liu (Stanford CS Dept.), Jie Tan (Google DeepMind), Stuart Bowers (Hands-On Robotics)
 - Co-Intructors: Wenhao Yu (Google DeepMind), Tingnan Zhang (Google DeepMind)
 - Head TAs: Ankush Dhawan, Zipeng Fu
-- TAs: Jaden Clark, Josh Francis, Akemi, Zara
+- TAs: Jaden Clark, Josh Francis, Akemi Sabatier, Zara Rutherford
 
 
 If your university is interesting in hosting this course, contact ankushd@stanford.edu
