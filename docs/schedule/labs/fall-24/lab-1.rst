@@ -15,95 +15,40 @@ ___________________________
 #. For this class, and for many robots you will interface with as a roboticist, we use ROS, or Robot Operating System. ROS allows us to build robotic applications by  providing tools, libraries, and conventions that allow different parts of the robot to interact with each other. 
 #. Navigate to :doc:`../../lectures/fall-24/ros_intro` to get acquainted with the basics of ROS. Keep this guide handy to be a ROS cheat sheet that you can refer to throughout the course. You may do this on your personal laptops or the Raspberry Pi. 
 
+Part 2: Robot Leg Assembly
+___________________________
 
+#. TODO: Write out assembly instructions
+#. TODO: Write out instructions on setting motor ids
 
+Part 3: Hello PD
+___________________________
 
-
-Step 1. Assemble motor to base
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/S7Yns-jh8pE" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-|
-
-Step 2. Fasten feet to base
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/StzPjM9KXO0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-|
-
-* Ignore that there's a whole robot arm attached in the video.
-
-Step 3. Attach dial to motor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/jO2BjMUmuZs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-|
-
-Step 4. Connect and calibrate electronics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**ELECTRONICS SAFETY:** Make sure to separate the PCB from the metal base before turning on the power, otherwise the circuit will short! Either elevate the PCB above the base with the screws provided, or place the PCB next to the metal base on the table.
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/r9CnXgrQnfI" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-|
-
-#. Turn on the system: press the power button on the PCB shield.
-#. Calibrate: Press and hold the button on the C610 motor controller until the motor starts moving and release.
-#. Wait until the C610 motor controller restarts.
-#. Set ID: Click the button on the C610 controller, then a little while later (half second or so) press the button again. The light should flash green.
-#. The light should now flash once every 2 seconds or so. The number of blinks indicates which ID it is. For example two blinks every 2 seconds indicates ID=2.
-
-**Important:** *To set a motor controller to a certain ID, click (short press) press to put the motor controller into id-setting mode, then click N more times in quick succession, where N is the desired ID. Eg, for a desired ID of 3, press 3 more times after the first click.*
-
-Step 5. Examine and run the starter code
+Step 1: Setup Lab 1 Code Base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**WARNING** To stop code, press ``s`` inside the terminal instead of ^C. Using ^C will lead to undefined behavior when you upload new code, or run the code again. 
+1. Start by cloning the lab 1 code repo on the Raspberry Pi and building the package. 
 
-1. Git clone the `starter code <https://github.com/stanfordroboticsclub/independent-study-lab1>`_
+``cd ~/ros2_ws/src``
 
-``git clone https://github.com/cs123-stanford/lab_1_hello_pd.git``
-
-``cd lab_1_hello_pd``
+``git clone <LAB 1 STARTER CODE REPO>``
 
 ``git submodule init``
 
 ``git submodule update``
 
+``cd ~/ros2_ws``
 
-.. figure:: ../../../_static/teensy.jpeg
-    :align: center
+``colcon build <LAB 1 STARTER CODE PACKAGE``
 
-    Plug in USB Cable into Teensy like above
+**NOTE: Notice that all the code for the pupper runs under the workspace ``ros2_ws``. Every lab will have a package that you will clone into the ``src`` directory of the workspace, and you will build the package from inside the main workspace folder.**
 
 
-Open in VSCode, and upload to Teensy (refer to video).
+2. Open the workspace in VSCode
 
-.. raw:: html
+``code ~/ros2_ws``
 
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/WMEhVteT9h4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+
 
 #. Examine where in the code the motor angle and velocity are read in ``src/main.cpp``. Examine where the motor is commanded.
 
