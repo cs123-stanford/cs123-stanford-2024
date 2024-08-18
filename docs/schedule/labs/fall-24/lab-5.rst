@@ -1,16 +1,25 @@
 Lab 5: How to Train Your Dog
 ========================
 
-*Goal: Use RL to control your Pupper.*
+*Goal: Train Pupper to walk using reinforcement learning!*
 
-Step 1.Stand High Policy
+Step 1. Colab setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Reward is standing high. Provide code with standing at regular height, student need to modify it to make it stand higher.
-#. Deploy on real
+#. Make a copy of the Colab notebook HERE
+#. Create a wandb account (https://wandb.ai/), navigate to User Settings, and generate an API key
+#. Run the SETUP cells
 
-DELIVERABLE: Screen recording of stand up in simulation
 
-Step 2. Deploy Stand High Policy
+Step 2. Pupper stand-up in sim
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Complete the #TODO in the Reward Functions cell to write a reward function to make Pupper stand up
+#. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to stand up
+#. Pupper should take around 5-10 minutes to train. 
+
+DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
+DELIVERABLE: Screen recording of stand-up in simulation
+
+Step 3. Deploy Stand High Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
@@ -21,12 +30,12 @@ Step 2. Deploy Stand High Policy
 
 |
 Transfer policy from local machine to pupper
-#. The model is a .pt file under the log folder name (e.g., “model_700.pt”)
-#. ‘scp [model name] pi@raspberrypi.local:’ (note the colon at the end)
+#. When you train a policy that can standup and stay stable, you are ready to transfer the policy to the physical Pupper robot
+#. Navigate to archive in wandb, and download the .json from the policy you trained
+#. ‘scp [path_to_model_name.json] pi@pupper.local:’ (note the colon at the end)
 
-#. In local puppersim repo, change the policy called in isaac_gym_policy.py (located under the puppersim folder) to your policy name (your .pt file)
-#. Change pi address in deploy_to_robot.sh
-#. ./deploy_to_robot.sh python puppersim/puppersim/isaac_gym_policy.py --run_on_robot
+#. In local neural_controller repo, change the policy called in policy.py (ros2_ws folder) to your policy name (your .json file)
+#. On the pi, run the launch.py script
 
 
 DELIVERABLE: Take video of stand-up
@@ -37,7 +46,7 @@ DELIVERABLE: Take video of stand-up
     
     Motor ID diagram
 
-Step 3. Walking Policy
+Step 4. Walking Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
@@ -48,12 +57,15 @@ Step 3. Walking Policy
 
 |
 
-#. We provide basic interface (how to read robot velocity, how to obtain target velocity) and student need to write a new reward function
-#. deploy in sim
+#. Write a reward function that makes Pupper move forward in the PUPPER WALK cell
+#. Reload the environment, and train Pupper to walk in sim
+#. Pupper should take around 10-15 minutes to train. 
 
-DELIVERABLE: What terms are included in your reward functions? What coefficeints did you use? How did you come up with these terms and what was their desired effect? Why might this policy perform poorly on the physical robot?
+DELIVERABLE: What terms are included in your reward functions? What coefficients did you use? How did you come up with these terms and what was their desired effect? Why might this policy perform poorly on the physical robot?
+DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
+DELIVERABLE: Screen recording of stand-up in simulation
 
-Step 4. Domain Randomization
+Step 5. Reward tuning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
@@ -64,11 +76,11 @@ Step 4. Domain Randomization
 
 |
 
-#. Student need to implement domain randomization
+#. Tune the reward so 
 #. Deploy on real, works
 
 
-
+DELIVERABLE: What terms are included in your reward functions? What coefficeints did you use? How did you come up with these terms and what was their desired effect? Why might this policy perform poorly on the physical robot?
 DELIVERABLE: What other terms could you randomize?
 
 
@@ -79,7 +91,7 @@ DELIVERABLE: What other terms could you randomize?
     Startup position.
 
 
-Step 5. Speed/terrain test
+Step 6. Domain randomization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
@@ -88,14 +100,11 @@ Step 5. Speed/terrain test
         <iframe src="https://www.youtube.com/embed/OArwzrKzQdM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-|
+Okay, so Pupper looks pretty good in sim, but the policy doesn't look so great in the real world...
 
-#. Screw RPi into electronics bulkhead with M2.5x5 socket head screws such that the Pi is oriented like in the video.
-#. Connect USB C extension cable to Rpi
-#. Connect RPi camera flex cable into RPi. There's a little grey flap that flips up on the connector that lets you slide the cable in. Flip the flap down to lock the cable in.
-#. Connect RPi to power by using 2-pin cable. Connect one end into 5V, GND pins near the Teensy and other side into RPi. Quadruple-check that the 5V and GND pins are going the right places. See diagram.
-#. Connect RPi to Teensy using USB A to USB micro cable
-#. Connect RC receiver to RPi with usb extension cable.
+You will need to add randomization to the sim environment so your policy successfully transfers
+
+#. Edit the environment config to adequately represent all the situations Pupper might encounter in the real world
 
 
 DELIVERABLE: Test your policy during office hours
