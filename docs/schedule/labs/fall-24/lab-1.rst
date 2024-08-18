@@ -1,176 +1,210 @@
-Lab 1: ROS Introduction and Hello PD
-====================================
-*Goal: Get setup with the hardware, and build a robot arm that you can program PD control on using ROS2.*
+Lab 1: ROS Introduction and PD Control
+======================================
 
-Part 0. Setup
-___________________________
+Goal
+----
+Get set up with the Raspberry Pi 5 hardware and build a robot leg that you can program PD control on using ROS2.
 
-#. For this class, you will be doing all your coding and development on Raspberry Pi 5s, a minimalistic quad-core single-board computer oftentimes used in robotics projects. The Raspberry Pi will serve as the brain for our Pupper robot, communicating with the electronics board, motor drivers, and camera among other functions. The TAs should distribute a Raspberry Pi 5, pre-flashed micro SD card, a computer monitor, USB keyboard and mouse, power cable, and HDMI cable. 
-#. Insert the micro SD card to the slot on the back of the Raspberry Pi. Plug in the USB keyboard and mouse to the USB terminals and connect to the monitor via the HDMI cable and port. Power on the Raspberry Pi with the power cable and see that the desktop turns on. 
-#. Make sure that your Raspberry Pi can connect to the class WiFi router, if you are having issues, ask a TA. 
+Part 0: Setup
+-------------
+
+1. For this class, you will be doing all your coding and development on Raspberry Pi 5s, a minimalistic quad-core single-board computer often used in robotics projects. The Raspberry Pi will serve as the brain for our Pupper robot, communicating with the electronics board, motor drivers, and camera among other functions.
+
+2. You should receive the following from the TAs:
+
+   - Pupper robot: containing Raspberry Pi 5, Pre-flashed micro SD card and etc.
+   - Ethernet cable
+   - HDMI cable
+
+4. Connect to the Pupper robot via SSH, which stands for Secure Shell, is a network protocol that provides a secure way to access and manage remote computers over an unsecured network. It offers strong authentication and encrypted data communications between two computers connecting over an open network such as the internet. 
+    - Connect your laptop to the Pupper robot using the Ethernet cable.
+    - Enable internet sharing in system settings (turn on anything that looks like Ethernet).
+    - SSH into the Raspberry Pi through terminal: ``ssh pi@pupper.local`` (password: rhea123)
+    - Remember to turn off internet sharing afterwards.
+
+.. figure:: ../../../_static/internet_sharing.png
+    :align: center
+
+    Enable internet sharing in system settings.
+
 
 Part 1: ROS Introduction
-___________________________
+------------------------
 
-#. For this class, and for many robots you will interface with as a roboticist, we use ROS, or Robot Operating System. ROS allows us to build robotic applications by  providing tools, libraries, and conventions that allow different parts of the robot to interact with each other. 
-#. Navigate to :doc:`../../lectures/fall-24/ros_intro` to get acquainted with the basics of ROS. Keep this guide handy to be a ROS cheat sheet that you can refer to throughout the course. You may do this on your personal laptops or the Raspberry Pi. 
+1. We'll be using ROS (Robot Operating System) throughout this course. ROS provides tools, libraries, and conventions that facilitate building robotic applications and allow different parts of the robot to interact with each other.
 
-Part 2: Robot Leg Assembly
-___________________________
+2. Familiarize yourself with the basics of ROS by reviewing the ROS introduction guide (https://wiki.ros.org/ROS/Introduction). Keep this guide handy as a ROS cheat sheet (https://mirror.umd.edu/roswiki/attachments/de/ROScheatsheet.pdf) that you can refer to throughout the course.
 
-#. TODO: Write out assembly instructions
-#. TODO: Write out instructions on setting motor ids
+3. ROS services in Pupper: robot.service manages control code (face controller, rl or heuristic controller, etc). See if controller is running: ``systemctl status robot.service`` You should see the status as "active (running)". Checkout all topics and services: ``ros2 topic list`` and ``ros2 service list``.
 
-Part 3: Hello PD
-___________________________
+4. Remember to disable the robot service before working on your code. This will prevent the robot from running any pre-existing code that may interfere with your work. Pupper robot falls after disable the robot service, so make sure to place it on a soft surface. To disable the robot service, run the following commands:
+
+.. code-block:: bash
+
+   sudo systemctl disable robot.service
+   sudo reboot
+
+5. Calibration after rebooting: After rebooting, you may need to recalibrate the robot joints. Follow the following image:
+
+.. figure:: ../../../_static/calibration.png
+    :align: center
+
+    Calibration after rebooting.
+
+
+5. Troubleshooting. If you encounter any issues with , try the following:
+
+  - If you see "ros_2 not found", ``source ~/.bashrc`` again
+
+Part 2: Hello PD
+----------------
 
 Step 1: Setup Lab 1 Code Base
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Start by cloning the lab 1 code repo on the Raspberry Pi and building the package. 
+1. Clone the lab 1 code repository on the Raspberry Pi and build the package:
 
-``cd ~/ros2_ws/src``
+   .. code-block:: bash
 
-``git clone <LAB 1 STARTER CODE REPO>``
+      cd ~/
+      git clone https://github.com/cs123-stanford/lab_1_2024.git lab_1
 
-``git submodule init``
+   Note: Make sure the folder name is ``lab_1``. If you have a different folder name, you may need to update the launch file accordingly.
 
-``git submodule update``
+2. Open the workspace in VSCode:
 
-``cd ~/ros2_ws``
+   .. code-block:: bash
 
-``colcon build <LAB 1 STARTER CODE PACKAGE``
+      code ~/lab_1
 
-**NOTE: Notice that all the code for the pupper runs under the workspace ``ros2_ws``. Every lab will have a package that you will clone into the ``src`` directory of the workspace, and you will build the package from inside the main workspace folder.**
+3. Examine ``<lab_1/lab_1.py>`` to understand where the motor angle and velocity are read and where the motor is commanded.
 
-2. Open the workspace in VSCode
+   Note: In ROS2 code, pay attention to publishers and subscribers defined in the ``__init__`` section of the node definition. Publishers send messages to topics, while subscribers listen to messages on topics. Callback functions run when new information is published to a topic.
 
-``code ~/ros2_ws``
+**DELIVERABLE:** Before running your code, explain in your lab document what you understand about the publishers and subscribers. What gets sent and received on each message publish? How does this correspond to what is physically commanded in the motor?
 
-3. Examine where in the code the motor angle and velocity are read in ``<lab1_package/lab_1.py>``. Examine where the motor is commanded.
 
-**NOTE** In ROS2 code, there are two central functions to pay attention to. There are publishers and subscribers of topics defined in the ``__init__`` section of the node definition. Publishers publish a message to a topic, and subscribers listen to the messages that are sent to that topic. Callback functions are run when new information is published to a topic. Pay attention to how these publishers and subscribers interface in a ROS program.  
+Step 2: Run ROS Launch Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**DELIVERABLE: Before running your code, write what you understand about the publishers and subscribers in your lab document. What gets sent and received on each message publish? How does this correspond to what is physically commanded in the motor?**
+1. Check the launch description in ``lab_1_launch.py`` and ``lab_1.yaml``. Familiarize yourself with the structure and parameters defined in these files.
 
-Step 2: Run Starter Code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2. Run the launch file using the following command:
 
-To run the starter code, we launch the lab1 launch file. The launch file runs the nodes that are specified in its launch description. 
+   .. code-block:: bash
 
-1. In lab_1_launch.py, complete the launch description to launch the node that is defined in lab_1.py. 
+      ros2 launch lab_1 lab_1.launch.py
 
-2. Run your code, and make sure that PD control is enabled on the leg you have just built. 
+   This command will start all the necessary nodes for your PD control experiment.
 
-``cd ~/ros2_ws``
+3. After running the launch file, you should see output in your terminal indicating that the nodes have been started successfully. If you encounter any errors, double-check your file paths and make sure all dependencies are installed.
 
-``ros2 launch <lab1_package_name> <lab1_launch.py>``
+4. Open a new terminal window (you can use SSH to open multiple connections to your Raspberry Pi) and run the following command to see the list of active topics:
 
-**NOTE: Top stop your ros2 program, you can run CTRL+C, just like terminating a regular command line run program**
+   .. code-block:: bash
 
-Step 3: Run Bang-Bang Control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      ros2 topic list
 
-TODO: UPDATE THIS FOR ROS2 CODE
-#. Examine the function ``bang_bang_control()`` in ``src/main.cpp`` and understand what it does. It is called in the ``updateCmd()`` function. ``updateCmd()`` is then called every iteration of ``loop()``.
-#. Uncomment the bang-bang code in ``updateCmd()`` and upload.
-#. Observe the effects of changing the current command to something else. Reminder, bang_bang_control returns a commanded current.
-#. *FEEL* how the controller behaves. Move the dial by hand and see how the controller reacts.
+   You should see topics related to joint states and commands. These are the topics your node will be publishing to and subscribing from.
 
-TODO: INSERT VIDEO OF EXAMPLE BANG-BANG CONTROL
-*Example bang-bang control.*
+5. To inspect the data being published on a specific topic, you can use the `ros2 topic echo` command. For example:
 
-**DELIVERABLE: Take a video of your bang bang control to upload to Gradescope with your submission**
+   .. code-block:: bash
 
-Step 4. Write P proportional control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TODO: UPDATE FOR ROS2 PUPPER
+      ros2 topic echo /joint_states
 
-#. Comment out the bang-bang controller. 
-#. Take a look at the pd_control function in ``src/main.cpp``. Notice that there are two parts summed together: proportional_control and derivative_control. They are the individual terms of the PD control law. 
-#. Complete the proportional_control function in ``src/main.cpp``. Your function should return an electrical current command (100mA, 200mA etc) using the PD control law using the following update equation. In this case, we are not conducting any damping on the control current, so leave that as 0. 
+   This will show you real-time data about the joint states of your robot leg.
 
-.. figure:: ../../../_static/pid_eqn.png
-    :align: center
-    
-    PID Update Equation. ``Tau`` is the commanded electrical current for the motor, ``theta_target`` is the target angle, ``omega_target`` is the target angular velocity, ``theta_current`` is the motor angle, and ``omega_current`` is the motor angular velocity. ``Kd`` and ``Kp`` are the derivative and proportional gains - these are dimensionless coefficients that you will experimentally determine through trial and error. 
+**DELIVERABLE:** In your lab document, provide screenshots of:
 
-Questions:
+1. The terminal output after running the launch file, showing successful node startup.
+2. The list of active topics you observed.
+3. A sample of the joint states data you saw when using the `ros2 topic echo` command.
 
-#. Start with Kp = 1000.0 and leave Kd as is. Don't forget the negative signs! 
-#. Upload code to Teensy
-#. *FEEL* the effect of the P controller.
-#. What happens when you rotate the disc just a little bit away from the target position? What happens when you rotate it a lot away from the target position? Do you feel the motor torque increase and then flatten out as you rotate the disc? 
-#. What changes when you change Kp?
+Also, answer the following questions:
 
-**DELIVERABLE: Answer these last two questions in your lab document**
+1. What nodes are being launched by your `lab_1.launch.py` file?
+2. What parameters are being set in the `lab_1.yaml` file, and what do you think they control?
+3. Based on the topics you observed, how do you think the different parts of your robot control system are communicating with each other?
 
-Step 5. Write PD position control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Remember, understanding how the launch system works and how to inspect your ROS2 system is crucial for debugging and developing more complex robotic systems in the future.
 
-TODO: UPDATE FOR ROS2 PUPPER
+Step 3: Implement PD Control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Next, complete the derivative_control in ``src/main.cpp``. This should work with your proportional_control in pd_control to create a more full PD controller. Again, follow the above update equation, outputting an electrical current in ``tau``.
+1. Open ``lab_1.py`` and locate the PD control implementation.
 
-Questions:
+2. Start with Kp = 2.0 and Kd = 0.3. Implement the PD control law using the following update equation:
 
-#. After adding in the derivative term, use Kp = 1000.0 and Kd = 10.0 to start. Don't forget the negative signs! How does this controller perform compared to just P control?
-#. Upload code to Teensy
-#. *FEEL* the effect of the PD controller.
-#. Change around the values for Kp and Kd, experimenting with how they change the performance. What happens now when you rotate the disc farther from the target position? Why does adding the derivative term help the controller’s performance? Find the optimal Kp and Kd values. 
+   .. code-block:: python
 
-**DELIVERABLE: Answer the above questions in your lab document, and report your chosen Kp and Kd values. Take a video of your working PD controller to upload to Gradescope**
+      tau = Kp * (theta_target - theta_current) + Kd * (omega_target - omega_current) + feedforward_term
 
-Step 6. Experiment with different parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   Where:
+   
+   - ``tau`` is the commanded torque for the motor
+   - ``theta_target`` is the target angle
+   - ``omega_target`` is the target angular velocity (usually 0)
+   - ``theta_current`` is the current motor angle
+   - ``omega_current`` is the current motor angular velocity
+   - ``Kp`` and ``Kd`` are the proportional and derivative gains
+   - ``feedforward_term`` is a constant term that you can use send a constant torque to the motor
 
-TODO: UPDATE FOR ROS2 PUPPER
+3. Run your code ``python lab_1.py`` and observe the behavior of the PD controller.
 
-Note: Some of these steps will cause the output disc to go unstable and violently shake, be prepared!
+**DELIVERABLE:** Answer the following questions in your lab document:
 
-For each of these situations (except the ones that go unstable), rotate the disc around with your hand to get a physical sense for the PD behavior. Report on your findings for each of these in your lab document.
+- How does the leg respond to manual movements?
+- What happens when you change Kp and Kd values?
+- Find and report the optimal Kp and Kd values for your setup.
 
-#. Keeping Kd constant (0), experiment with Kp = -100 and Kp = 5000. Discuss with your partner how each feels. Report how Kp and stiffness related?
-#. Keeping Kp constant (1000), experiment with different Kd values from -10 to 1000. Report what happens.
-#. Report what happens when Kp is too high. Try Kp=50000 and Kd=100.
-#. Report what happens when Kd is too high. Try Kp=0 and Kd=100000.
-#. Report what happens with just moderate damping. Try Kp=0 and Kd=100. 
+Step 4: Experiment with Different Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**DELIVERABLE: Report your findings in your lab document**
+Experiment with different Kp and Kd values and observe the effects. Be prepared for potential instability!
 
-The expected behavior is that higher Kp values will make the position control more stiff while higher Kd values will make the motor slower to achieve the desired position.
-If either gain is too high or is negative, the motor will go unstable.
+For each situation, manually rotate the leg to get a physical sense of the PD behavior. Report your findings in your lab document.
 
-Step 7. Experiment with different loop rates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Vary Kp while keeping Kd constant (0.1). Try Kp values from 0.5 to 5.0.
+2. Vary Kd while keeping Kp constant (2.0). Try Kd values from 0.1 to 1.0.
 
-TODO: UPDATE FOR ROS2 PUPPER
+**DELIVERABLE:** Report your findings for each experiment in your lab document.
 
-Report on your findings for each of these in your lab document
-#. Examine where the code is checking if it's time to issue another control update.
-#. Change the update rate to 4Hz with Kp=1000 and Kd=100 to observe instability. Reminder, 1Hz = 1/seconds. 
+Step 5: Implement Periodic Motion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**DELIVERABLE: Report how increasing/decreasing the update frequency affects the controller's performance.**
+1. Program the leg to track a sinusoidal position:
 
-**WARNING, decreasing the update frequency by too much can cause dangerous behavior.**
+   .. code-block:: python
 
-Step 8. Program periodic motion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      import time
+      import math
 
-TODO: UPDATE FOR ROS2 PUPPER
+      # In your control loop:
+      current_time = time.time()
+      position_target = math.sin(current_time)
 
-1. Set the update rate back to 200Hz (5ms interval).
-2. Program the motor to track a sinusoidal position, like the psuedocode below. 
+2. Experiment with different frequencies of the sine wave.
 
-.. code-block:: c++
+**DELIVERABLE:** Take a video of the leg performing periodic motion and upload it to Gradescope with your submission.
 
-    float time = millis() / 1000.0
-    position_target = sin(time)
+Additional Notes
+----------------
+- ROS2 Workspace:
 
-3. Play around with different frequencies. How high can you raise the frequency before the motor no longer moves as much as you expect? 
+  - All robot-relevant code is in ``ros2_ws``
+  - Key packages:
 
-**DELIVERABLE: Take a video to upload to Gradescope with your submission of periodic motion**
+    - Neural controller (policy support)
+    - Hardware interface (motor control)
+    - Pupper feelings (face control)
+    - Pupper descriptions (URDF files)
 
-Fun fact, the maximum frequency you can go before the motor moves to only 71% (-3dB) of the intended motion is called the bandwidth.
+- Motor Control:
 
-Congrats on finishing your first lab!
+  - Refer to the control node and joy node
+  - URDF is the source of truth for CAN IDs
+  - Joint states topic provides current motor states
+
+
+Congratulations on completing your first lab! This hands-on experience with ROS2 and PD control on a real robot leg will serve as a foundation for the more advanced topics we'll cover in future labs.
