@@ -78,7 +78,7 @@ You will need to add randomization to the sim environment so your policy success
 
 .. figure:: ../../../_static/good_walk_terrain.gif
    :align: center
-   :width: 150%
+   :width: 500px
 
    Your sim environment should expose Pupper to a variety of possible scenarios
 
