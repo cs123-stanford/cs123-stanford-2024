@@ -5,9 +5,10 @@ Lab 5: How to Train Your Dog
 
 Step 1. Colab setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Make a copy of the Colab notebook HERE
+#. Make a copy of the Colab notebook `HERE <https://colab.research.google.com/drive/1sZGUI-ivHQdxdR9PosIWi54TKFU3KokG?authuser=1#scrollTo=IbZxYDxzoz5R>`_
 #. Create a wandb account (https://wandb.ai/), navigate to User Settings, and generate an API key
-#. Run the SETUP cells
+#. Set up your wandb key by running cell 2 and inserting your key
+#. Run all cells up until Config to install dependencies
 
 
 Step 2. Pupper stand-up in sim
