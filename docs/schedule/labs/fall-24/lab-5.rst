@@ -11,16 +11,26 @@ Step 1. Colab setup
 #. Run all cells up until Config to install dependencies
 
 
-Step 2. Pupper stand-up in sim
+Step 2. Pupper forward
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Complete the #TODO in the Reward Functions cell to write a reward function to make Pupper stand up
+#. Complete the #TODO in the Reward Functions cell to write a reward function to make Pupper walk forward
 #. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to stand up
 #. Pupper should take around 5-10 minutes to train. 
 
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
 DELIVERABLE: Screen recording of stand-up in simulation
 
-Step 3. Deploy Stand High Policy
+Step 3. Effort function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Complete the #TODO in the Reward Functions cell to write a reward function that helps Pupper conserve energy
+#. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to stand up
+#. Pupper should take around 5-10 minutes to train. 
+
+DELIVERABLE: What is your reward function (in math)? Why did you choose this function, and what other alternatives did you consider?
+DELIVERABLE: Qualitatively, how does this Pupper policy compare to the previous one?
+DELIVERABLE: Screen recording of stand-up in simulation
+
+Step 4. Deploy your walking policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
@@ -38,8 +48,8 @@ Transfer policy from local machine to pupper
 #. In local neural_controller repo, change the policy called in policy.py (ros2_ws folder) to your policy name (your .json file)
 #. On the pi, run the launch.py script
 
-
-DELIVERABLE: Take video of stand-up
+DELIVERABLE: In what ways is this policy different on the physical robot (compared to sim)
+DELIVERABLE: Take video of walking
 
 
 .. figure:: ../_static/motor_ids.png
@@ -47,7 +57,7 @@ DELIVERABLE: Take video of stand-up
     
     Motor ID diagram
 
-Step 4. Walking Policy
+Step 5. Reward tuning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
@@ -66,33 +76,8 @@ DELIVERABLE: What terms are included in your reward functions? What coefficients
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
 DELIVERABLE: Screen recording of stand-up in simulation
 
-Step 5. Reward tuning
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/OArwzrKzQdM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-|
-
-#. Tune the reward so 
-#. Deploy on real, works
-
-
-DELIVERABLE: What terms are included in your reward functions? What coefficeints did you use? How did you come up with these terms and what was their desired effect? Why might this policy perform poorly on the physical robot?
-DELIVERABLE: What other terms could you randomize?
-
-
-
-.. figure:: ../_static/djipupper_photos/startup-position.png
-    :align: center
-    
-    Startup position.
-
-
-Step 6. Domain randomization
+Step 5. Domain randomization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
@@ -103,7 +88,7 @@ Step 6. Domain randomization
 
 Okay, so Pupper looks pretty good in sim, but the policy doesn't look so great in the real world...
 
-You will need to add randomization to the sim environment so your policy successfully transfers
+You will need to add randomization to the sim environment so your policy successfully transfers. Consider randomizing parameters such as Pupper mass, environment heighfields, or PID gains.
 
 #. Edit the environment config to adequately represent all the situations Pupper might encounter in the real world
 
