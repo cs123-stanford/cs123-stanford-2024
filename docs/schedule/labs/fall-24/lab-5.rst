@@ -10,6 +10,11 @@ Step 1. Colab setup
 #. Set up your wandb key by running cell 2 and inserting your key
 #. Run all cells up until Config to install dependencies
 
+.. figure:: ../../../_static/colab.png
+   :align: center
+
+   Insert your wandb key here
+
 
 Step 2. Pupper forward
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
