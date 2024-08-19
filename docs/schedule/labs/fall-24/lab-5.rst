@@ -91,10 +91,15 @@ Okay, so Pupper looks pretty good in sim, but the policy doesn't look so great i
 You will need to add randomization to the sim environment so your policy successfully transfers. Consider randomizing parameters such as Pupper mass, environment heighfields, or PID gains.
 
 #. Edit the environment config to adequately represent all the situations Pupper might encounter in the real world
+#. Test your policy on the obstacle course in office hours
+
+.. figure:: ../_static/good_walk_terrain.gif
+   :align: center
+
+   Your sim environment should expose Pupper to a variety of possible scenarios
 
 
-DELIVERABLE: Test your policy during office hours
-
+DELIVERABLE: Record a video on the obstacle course
 Resources
 -----------
 
