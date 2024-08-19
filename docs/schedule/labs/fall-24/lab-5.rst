@@ -33,11 +33,6 @@ DELIVERABLE: Screen recording of stand-up in simulation
 Step 4. Deploy your walking policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/Xhj-rCPxm6o" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
 
 |
 Transfer policy from local machine to pupper
@@ -59,12 +54,6 @@ DELIVERABLE: Take video of walking
 
 Step 5. Reward tuning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/vv3jABUq3ng" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
 
 |
 
@@ -99,7 +88,8 @@ You will need to add randomization to the sim environment so your policy success
    Your sim environment should expose Pupper to a variety of possible scenarios
 
 
-DELIVERABLE: Record a video on the obstacle course
+DELIVERABLE: Record a video on the obstacle course and record a video
+
 Resources
 -----------
 
