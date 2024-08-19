@@ -68,11 +68,6 @@ DELIVERABLE: Screen recording of stand-up in simulation
 Step 5. Domain randomization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/OArwzrKzQdM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
 
 Okay, so Pupper looks pretty good in sim, but the policy doesn't look so great in the real world...
 
@@ -83,6 +78,7 @@ You will need to add randomization to the sim environment so your policy success
 
 .. figure:: ../../../_static/good_walk_terrain.gif
    :align: center
+   :width: 80%
 
    Your sim environment should expose Pupper to a variety of possible scenarios
 
