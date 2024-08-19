@@ -46,8 +46,7 @@ Transfer policy from local machine to pupper
 DELIVERABLE: In what ways is this policy different on the physical robot (compared to sim)
 DELIVERABLE: Take video of walking
 
-
-.. figure:: ../_static/motor_ids.png
+.. figure:: ../../../_static/motor_ids.png
     :align: center
     
     Motor ID diagram
