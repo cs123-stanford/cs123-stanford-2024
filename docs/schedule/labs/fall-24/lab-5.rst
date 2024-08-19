@@ -20,6 +20,12 @@ Step 2. Pupper forward
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
 DELIVERABLE: Screen recording of stand-up in simulation
 
+.. figure:: ../../../_static/random_walk.gif
+   :align: center
+   :width: 360px
+
+   Earlier in training, Pupper will move seemingly randomly
+
 Step 3. Effort function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Complete the #TODO in the Reward Functions cell to write a reward function that helps Pupper conserve energy
@@ -78,7 +84,7 @@ You will need to add randomization to the sim environment so your policy success
 
 .. figure:: ../../../_static/good_walk_terrain.gif
    :align: center
-   :width: 500px
+   :width: 360px
 
    Your sim environment should expose Pupper to a variety of possible scenarios
 
