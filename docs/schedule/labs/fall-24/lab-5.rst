@@ -120,10 +120,7 @@ DELIVERABLE: Record a video on the obstacle course and record a video
 
 Resources
 -----------
-
-Wiring diagram
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. figure:: ../_static/wiring-diagram.png
-    :align: center
-    
-    Wiring diagram.
+`Sim-to-Real: Learning Agile Locomotion For Quadruped Robots <https://arxiv.org/abs/1804.10332>`_
+`Minimizing Energy Consumption Leads to the
+Emergence of Gaits in Legged Robots <https://energy-locomotion.github.io/>`_
+`Learning Agile Quadrupedal Locomotion Over Challenging Terrain <https://www.science.org/doi/full/10.1126/scirobotics.abc5986>`_
