@@ -53,6 +53,11 @@ DELIVERABLE: What is your reward function (in math)? Why did you choose this fun
 DELIVERABLE: Qualitatively, how does this Pupper policy compare to the previous one?
 DELIVERABLE: Screen recording of stand-up in simulation
 
+.. figure:: ../../../_static/effortless_walk.gif
+   :align: center
+   :width: 360px
+
+   Pupper should walk with much better stability and smoothness. However, it still shouldn't have a super natural locomotion, and will likely not be robust to pushes or other changes in the environment. Next, you will implement several additional auxiliary rewards to help Pupper stay stable.
 
 
 Step 4. Reward tuning
