@@ -53,9 +53,27 @@ DELIVERABLE: What is your reward function (in math)? Why did you choose this fun
 DELIVERABLE: Qualitatively, how does this Pupper policy compare to the previous one?
 DELIVERABLE: Screen recording of stand-up in simulation
 
-Step 4. Deploy your walking policy
+
+
+Step 4. Reward tuning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+#. Write a reward function that makes Pupper move forward in the PUPPER WALK cell
+#. Reload the environment, and train Pupper to walk in sim
+#. Pupper should take around 10-15 minutes to train. 
+
+DELIVERABLE: What terms are included in your reward functions? What coefficients did you use? How did you come up with these terms and what was their desired effect? Why might this policy perform poorly on the physical robot?
+DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
+DELIVERABLE: Screen recording of stand-up in simulation
+
+.. figure:: ../../../_static/flat_fast.gif
+   :align: center
+   :width: 360px
+
+   You should aim to train a stable policy up to 0.75 m/s in simulation
+
+Step 5. Deploy your walking policy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |
 Transfer policy from local machine to pupper
@@ -74,22 +92,6 @@ DELIVERABLE: Take video of walking
 
    Deploy your policy on Pupper v3
 
-Step 5. Reward tuning
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Write a reward function that makes Pupper move forward in the PUPPER WALK cell
-#. Reload the environment, and train Pupper to walk in sim
-#. Pupper should take around 10-15 minutes to train. 
-
-DELIVERABLE: What terms are included in your reward functions? What coefficients did you use? How did you come up with these terms and what was their desired effect? Why might this policy perform poorly on the physical robot?
-DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
-DELIVERABLE: Screen recording of stand-up in simulation
-
-.. figure:: ../../../_static/flat_fast.gif
-   :align: center
-   :width: 360px
-
-   You should aim to train a stable policy up to 0.75 m/s in simulation
 
 Step 5. Domain randomization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
