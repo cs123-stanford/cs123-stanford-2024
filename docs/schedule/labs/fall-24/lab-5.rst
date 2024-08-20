@@ -33,6 +33,7 @@ DELIVERABLE: Screen recording of stand-up in simulation
 
 .. figure:: ../../../_static/loss_pup.png
    :align: center
+   :width: 360px
 
    During training, your reward should be going up steadily and eventually plateau
 
