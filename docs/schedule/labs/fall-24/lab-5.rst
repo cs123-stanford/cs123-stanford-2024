@@ -71,8 +71,6 @@ DELIVERABLE: Take video of walking
 Step 5. Reward tuning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|
-
 #. Write a reward function that makes Pupper move forward in the PUPPER WALK cell
 #. Reload the environment, and train Pupper to walk in sim
 #. Pupper should take around 10-15 minutes to train. 
@@ -81,6 +79,11 @@ DELIVERABLE: What terms are included in your reward functions? What coefficients
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
 DELIVERABLE: Screen recording of stand-up in simulation
 
+.. figure:: ../../../_static/flat_fast.gif
+   :align: center
+   :width: 360px
+
+   You should aim to train a stable policy up to 0.75 m/s in simulation
 
 Step 5. Domain randomization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
