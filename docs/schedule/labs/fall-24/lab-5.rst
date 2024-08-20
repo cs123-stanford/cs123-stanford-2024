@@ -37,6 +37,12 @@ DELIVERABLE: Screen recording of stand-up in simulation
 
    During training, your reward should be going up steadily and eventually plateau
 
+.. figure:: ../../../_static/crazy_walk.gif
+   :align: center
+   :width: 360px
+
+   Just because Pupper has velocity tracking reward doesn't mean it will perfectly follow the desired speed. To learn natural gaits, auxiliary rewards are needed. Next, you will implement a function to encourage Pupper to walk more efficiently.
+
 Step 3. Effort function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Complete the #TODO in the Reward Functions cell to write a reward function that helps Pupper conserve energy
