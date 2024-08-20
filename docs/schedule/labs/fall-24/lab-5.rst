@@ -23,6 +23,7 @@ Step 2. Pupper forward
 #. Pupper should take around 5-10 minutes to train. 
 
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
+
 DELIVERABLE: Screen recording of stand-up in simulation
 
 .. figure:: ../../../_static/random_walk.gif
@@ -68,7 +69,9 @@ Step 4. Reward tuning
 #. Pupper should take around 10-15 minutes to train. 
 
 DELIVERABLE: What terms are included in your reward functions? What coefficients did you use? How did you come up with these terms and what was their desired effect? Why might this policy perform poorly on the physical robot?
+
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
+
 DELIVERABLE: Screen recording of stand-up in simulation
 
 .. figure:: ../../../_static/flat_fast.gif
@@ -90,6 +93,7 @@ Transfer policy from local machine to pupper
 #. On the pi, run the launch.py script
 
 DELIVERABLE: In what ways is this policy different on the physical robot (compared to sim)
+
 DELIVERABLE: Take video of walking
 
 .. figure:: ../../../_static/walker.gif
@@ -121,6 +125,8 @@ DELIVERABLE: Record a video on the obstacle course and record a video
 Resources
 -----------
 `Sim-to-Real: Learning Agile Locomotion For Quadruped Robots <https://arxiv.org/abs/1804.10332>`_
+
 `Minimizing Energy Consumption Leads to the
 Emergence of Gaits in Legged Robots <https://energy-locomotion.github.io/>`_
+
 `Learning Agile Quadrupedal Locomotion Over Challenging Terrain <https://www.science.org/doi/full/10.1126/scirobotics.abc5986>`_
