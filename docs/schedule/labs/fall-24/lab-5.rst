@@ -31,6 +31,11 @@ DELIVERABLE: Screen recording of stand-up in simulation
 
    Earlier in training, Pupper will move seemingly randomly
 
+.. figure:: ../../../_static/loss_pup.png
+   :align: center
+
+   During training, your reward should be going up steadily and eventually plateau
+
 Step 3. Effort function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Complete the #TODO in the Reward Functions cell to write a reward function that helps Pupper conserve energy
