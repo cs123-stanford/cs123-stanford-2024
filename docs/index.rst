@@ -18,7 +18,7 @@ CS 123: A Hands-On Introduction to Building AI-Enabled Robots
 
 Welcome to the course page for Stanford’s course in legged robots!
 
-This course offers a hands-on introduction to AI-powered robotics. Unlike most introductory robotics courses, students will learn essential robotics concepts by constructing a quadruped robot from scratch and training it to perform real-world tasks such as navigation and command following. The course covers a broad range of topics critical to robot learning, including motor control, forward and inverse kinematics, system identification, simulation, and reinforcement learning. Through weekly labs, students will construct and program an agile robot quadruped named Pupper. In the final few weeks, students will undertake an open-ended project, such as training Pupper to perform agile movements, developing a vision system to allow Pupper to play fetch, or adapting large language models to enable Pupper’s ability to communicate with humans. Researchers from Google DeepMind, Hands-On Robotics, and Toyota Research Institute will give lectures during the quarter on their work teaching robots new skills using reinforcement learning.
+This course offers a hands-on introduction to AI-powered robotics. Unlike most introductory robotics courses, students will learn essential robotics concepts by constructing a quadruped robot from scratch and training it to perform real-world tasks such as navigation and command following. The course covers a broad range of topics critical to robot learning, including motor control, forward and inverse kinematics, system identification, simulation, and reinforcement learning. Through weekly labs, students will construct and program an agile robot quadruped named Pupper. In the final few weeks, students will undertake an open-ended project, such as training Pupper to perform agile movements, developing a vision system to allow Pupper to play fetch, or adapting large language models to enable Pupper’s ability to communicate with humans.
 
 *“Empowering robots with AI is essential to make them smart and useful in people’s daily life. It is one of the most important research directions in both academia and industry. This class teaches the most relevant skills, gives students hand-on experiences, and prepares them for a career in the area of AI and robotics.”* - Jie Tan, Staff Research Scientist at Google DeepMind
 
@@ -39,13 +39,13 @@ TBA
 
 * MATH51/CME100 (understanding of gradients)
 
-* Coding will be majority Python but some C++ (Arduino)
+* Coding will be majority Python but some C++
 
 * No robotics experience necessary!!
 
 **Number of credits:** 3
 
-**Grading:** :doc:`../grading_details`
+**Grading:** Students will work in assigned group for all labs, but are free to from their own groups for the final project. Everyone in the same group will receive the same score for each lab. Some labs have written homework for which students get individual credits.
 
 
 
