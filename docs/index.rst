@@ -45,7 +45,7 @@ TBA
 
 **Number of credits:** 3
 
-**Grading:** :doc:`../grading_details`
+**Grading:** Students will work in assigned group for all labs, but are free to from their own groups for the final project. Everyone in the same group will receive the same score for each lab. Some labs have written homework for which students get individual credits.
 
 
 
