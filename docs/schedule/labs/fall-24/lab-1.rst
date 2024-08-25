@@ -169,6 +169,7 @@ For each situation, manually rotate the leg to get a physical sense of the PD be
 **DELIVERABLE:** Report your findings for each experiment in your lab document.
 
 Step 5: Experiment with Delays in the System
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Introduce a delay in the system by adding a buffer in the current motor angle and velocity readings. This simulates the delay in the physical system.
 2. Experiment with different delay values (e.g., 0.1, 0.5 seconds).
