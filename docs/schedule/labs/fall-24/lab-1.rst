@@ -16,7 +16,7 @@ Part 0: Setup
    - Ethernet cable
    - HDMI cable
 
-4. Connect to the Pupper robot via SSH, which stands for Secure Shell, is a network protocol that provides a secure way to access and manage remote computers over an unsecured network. It offers strong authentication and encrypted data communications between two computers connecting over an open network such as the internet. 
+3. Connect to the Pupper robot via SSH, which stands for Secure Shell, is a network protocol that provides a secure way to access and manage remote computers over an unsecured network. It offers strong authentication and encrypted data communications between two computers connecting over an open network such as the internet. 
     - Connect your laptop to the Pupper robot using the Ethernet cable.
     - Enable internet sharing in system settings (turn on anything that looks like Ethernet).
     - SSH into the Raspberry Pi through terminal: ``ssh pi@pupper.local`` (password: rhea123)
@@ -26,6 +26,8 @@ Part 0: Setup
     :align: center
 
     Enable internet sharing in system settings.
+
+4. In this course, we use VSCode as our primary development environment. You can use VSCode to edit code on your Raspberry Pi and run it directly on the robot. To set up VSCode on your Raspberry Pi, follow the instructions in the VSCode ssh setup guide (https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host).
 
 
 Part 1: ROS Introduction
@@ -46,7 +48,7 @@ Part 1: ROS Introduction
 
 5. Calibration after rebooting: After rebooting, you may need to recalibrate the robot joints. Follow the following image:
 
-.. figure:: ../../../_static/calibration.png
+.. figure:: ../../../_static/calibration.jpeg
     :align: center
 
     Calibration after rebooting.
@@ -71,11 +73,7 @@ Step 1: Setup Lab 1 Code Base
 
    Note: Make sure the folder name is ``lab_1``. If you have a different folder name, you may need to update the launch file accordingly.
 
-2. Open the workspace in VSCode:
-
-   .. code-block:: bash
-
-      code ~/lab_1
+2. Open the workspace in VSCode
 
 3. Examine ``<lab_1/lab_1.py>`` to understand where the motor angle and velocity are read and where the motor is commanded.
 
@@ -170,7 +168,27 @@ For each situation, manually rotate the leg to get a physical sense of the PD be
 
 **DELIVERABLE:** Report your findings for each experiment in your lab document.
 
-Step 5: Implement Periodic Motion
+Step 5: Experiment with Delays in the System
+
+1. Introduce a delay in the system by adding a buffer in the current motor angle and velocity readings. This simulates the delay in the physical system.
+2. Experiment with different delay values (e.g., 0.1, 0.5 seconds).
+
+   .. code-block:: python
+      # In your initialization:
+      self.delay_buffer_size = int(delay_seconds * control_frequency)
+      self.angle_buffer = deque(maxlen=self.delay_buffer_size)
+      self.velocity_buffer = deque(maxlen=self.delay_buffer_size)
+
+      # In your control loop:
+      self.angle_buffer.append(joint_pos)
+      self.velocity_buffer.append(joint_vel)
+      joint_pos = self.angle_buffer[0]
+      joint_vel = self.velocity_buffer[0]
+
+**DELIVERABLE:** Report your findings in your lab document. How does the delay affect the performance of the PD controller?
+
+
+Step 6: Implement Periodic Motion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Program the leg to track a sinusoidal position:
@@ -180,13 +198,28 @@ Step 5: Implement Periodic Motion
       import time
       import math
 
-      # In your control loop:
       current_time = time.time()
-      position_target = math.sin(current_time)
+      joint_pos_desired = math.sin(current_time)
 
 2. Experiment with different frequencies of the sine wave.
 
 **DELIVERABLE:** Take a video of the leg performing periodic motion and upload it to Gradescope with your submission.
+
+
+Step 7. Run bang-bang control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Remove the code in the Step 5 and implement the bang-bang control. Bang-bang control is a simple control strategy where the control input is either on or off. In this case, the control input is either the maximum torque or zero torque. The control input switches when the motor angle crosses a threshold.
+2. Implement the bang-bang control law using the following update equation:
+   
+   .. code-block:: python
+
+      toruqe_command = 1.0
+      if joint_pos < joint_pos_desired:
+         torque = toruqe_command
+      else:
+         torque = -toruqe_command
+
+**DELIVERABLE: Take a video of your bang bang control to upload to Gradescope with your submission**
 
 Additional Notes
 ----------------
