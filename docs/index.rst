@@ -39,7 +39,7 @@ TBA
 
 * MATH51/CME100 (understanding of gradients)
 
-* Coding will be majority Python but some C++ (Arduino)
+* Coding will be majority Python but some C++
 
 * No robotics experience necessary!!
 
