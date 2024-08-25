@@ -10,4 +10,4 @@ Hosts the course website for Stanford course CS123 https://cs123-stanford-2024.r
 
 If your university is interesting in hosting this course, contact ankushd@stanford.edu
 
-To view our previous course listing, visit https://cs-123-stanford-2023.readthedocs.io/en/latest/
+To view our previous course listing, visit [https://cs123-stanford-2024.readthedocs.io/](https://cs123-stanford-2024.readthedocs.io/)
