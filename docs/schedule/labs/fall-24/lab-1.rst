@@ -172,9 +172,11 @@ Step 5: Experiment with Delays in the System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Introduce a delay in the system by adding a buffer in the current motor angle and velocity readings. This simulates the delay in the physical system.
-2. Experiment with different delay values (e.g., 0.1, 0.5 seconds).
+2. Experiment with different delay values (e.g., several steps of delay).
 
    .. code-block:: python
+      from collections import deque
+
       # In your initialization:
       self.delay_buffer_size = int(delay_seconds * control_frequency)
       self.angle_buffer = deque(maxlen=self.delay_buffer_size)
@@ -185,6 +187,10 @@ Step 5: Experiment with Delays in the System
       self.velocity_buffer.append(joint_vel)
       joint_pos = self.angle_buffer[0]
       joint_vel = self.velocity_buffer[0]
+
+      #####
+      # You can also instead delay the output torque
+      #####
 
 **DELIVERABLE:** Report your findings in your lab document. How does the delay affect the performance of the PD controller?
 
