@@ -3,7 +3,7 @@ Lab 3: Pupper's First Steps!
 
 **Goals:**
         1. Learn how to compute inverse kinematics 
-        2. Use FK+IK to create a mirroring setup
+        2. Use forward and inverse kinematics to program a naiive walking gait for Pupper!!!
 
 .. figure:: ../../../_static/lab3.jpg
     :align: center
