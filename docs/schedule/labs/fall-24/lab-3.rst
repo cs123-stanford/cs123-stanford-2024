@@ -11,10 +11,16 @@ Lab 3: Romeo and Juliet
 
 Step 1. Code inverse kinematics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download starter code from here: https://github.com/cs123-stanford/lab_3_romeo_and_juliet.git and fill out deliverables in [template doc here](https://docs.google.com/document/d/1eVlykTsy5krLiFD5Apgt6rBzp-t0tfXLXmJ1NIIOQTQ/edit?usp=sharing)
-#. Implement ``distance`` in ``kinematics.h`` as the squared-norm of the error between the position returned by ``FK(guess)`` and ``target_location``. 
-#. Implement ``calculate_gradient`` in ``kinematics.h``
-#. Implement ``inverse_kinematics`` in ``kinematics.h``
+#. Clone the starter code:
+
+   .. code-block:: bash
+
+      cd ~/
+      git clone https://github.com/cs123-stanford/lab_3_2024.git lab_3
+
+#. Implement ``cost`` in ``lab_3.py`` as the squared-norm of the error between the position returned by ``FK(guess)`` and ``target_location``. 
+#. Implement ``calculate_gradient`` in ``lab_3.py``
+#. Implement ``inverse_kinematics`` in ``lab_3.py``
 
 Step 2. Test the consistency between forward kinematics and inverse kinematics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -28,10 +34,10 @@ Step 2. Test the consistency between forward kinematics and inverse kinematics
 
 Step 4. Put it together! Make your two robot arms match each other's end-effector positions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Implement the rest of ``loop()`` in ``main.cpp`` and deploy on the robot
+1. TODO: Implement walking by tracing a triangle
 
 **Deliverable: Send a video of the arms roughly matching each other when you move them**
 
-2. Try more iterations of IK in ``kinematics.h``, and observe the behavior **(Careful may be unstable)**
+2. Try more iterations of IK in ``lab_3.py``, and observe the behavior **(Careful may be unstable)**
 
 **Deliverable: Why does more iterations of IK cause instability?**
