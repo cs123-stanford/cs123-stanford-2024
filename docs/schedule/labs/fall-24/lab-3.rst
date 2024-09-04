@@ -1,4 +1,4 @@
-Lab 3: Romeo and Juliet
+Lab 3: Pupper's First Steps!
 =======================================================
 
 **Goals:**
