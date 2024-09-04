@@ -24,7 +24,7 @@ Step 1. Code inverse kinematics
 
 Step 2. Test the consistency between forward kinematics and inverse kinematics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Look at the tests written for you in ``test_ik`` within ``test_inv_kinematics.h``
+#. Look at the tests written for you in ``test_ik`` within ``run_ik_tests()``
 #. The test works by taking some reachable (x,y,z) point in space, and calling your IK function to get the corresponding joint angles, then passing them to your FK function to retrieve the original (x,yz).
 #. Make sure the test passes before moving on
 
