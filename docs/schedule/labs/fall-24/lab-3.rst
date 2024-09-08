@@ -1,66 +1,119 @@
-Lab 3: Copy Cat (Dog...)
-=======================================================
+Lab 3: Inverse Kinematics and Trajectory Tracking
+================================================
 
-*Goal: 1) Learn how to compute inverse kinematics 2) Use IK to create a mirroring setup.*
+Goal
+----
+Implement inverse kinematics for a robot leg and create a trajectory tracking system using ROS2.
 
-.. figure:: ../_static/teleop.jpeg
-    :align: center
-    
-    TODO: picture of sim and real robot together
+Part 0: Setup
+-------------
 
-Step 1. Code inverse kinematics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Implement ``ik_cost`` in ``reacher_kinematics.py`` as the squared-norm of the error between the position returned by ``FK(guess)`` and ``end_effector_pos``. 
-#. Implement ``calculate_jacobian`` in ``reacher_kinematics.py`` using the finite differencing method we covered in lecture. A good perturbation size is small, like 0.001.
-#. Implement ``calculate_inverse_kinematics`` in ``reacher_kinematics.py``. Play around with different step sizes, from 1 to 100, to see what works for you.
+1. Clone the lab 3 code repository on your Raspberry Pi:
 
-.. #. Optionally, implement Newton's method which takes much fewer iterations. The gist is you replace the jacobian transpose with the jacobian inverse and set gradient descent step size to 1.0. Set the initial angle guess to something besides 
+   .. code-block:: bash
 
-Step 2. Test the consistency between forward kinematics and inverse kinematics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Test your code by taking some reachable (x,y,z) point in space (think hard about what's reachable!), using your IK function to get the corresponding joint angles, then passing them to your FK function to retrieve the original (x,yz). These should match as long as the original point was reachable. 
+      cd ~/
+      git clone https://github.com/cs123-stanford/lab_3_2024.git lab_3
 
-The reason we're doing this IK -> FK consistency test and not a FK -> IK consistency test is that for any reachable point in space, the robot can flip its "elbow" joint up or down to get to that point in space, resulting in different joint angles.
+   Note: Ensure the folder name is ``lab_3``. If different, update the launch file accordingly.
 
-Step 3. Test IK in simulation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2. Open the workspace in VSCode.
 
-#. Use the simulator to visualize your IK: Make the white sphere go to an arbitrary point in space by modifying ``reacher_manual_control.py`` (see line 95)
-#. Use your IK code to figure out the joint angles, and then set the simulated robot's joint commands to those angles (see line 81).
-#. Like in lab 3, the white sphere should follow the red sphere of the robot.
+3. Examine ``lab_3.py`` to understand the structure of the ``InverseKinematics`` class and its methods.
 
-Step 4. Deploy your IK to your robot
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Look at the code that sets the actual robot motors, specifically line 86 and 87. 
-#. Change the joint angles sent to the hardware to those calculated by your IK.
-#. Deploy to robot. Remember to pass the ``--run_on_robot`` flag when you run your program.
+Part 1: Forward Kinematics (already done)
+------------------------------------
 
-Step 5. Make your two robot arms match each other's end-effector positions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Open ``lab_3.py`` and locate the ``forward_kinematics`` method in the ``InverseKinematics`` class.
 
-#. Calculate the cartesian end-effector position of the right arm using FK.
-#. Use this result to calculate the cartesian position of the right arm's end-effector relative to the base of the left arm.
-#. Disable the right arm's torque by de-activating the motors in the right arm. [TODO link code line number]
-#. Deploy to robot and sanity check the reported position
-#. Figure out what to add/subtract from the right arm's position to get the corresponding position relative to the left arm.
-#. Deploy to robot and sanity check that the position relative to the left arm is correct.
-#. Use your IK to move the left arm to this position in the simulator. Check that the left arm doesn't freak out.
-#. Deploy to robot!
-#. The result you should get is that the left arm and right arm are touching or very close at the end effector! You can put an object between the end-effectors and now you have a multi-robot manipulator!
+- Review the compositions of the transformation matrices T_0_1, T_1_2, T_2_3, and T_3_ee.
+- Review the final transformation matrix T_0_ee.
+- Review the end-effector position (the first 3 elements of the last column of T_0_ee).
 
-Notes:
-* The code is set up to control both arms, but currently we are commanding the second robot arm's actuators to stay at zero.
-* We can move the second arm by setting the values in the 3rd column (index 2) of the ``full_actions`` 2d array. See line 86 as an example.
-* You might need to change the sign of some of your joint angle commands because the second arm is a right-sided leg instead of a left-sided leg.
+Part 2: Implement Inverse Kinematics
+------------------------------------
 
-(Old) IK Lecture
-------------
+1. Find the ``inverse_kinematics`` method in the ``InverseKinematics`` class.
+
+**TODO 1:** Implement the cost function for inverse kinematics.
+
+- Use the ``forward_kinematics`` method to get the current end-effector position.
+- Calculate the L1 distance between the current and target end-effector positions.
+- Return the sum of squared L1 distances as the cost.
+
+**TODO 2:** Implement the gradient function for inverse kinematics.
+
+- Calculate the numerical gradient of the cost function with respect to each joint angle.
+- Use a small epsilon value (e.g., 1e-3) for the finite difference approximation.
+
+**TODO 3:** Implement the gradient descent algorithm for inverse kinematics.
+
+- Use the provided learning rate and maximum iterations.
+- Update the joint angles using the calculated gradient.
+- Stop the iteration if the mean L1 distance is below the tolerance.
+
+Part 3: Implement Trajectory Generation
+---------------------------------------
+
+1. Locate the ``interpolate_triangle`` method in the ``InverseKinematics`` class.
+
+**TODO 4:** Implement the interpolation for the triangular trajectory.
+
+- Use the provided ``ee_triangle_positions``, which define the 3 vertices of the triangle trajectory.
+- Implement linear interpolation between the triangle vertices based on the input time ``t``.
+- Ensure the trajectory loops every ~2 seconds approximately.
+
+Part 4: Implement PD Control (already done)
+----------------------------
+
+1. Find the ``pd_timer_callback`` method in the ``InverseKinematics`` class.
+
+- Review the position error (difference between target and current joint positions).
+- Review the velocity error (assuming target velocity is zero).
+- Review computation of the torque command using the PD control law: τ = Kp * position_error - Kd * velocity_error.
+
+Part 5: Run and Test Your Implementation
+----------------------------------------
+
+1. Run the launch file using the following command:
+
+   .. code-block:: bash
+
+      ros2 launch lab_3 lab_3.launch.py
+
+2. Observe the robot leg's movement and the terminal output.
+
+3. Experiment with different trajectory shapes by modifying the ``ee_triangle_positions`` in the ``__init__`` method.
 
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/FvQ6NbqDR1U" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="https://www.youtube.com/embed/ygwWZw50yw0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
-
 |
 
+**DELIVERABLE:** Take a video of the robot leg tracking the triangular trajectory and submit it with your submission.
+
+Part 6: Analyze and Improve Performance
+---------------------------------------
+
+1. Experiment with different values for ``Kp`` and ``Kd`` in the PD controller.
+
+2. Modify the ``ik_timer_period`` and ``pd_timer_period`` to see how they affect the system's performance.
+
+3. Try different initial guesses for the inverse kinematics algorithm and observe the convergence behavior.
+
+**DELIVERABLE:** In your lab document, report on:
+
+- The effects of changing ``Kp`` and ``Kd`` values
+- How different timer periods affect the system's behavior
+- The impact of initial guesses on the inverse kinematics convergence
+
+Additional Notes
+----------------
+
+- Pay attention to the transformation matrices and their composition in the ``forward_kinematics`` method.
+- The ``inverse_kinematics`` method uses gradient descent. Ensure you understand how the cost function and gradient are calculated.
+- The ``interpolate_triangle`` method should create a continuous trajectory between the defined triangle points.
+
+Congratulations on completing Lab 3! This hands-on experience with inverse kinematics and trajectory control will be crucial for more advanced robot control tasks in future labs.
