@@ -158,7 +158,7 @@ Step 4: Implement PD Control
    .. figure:: ../../../_static/pid_eqn.jpg
     :align: center
 
-    Calibration after rebooting.
+    PID Control Equation. 
 
    Where:
    
