@@ -5,6 +5,10 @@ Goal
 ----
 Get set up with the Raspberry Pi 5 hardware and build a robot that you can program PD control on using ROS2.
 
+Lab Document
+------------
+Fill out this lab document (https://docs.google.com/document/d/1FZ3WAwX1zRO5ivQpqraeYcaJwmDZFZVPRNCVBTsuZrw/edit?usp=sharing) with your answers to the questions and your code. You will submit this document to Gradescope.
+
 Part 0: Setup
 -------------
 
@@ -144,10 +148,22 @@ Step 3. Run bang-bang control
 
 **DELIVERABLE: Take a video of your bang bang control to upload to Gradescope with your submission**
 
-Step 4: Implement PD Control
+Step 4: Implement P Control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Implement P control in the `lab_1.py` file by replacing your implementation of bang-bang control. The P controller is more robust than bang-bang control. The proportional gain (Kp) is used to tune the controller.
+
+2. Start with Kp = 2.0
+
+   .. figure:: ../../../_static/p_control.jpg
+    :align: center
+
+    P Control Equation. 
+
+
+Step 5: Implement PD Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Implement PD control in the `lab_1.py` file by replacing your implementation of bang-bang control. The PD controller is more robust than bang-bang control, and is common control strategy used in robotics to stabilize systems. The proportional gain (Kp) and derivative gain (Kd) are used to tune the controller.
+1. Implement PD control in the `lab_1.py` file by replacing your implementation of bang-bang control. The PD controller is more robust than only P control, and is common control strategy used in robotics to stabilize systems. The proportional gain (Kp) and derivative gain (Kd) are used to tune the controller.
 
 2. Start with Kp = 2.0 and Kd = 0.3. Implement the PD control law using the following update equation:
 
@@ -178,7 +194,7 @@ Step 4: Implement PD Control
 - What happens when you change Kp and Kd values?
 - Find and report the optimal Kp and Kd values for your setup.
 
-Step 5: Experiment with Different Parameters
+Step 6: Experiment with Different Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Experiment with different Kp and Kd values and observe the effects. Be prepared for potential instability!
@@ -190,7 +206,7 @@ For each situation, manually rotate the leg to get a physical sense of the PD be
 
 **DELIVERABLE:** Report your findings for each experiment in your lab document.
 
-Step 6: Experiment with Delays in the System
+Step 7: Experiment with Delays in the System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Introduce a delay in the system by adding a buffer in the current motor angle and velocity readings. This simulates the delay in the physical system.
@@ -217,7 +233,7 @@ Step 6: Experiment with Delays in the System
 **DELIVERABLE:** Report your findings in your lab document. How does the delay affect the performance of the PD controller?
 
 
-Step 6: Implement Periodic Motion
+Step 8: Implement Periodic Motion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Program the leg to track a sinusoidal position:
