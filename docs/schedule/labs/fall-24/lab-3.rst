@@ -5,6 +5,13 @@ Goal
 ----
 Implement inverse kinematics for a robot leg and create a trajectory tracking system using ROS2.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/ygwWZw50yw0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+|
+
 Part 0: Setup
 -------------
 
@@ -84,13 +91,6 @@ Part 5: Run and Test Your Implementation
 2. Observe the robot leg's movement and the terminal output.
 
 3. Experiment with different trajectory shapes by modifying the ``ee_triangle_positions`` in the ``__init__`` method.
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/ygwWZw50yw0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-|
 
 **DELIVERABLE:** Take a video of the robot leg tracking the triangular trajectory and submit it with your submission.
 
