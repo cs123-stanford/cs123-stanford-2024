@@ -28,11 +28,12 @@ Part 0: Setup
 
 3. Examine ``lab_3.py`` to understand the structure of the ``InverseKinematics`` class and its methods.
 
-Part 1: Forward Kinematics (already done)
+Part 1: Forward Kinematics (already done in lab 2)
 ------------------------------------
 
 1. Open ``lab_3.py`` and locate the ``forward_kinematics`` method in the ``InverseKinematics`` class.
 
+- Paste code from lab 2
 - Review the compositions of the transformation matrices T_0_1, T_1_2, T_2_3, and T_3_ee.
 - Review the final transformation matrix T_0_ee.
 - Review the end-effector position (the first 3 elements of the last column of T_0_ee).
@@ -70,11 +71,12 @@ Part 3: Implement Trajectory Generation
 - Implement linear interpolation between the triangle vertices based on the input time ``t``.
 - Ensure the trajectory loops every ~2 seconds approximately.
 
-Part 4: Implement PD Control (already done)
+Part 4: Implement PD Control (already done in lab 1)
 ----------------------------
 
 1. Find the ``pd_timer_callback`` method in the ``InverseKinematics`` class.
 
+- Paste code from lab 1
 - Review the position error (difference between target and current joint positions).
 - Review the velocity error (assuming target velocity is zero).
 - Review computation of the torque command using the PD control law: τ = Kp * position_error - Kd * velocity_error.
@@ -112,7 +114,6 @@ Part 6: Analyze and Improve Performance
 Additional Notes
 ----------------
 
-- Pay attention to the transformation matrices and their composition in the ``forward_kinematics`` method.
 - The ``inverse_kinematics`` method uses gradient descent. Ensure you understand how the cost function and gradient are calculated.
 - The ``interpolate_triangle`` method should create a continuous trajectory between the defined triangle points.
 
