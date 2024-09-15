@@ -59,6 +59,7 @@ Part 2: Implement Inverse Kinematics
 - Use the provided learning rate and maximum iterations.
 - Update the joint angles using the calculated gradient.
 - Stop the iteration if the mean L1 distance is below the tolerance.
+- Bonus: Implement the (quasi-)Newton's method for faster convergence.
 
 Part 3: Implement Trajectory Generation
 ---------------------------------------
