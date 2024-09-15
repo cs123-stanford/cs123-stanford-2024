@@ -3,7 +3,11 @@ Lab 1: ROS Introduction and PD Control
 
 Goal
 ----
-Get set up with the Raspberry Pi 5 hardware and build a robot leg that you can program PD control on using ROS2.
+Get set up with the Raspberry Pi 5 hardware and build a robot that you can program PD control on using ROS2.
+
+Lab Document
+------------
+Fill out this lab document (https://docs.google.com/document/d/1FZ3WAwX1zRO5ivQpqraeYcaJwmDZFZVPRNCVBTsuZrw/edit?usp=sharing) with your answers to the questions and your code. You will submit this document to Gradescope.
 
 Part 0: Setup
 -------------
@@ -12,34 +16,43 @@ Part 0: Setup
 
 2. You should receive the following from the TAs:
 
-   - Pupper robot: containing Raspberry Pi 5, Pre-flashed micro SD card and etc.
+   - Pupper robot: containing Raspberry Pi 5, pre-flashed micro SD card and etc.
    - Ethernet cable
    - HDMI cable
+   - Monitor, keyboard, and mouse setup
 
-3. Connect to the Pupper robot via SSH, which stands for Secure Shell, is a network protocol that provides a secure way to access and manage remote computers over an unsecured network. It offers strong authentication and encrypted data communications between two computers connecting over an open network such as the internet. 
+3. Connect to the Raspberry Pi
+
+OPTION 1: Connect via SSH via SSH 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Secure Shell is a network protocol that provides a secure way to access and manage remote computers over an unsecured network. It offers strong authentication and encrypted data communications between two computers connecting over an open network such as the internet. 
     - Connect your laptop to the Pupper robot using the Ethernet cable.
     - Enable internet sharing in system settings (turn on anything that looks like Ethernet).
-    - SSH into the Raspberry Pi through terminal: ``ssh pi@pupper.local`` (password: rhea123)
-    - Remember to turn off internet sharing afterwards.
+    - SSH into the Raspberry Pi through terminal: ``ssh pi@pupper.local`` (password: rhea123). If you would like to use VSCode, you can also connect to the Raspberry Pi using the Remote - SSH extension (Open Command Palette with CMD+SHIFT_P -> Remote-SSH: Connect to Host -> ssh)
+    - If this is successful, you should be able to see the Pi's file system on your computer, and be able to 
 
 .. figure:: ../../../_static/internet_sharing.png
     :align: center
 
     Enable internet sharing in system settings.
 
-4. In this course, we use VSCode as our primary development environment. You can use VSCode to edit code on your Raspberry Pi and run it directly on the robot. To set up VSCode on your Raspberry Pi, follow the instructions in the VSCode ssh setup guide (https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host).
-
+Option 2: Connect via the Monitor Setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   - Connect the Raspberry Pi to the monitor using the HDMI cable.
+   - Connect the keyboard and mouse to the Raspberry Pi.
+   - Log in with the username ``pi`` and password ``rhea123`` after powering on.
+   - Open VSCode by opening a terminal, and running ``code``.
 
 Part 1: ROS Introduction
 ------------------------
 
 1. We'll be using ROS (Robot Operating System) throughout this course. ROS provides tools, libraries, and conventions that facilitate building robotic applications and allow different parts of the robot to interact with each other.
 
-2. Familiarize yourself with the basics of ROS by reviewing the ROS introduction guide (https://wiki.ros.org/ROS/Introduction). Keep this guide handy as a ROS2 cheat sheet (https://github.com/ubuntu-robotics/ros2_cheats_sheet/tree/master) that you can refer to throughout the course.
+2. Familiarize yourself with the basics of ROS by reviewing the ROS introduction guide (https://wiki.ros.org/ROS/Introduction). Keep this guide handy as a ROS2 cheat sheet (https://github.com/ubuntu-robotics/ros2_cheats_sheet/tree/master) that you can refer to throughout the course. We also have a list of important ROS2 commands for this course here: :doc:`../schedule/lectures/fall-24/ros_intro`.
 
 3. ROS services in Pupper: robot.service manages control code (face controller, rl or heuristic controller, etc). See if controller is running: ``systemctl status robot.service`` You should see the status as "active (running)". Checkout all topics and services: ``ros2 topic list`` and ``ros2 service list``.
 
-4. Remember to disable the robot service before working on your code. This will prevent the robot from running any pre-existing code that may interfere with your work. Pupper robot falls after disable the robot service, so make sure to place it on a soft surface. To disable the robot service, run the following commands:
+4. Since we are running custom code, we must disable the robot service before working on your code. This will prevent the robot from running any pre-existing code that may interfere with your work. Pupper falls after disabling the robot service, so make sure to place it on a soft surface. To disable the robot service, run the following commands:
 
 .. code-block:: bash
 
@@ -97,7 +110,7 @@ Step 2: Run ROS Launch Code
 
 3. After running the launch file, you should see output in your terminal indicating that the nodes have been started successfully. If you encounter any errors, double-check your file paths and make sure all dependencies are installed.
 
-4. Open a new terminal window (you can use SSH to open multiple connections to your Raspberry Pi) and run the following command to see the list of active topics:
+4. Open a new terminal window (if using SSH, you can open multiple connections to your Raspberry Pi, or add a terminal from VSCode) and run the following command to see the list of active topics:
 
    .. code-block:: bash
 
@@ -111,7 +124,7 @@ Step 2: Run ROS Launch Code
 
       ros2 topic echo /joint_states
 
-   This will show you real-time data about the joint states of your robot leg.
+   This will show you real-time data about the joint states of your robot leg. 
 
 **DELIVERABLE:** In your lab document, provide screenshots of:
 
@@ -127,16 +140,41 @@ Also, answer the following questions:
 
 Remember, understanding how the launch system works and how to inspect your ROS2 system is crucial for debugging and developing more complex robotic systems in the future.
 
-Step 3: Implement PD Control
+Step 3. Run bang-bang control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Open ``lab_1.py`` and locate the PD control implementation. For this step, you will implement Bang-bang control before PD control. Remember that bang-bang control is a simple control strategy where the control input is either on or off. In this case, the control input is either positive maximum torque or negative maximum torque. The control input switches when the motor angle crosses a threshold.
+3. This can be accomplished by a block of if statements. Implement bang-bang control in the `lab_1.py` file.
+
+**DELIVERABLE: Take a video of your bang bang control to upload to Gradescope with your submission**
+
+Step 4: Implement P Control
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Implement P control in the `lab_1.py` file by replacing your implementation of bang-bang control. The P controller is more robust than bang-bang control. The proportional gain (Kp) is used to tune the controller.
+
+2. Start with Kp = 2.0
+
+   .. figure:: ../../../_static/p_control.jpg
+    :align: center
+
+    P Control Equation. 
+
+
+Step 5: Implement PD Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Open ``lab_1.py`` and locate the PD control implementation.
+1. Implement PD control in the `lab_1.py` file by replacing your implementation of bang-bang control. The PD controller is more robust than only P control, and is common control strategy used in robotics to stabilize systems. The proportional gain (Kp) and derivative gain (Kd) are used to tune the controller.
 
 2. Start with Kp = 2.0 and Kd = 0.3. Implement the PD control law using the following update equation:
 
-   .. code-block:: python
+   .. .. code-block:: python
 
-      tau = Kp * (theta_target - theta_current) + Kd * (omega_target - omega_current) + feedforward_term
+   ..    tau = Kp * (theta_target - theta_current) + Kd * (omega_target - omega_current) + feedforward_term
+
+   .. figure:: ../../../_static/pid_eqn.jpg
+    :align: center
+
+    PID Control Equation. 
 
    Where:
    
@@ -146,7 +184,7 @@ Step 3: Implement PD Control
    - ``theta_current`` is the current motor angle
    - ``omega_current`` is the current motor angular velocity
    - ``Kp`` and ``Kd`` are the proportional and derivative gains
-   - ``feedforward_term`` is a constant term that you can use send a constant torque to the motor
+   - ``r(t)`` known as a feedforward_term, is a constant term that you can use send a constant torque to the motor. For us, we just use 0. 
 
 3. Run your code ``python lab_1.py`` and observe the behavior of the PD controller.
 
@@ -156,7 +194,7 @@ Step 3: Implement PD Control
 - What happens when you change Kp and Kd values?
 - Find and report the optimal Kp and Kd values for your setup.
 
-Step 4: Experiment with Different Parameters
+Step 6: Experiment with Different Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Experiment with different Kp and Kd values and observe the effects. Be prepared for potential instability!
@@ -168,7 +206,7 @@ For each situation, manually rotate the leg to get a physical sense of the PD be
 
 **DELIVERABLE:** Report your findings for each experiment in your lab document.
 
-Step 5: Experiment with Delays in the System
+Step 7: Experiment with Delays in the System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Introduce a delay in the system by adding a buffer in the current motor angle and velocity readings. This simulates the delay in the physical system.
@@ -195,7 +233,7 @@ Step 5: Experiment with Delays in the System
 **DELIVERABLE:** Report your findings in your lab document. How does the delay affect the performance of the PD controller?
 
 
-Step 6: Implement Periodic Motion
+Step 8: Implement Periodic Motion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Program the leg to track a sinusoidal position:
@@ -211,22 +249,6 @@ Step 6: Implement Periodic Motion
 2. Experiment with different frequencies of the sine wave.
 
 **DELIVERABLE:** Take a video of the leg performing periodic motion and upload it to Gradescope with your submission.
-
-
-Step 7. Run bang-bang control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Remove the code in the Step 5 and implement the bang-bang control. Bang-bang control is a simple control strategy where the control input is either on or off. In this case, the control input is either the maximum torque or zero torque. The control input switches when the motor angle crosses a threshold.
-2. Implement the bang-bang control law using the following update equation:
-   
-   .. code-block:: python
-
-      toruqe_command = 1.0
-      if joint_pos < joint_pos_desired:
-         torque = toruqe_command
-      else:
-         torque = -toruqe_command
-
-**DELIVERABLE: Take a video of your bang bang control to upload to Gradescope with your submission**
 
 Additional Notes
 ----------------
@@ -247,4 +269,4 @@ Additional Notes
   - Joint states topic provides current motor states
 
 
-Congratulations on completing your first lab! This hands-on experience with ROS2 and PD control on a real robot leg will serve as a foundation for the more advanced topics we'll cover in future labs.
+Congratulations on completing your first lab! This hands-on experience with ROS2 and PD control on a real robot will serve as a foundation for the more advanced topics we'll cover in future labs.

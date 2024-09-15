@@ -20,26 +20,29 @@ Welcome to the course page for Stanford’s course in legged robots!
 
 This course offers a hands-on introduction to AI-powered robotics. Unlike most introductory robotics courses, students will learn essential robotics concepts by constructing a quadruped robot from scratch and training it to perform real-world tasks such as navigation and command following. The course covers a broad range of topics critical to robot learning, including motor control, forward and inverse kinematics, system identification, simulation, and reinforcement learning. Through weekly labs, students will construct and program an agile robot quadruped named Pupper. In the final few weeks, students will undertake an open-ended project, such as training Pupper to perform agile movements, developing a vision system to allow Pupper to play fetch, or adapting large language models to enable Pupper’s ability to communicate with humans.
 
-*“Empowering robots with AI is essential to make them smart and useful in people’s daily life. It is one of the most important research directions in both academia and industry. This class teaches the most relevant skills, gives students hand-on experiences, and prepares them for a career in the area of AI and robotics.”* - Jie Tan, Staff Research Scientist at Google DeepMind
+*“Empowering robots with AI is essential to make them smart and useful in people’s daily life. It is one of the most important research directions in both academia and industry. This class teaches the most relevant skills, gives students hands-on experiences, and prepares them for a career in the area of AI and robotics.”* - Jie Tan, Staff Research Scientist at Google DeepMind
 
-**Time:** TBA
+**Time:** Monday, 3:30-6:20pm
 
-**Location:** TBA, *in-person attendance required*
+**Lecture Location:** 320-109, *in-person attendance required*
 
 **TA Sessions:**
 
 * TBA
+
+**Office Hours Location:**
+Gates B08
 
 **Office Hours:**
 TBA
 
 **Prerequisites:**
 
+* CS106B (programming will be majority in Python)
+
 * CS107 (familiarity with the command line) 
 
 * MATH51/CME100 (understanding of gradients)
-
-* Coding will be majority Python but some C++
 
 * No robotics experience necessary!!
 
@@ -47,7 +50,11 @@ TBA
 
 **Grading:** Students will work in assigned group for all labs, but are free to from their own groups for the final project. Everyone in the same group will receive the same score for each lab. Some labs have written homework for which students get individual credits.
 
+**Lab Policies:**  Lab: each team has a total of 7 late days over all labs. Using 1 late day extends the deadline by 24 hours. A team may use up to 3 late days per lab. No lab will be accepted more than 72 hours after the deadline.
+Individual written assignments: Each student has a total of 5 late days over all written assignments. Using 1 late day extends the deadline by 24 hours. You may use up to 3 late days per assignment. No assignment will be accepted more than 72 hours after the deadline.
+Final project: no extension is allowed for the final project proposal and presentation.
 
+**Enrollment:** 36 students; 6 groups of 6
 
 Schedule
 ===========
@@ -55,27 +62,27 @@ Schedule
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
 |                  | Lecture                                           | Lab                                       | Lab Due Date     | Other                             |
 +==================+===================================================+===========================================+==================+===================================+
-| Week 1: 9/25     | :doc:`../schedule/lectures/fall-24/lec-1`         |                                           |                  |                                   |
+| Week 1: 9/25     | :doc:`../schedule/lectures/fall-24/lec-1`         |    :doc:`../schedule/labs/fall-24/lab-1`  |                  |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 2: 10/2     | :doc:`../schedule/lectures/fall-24/lec-2`         | :doc:`../schedule/labs/fall-24/lab-1`     | TBA              |                                   |
+| Week 2: 10/2     | :doc:`../schedule/lectures/fall-24/lec-2`         |    :doc:`../schedule/labs/fall-24/lab-2`  | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 3: 10/9     | :doc:`../schedule/lectures/fall-24/lec-3`         | :doc:`../schedule/labs/fall-24/lab-2`     | TBA              |                                   |
+| Week 3: 10/9     | :doc:`../schedule/lectures/fall-24/lec-3`         |    :doc:`../schedule/labs/fall-24/lab-3`  | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 4: 10/16    | :doc:`../schedule/lectures/fall-24/lec-4`         | :doc:`../schedule/labs/fall-24/lab-3`     | TBA              |                                   |
+| Week 4: 10/16    | :doc:`../schedule/lectures/fall-24/lec-4`         |    :doc:`../schedule/labs/fall-24/lab-4`  | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 5: 10/23    | :doc:`../schedule/lectures/fall-24/lec-5`         | :doc:`../schedule/labs/fall-24/lab-4`     | TBA              |                                   |
+| Week 5: 10/23    | :doc:`../schedule/lectures/fall-24/lec-5`         |    :doc:`../schedule/labs/fall-24/lab-5`  | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 6: 10/30    | :doc:`../schedule/lectures/fall-24/lec-6`         | :doc:`../schedule/labs/fall-24/lab-5`     | TBA              |                                   |
+| Week 6: 10/30    | :doc:`../schedule/lectures/fall-24/lec-6`         |    :doc:`../schedule/labs/fall-24/lab-4`  | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 7: 11/6     | No Lecture! Open Lab Time                         | :doc:`../schedule/labs/fall-24/lab-4`     | TBA              |                                   |
+| Week 7: 11/6     | No Lecture! Open Lab Time                         |    :doc:`../schedule/labs/fall-24/lab-6`  | TBA              |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 8: 11/13    | :doc:`../schedule/lectures/fall-24/lec-7`         | :doc:`../schedule/labs/fall-24/lab-6`     | TBA              | Begin Final Project Proposals     |
+| Week 8: 11/13    | :doc:`../schedule/lectures/fall-24/lec-7`         |    :doc:`../schedule/labs/fall-24/lab-7`  | TBA              | Begin Final Project Proposals     |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week of 11/20    | Thanksgiving Break!                               |                                           |                  | Meet with TAs about Final Project |
+| Week of 11/20    | Thanksgiving Break!                               |       No Lab!                             |                  | Meet with TAs about Final Project |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 9: 11/27    | :doc:`../schedule/lectures/fall-24/lec-8`         | :doc:`../schedule/labs/fall-24/lab-7`     | 12/4             | Final Project Proposals Due TBD   |
+| Week 9: 11/27    | :doc:`../schedule/lectures/fall-24/lec-8`         |       Work on Final Projects!             | 12/4             | Final Project Proposals Due TBD   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
-| Week 10: 12/4    | No Lecture! Open Lab Time                         | Work on Final Projects!                   |                  |                                   |
+| Week 10: 12/4    | No Lecture! Open Lab Time                         |       Work on Final Projects!             |                  |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
 | Finals Week      | Dog Show on TBD at TBD                            |                                           |                  |                                   |
 +------------------+---------------------------------------------------+-------------------------------------------+------------------+-----------------------------------+
