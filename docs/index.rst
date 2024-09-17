@@ -7,7 +7,7 @@ CS 123: A Hands-On Introduction to Building AI-Enabled Robots
 
     Pupper Robot
 
-**2023 Teaching team:** 
+**2024 Teaching team:** 
 
 * Instructors: `Prof. Karen Liu <https://tml.stanford.edu/people/karen-liu>`_ (Stanford CS), `Jie Tan <https://www.jie-tan.net/>`_ (Google DeepMind), `Stuart Bowers <https://handsonrobotics.org/>`_ (Hands-On Robotics)
 * Co-Instructors: `Wenhao Yu <https://wenhaoyu.weebly.com/>`_ (Google DeepMind), `Tingnan Zhang <https://www.linkedin.com/in/tingnanzhang/>`_ (Google DeepMind)
