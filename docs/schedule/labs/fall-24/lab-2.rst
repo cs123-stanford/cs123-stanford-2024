@@ -5,6 +5,8 @@ Goal
 ----
 Implement forward kinematics for the right front leg of the Pupper robot using ROS2 and Python.
 
+Fill out the `lab document <https://docs.google.com/document/d/1uAoTIHvAqEqXTPVWyHrLkuw0ZJ24BPCPn_Q6XIztvR0/edit?usp=sharing>`_ as you go.
+
 Part 0: Setup
 -------------
 
@@ -28,6 +30,7 @@ Before we start implementing the TODOs, let's understand the structure of the ``
 2. It subscribes to the ``joint_states`` topic and publishes to the ``leg_front_r_end_effector_position`` topic.
 3. The ``forward_kinematics`` method is where we'll implement the forward kinematics calculations.
 4. The code uses NumPy for matrix operations.
+5. Note that it is convention to orient the coordinate frame so that the rotation about each motor is the z axis.
 
 Part 2: Implementing Forward Kinematics
 ---------------------------------------
@@ -64,17 +67,19 @@ Step 1: Implement Rotation Matrices
 Step 2: Implement Transformation Matrices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Implement the transformation matrix from leg_front_r_1 to leg_front_r_2:
+* Note that theta is the motor angle
+
+1. Implement the transformation matrix from leg_front_r_1 to leg_front_r_2. This involves a rotation about y, then another rotation. What axis will you need to rotate about?
 
    .. code-block:: python
 
-      T_1_2 = rotation_y(-1.57080) @ rotation_z(TODO)
+      T_1_2 = rotation_y(-1.57080) @ TODO
 
-2. Implement the transformation matrix from leg_front_r_2 to leg_front_r_3:
+2. Implement the transformation matrix from leg_front_r_2 to leg_front_r_3. This will invole a translation (to move to coordinate of leg_front_r_3), then two rotations. What axes will you rotate about (and in what order / how much)?
 
    .. code-block:: python
 
-      T_2_3 = translation(TODO) @ rotation_y(TODO) @ rotation_z(TODO)
+      T_2_3 = translation(TODO) @ TODO @ TODO
 
    Note: The translation values may need to be adjusted based on the actual dimensions of your robot. Make sure to verify these values with your robot's specifications.
 
