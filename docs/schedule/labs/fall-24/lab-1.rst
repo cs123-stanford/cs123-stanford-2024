@@ -25,6 +25,8 @@ Part 0: Setup
 
 4. Follow along the assembly instructions to build the robot body with motor dials: https://docs.google.com/document/d/1KCq6sDU6E63y6-M0tVXG8qigIHJQKecC0eopReKi0_Q/edit
 
+   - Your USB drive should come pre-flashed. If your USB drive does not come pre-flashed, then flash the image at this link: https://docs.google.com/document/d/1KCq6sDU6E63y6-M0tVXG8qigIHJQKecC0eopReKi0_Q/edit. Use Balena Etcher to flash: https://etcher.balena.io/.
+
 OPTION 1: Connect via SSH via SSH 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Secure Shell is a network protocol that provides a secure way to access and manage remote computers over an unsecured network. It offers strong authentication and encrypted data communications between two computers connecting over an open network such as the internet. 
