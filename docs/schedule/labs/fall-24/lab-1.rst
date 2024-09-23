@@ -42,10 +42,11 @@ Secure Shell is a network protocol that provides a secure way to access and mana
 
 Option 2: Connect via the Monitor Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   - Connect the Raspberry Pi to the monitor using the HDMI cable.
-   - Connect the keyboard and mouse to the Raspberry Pi.
+   - Connect the Raspberry Pi to the monitor using the HDMI - HDMI micro cable.
+   - Connect the keyboard and mouse to the Raspberry Pi via USB.
    - Log in with the username ``pi`` and password ``rhea123`` after powering on.
-   - Open VSCode by opening a terminal, and running ``code``.
+   - Connect to the class WiFi network: SSID: TP-Link_7951, Password: 32625073. Check that you can access the internet by running ``ping 8.8.8.8`` to see if you are receiving bytes (8.8.8.8 is google.com).
+   - Install firefox: ``sudo snap install firefox``
 
 Part 1: ROS Introduction
 ------------------------
