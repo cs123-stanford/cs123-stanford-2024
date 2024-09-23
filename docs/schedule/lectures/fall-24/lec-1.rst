@@ -7,6 +7,8 @@ ROS Introduction and PD Control
 
 **Lab:** :doc:`../../labs/fall-24/lab-1`
 
+**Lab Document:** https://docs.google.com/document/d/1FZ3WAwX1zRO5ivQpqraeYcaJwmDZFZVPRNCVBTsuZrw/edit#heading=h.47t0k5pf0v4
+
 Enjoy this video of Pupper (v2!) doing push-ups!
 
 .. youtube:: io4QuRr5GCA
