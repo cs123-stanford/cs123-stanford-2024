@@ -26,15 +26,22 @@ This course offers a hands-on introduction to AI-powered robotics. Unlike most i
 
 **Lecture Location:** 320-109, *in-person attendance required*
 
-**TA Sessions:**
+**Instructor Office Hours:**
+    * Karen: 
+    * Stuart, Jie, Wenhao, Tingnan: Office hours by appointment. Reach out to the teaching team to schedule. 
 
-* TBA
-
-**Office Hours Location:**
+**TA Office Hours Location:**
 Gates B08
 
-**Office Hours:**
-TBA
+**TA Office Hours:**
+
+    * Jaden: 9:30-11:00 AM M
+    * Josh: 7:00-8:30 Tu
+    * Akemi: 4:00-5:30 W
+    * Ankush:: 7:00-8:30  W
+    * Zara: 4:00-5:30  Th
+    * Zipeng: 5:00-6:30 F
+
 
 **Prerequisites:**
 
