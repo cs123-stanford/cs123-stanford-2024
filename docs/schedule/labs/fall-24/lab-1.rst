@@ -104,7 +104,7 @@ Step 2: Run ROS Launch Code
 
    .. code-block:: bash
 
-      ros2 launch lab_1 lab_1.launch.py
+      ros2 launch lab_1.launch.py
 
    This command will start all the necessary nodes for your PD control experiment.
 
