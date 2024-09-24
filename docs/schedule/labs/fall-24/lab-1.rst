@@ -23,8 +23,20 @@ Part 0: Setup
 
 3. Connect to the Raspberry Pi
 
-OPTION 1: Connect via SSH via SSH 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+4. Follow along the assembly instructions to build the robot body with motor dials: https://drive.google.com/file/d/1G-evq36QOEJLgNMRFhP06Nk44oQloq2K/view?usp=drive_link
+
+   - Your USB drive should come pre-flashed. If your USB drive does not come pre-flashed, then flash the image at this link: https://docs.google.com/document/d/1KCq6sDU6E63y6-M0tVXG8qigIHJQKecC0eopReKi0_Q/edit. Use Balena Etcher to flash: https://etcher.balena.io/.
+
+Option 1: Connect via the Monitor Setup (Recommended)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   - Connect the Raspberry Pi to the monitor using the HDMI - HDMI micro cable.
+   - Connect the keyboard and mouse to the Raspberry Pi via USB.
+   - Log in with the username ``pi`` and password ``rhea123`` after powering on.
+   - Connect to the class WiFi network: SSID: TP-Link_7951, Password: 32625073. Check that you can access the internet by running ``ping 8.8.8.8`` to see if you are receiving bytes (8.8.8.8 is google.com).
+   - Install firefox: ``sudo snap install firefox``
+
+OPTION 2: Connect via SSH via SSH (If you do not have access to the desktop setup)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Secure Shell is a network protocol that provides a secure way to access and manage remote computers over an unsecured network. It offers strong authentication and encrypted data communications between two computers connecting over an open network such as the internet. 
     - Connect your laptop to the Pupper robot using the Ethernet cable.
     - Enable internet sharing in system settings (turn on anything that looks like Ethernet).
@@ -35,13 +47,6 @@ Secure Shell is a network protocol that provides a secure way to access and mana
     :align: center
 
     Enable internet sharing in system settings.
-
-Option 2: Connect via the Monitor Setup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   - Connect the Raspberry Pi to the monitor using the HDMI cable.
-   - Connect the keyboard and mouse to the Raspberry Pi.
-   - Log in with the username ``pi`` and password ``rhea123`` after powering on.
-   - Open VSCode by opening a terminal, and running ``code``.
 
 Part 1: ROS Introduction
 ------------------------

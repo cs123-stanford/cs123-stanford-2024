@@ -102,6 +102,12 @@ Part 3: Testing Your Implementation
 
 4. Move the right front leg of your robot and observe the changes in the published positions.
 
+To test your code in simulation to make sure that the code works as expected, you can use RVIZ. RVIZ will show the Pupper model as well as a marker that shows the output from the forward kinematics.
+
+   .. code-block:: bash
+
+      rviz2 lab_2.rviz
+
 Part 4: Analyzing the Results
 -----------------------------
 
