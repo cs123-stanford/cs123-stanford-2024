@@ -18,7 +18,7 @@ Step 1. Colab setup
 
 Step 2. Pupper forward
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Complete the #TODO in the Reward Functions cell to write a reward function to make Pupper walk forward
+#. Edit tracking_lin_vel in the reward config to make Pupper walk forward!
 #. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to stand up
 #. Pupper should take around 5-10 minutes to train. 
 
@@ -46,11 +46,11 @@ DELIVERABLE: Screen recording of stand-up in simulation
 
 Step 3. Effort function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Complete the #TODO in the Reward Functions cell to write a reward function that helps Pupper conserve energy
-#. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to stand up
+#. Complete the reward config cell to write a reward function that helps Pupper conserve effort. Which rewards should be nonzero to encourage Pupper to conserve energy?
+#. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to walk forward more efficiently
 #. Pupper should take around 5-10 minutes to train. 
 
-DELIVERABLE: What is your reward function (in math)? Why did you choose this function, and what other alternatives did you consider?
+DELIVERABLE: What is your reward function (in math)? Why did you choose this function? What existing rewart terms could be used be used to make Pupper conserve energy, and what are their potential pros and cons? Are there any rewards that could be used that are not listed?
 DELIVERABLE: Qualitatively, how does this Pupper policy compare to the previous one?
 DELIVERABLE: Screen recording of stand-up in simulation
 
@@ -64,7 +64,7 @@ DELIVERABLE: Screen recording of stand-up in simulation
 Step 4. Reward tuning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Write a reward function that makes Pupper move forward in the PUPPER WALK cell
+#. Write a reward function that makes Pupper move forward in the reward config. Feel free to use any rewards you like
 #. Reload the environment, and train Pupper to walk in sim
 #. Pupper should take around 10-15 minutes to train. 
 
