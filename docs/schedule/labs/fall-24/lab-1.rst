@@ -149,13 +149,13 @@ Step 3. Run bang-bang control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Open ``lab_1.py`` and locate the PD control implementation. For this step, you will implement Bang-bang control before PD control. Remember that bang-bang control is a simple control strategy where the control input is either on or off. In this case, the control input is either positive maximum torque or negative maximum torque. The control input switches when the motor angle crosses a threshold.
-3. This can be accomplished by a block of if statements. Implement bang-bang control in the `lab_1.py` file.
+3. This can be accomplished by a block of if statements. Implement bang-bang control in the `lab_1.py` file. Run your code by starting a new terminal, navigating to the lab folder, and running ``python lab_1.py``
 
 **DELIVERABLE: Take a video of your bang bang control to upload to Gradescope with your submission**
 
 Step 4: Implement P Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Implement P control in the `lab_1.py` file by replacing your implementation of bang-bang control. The P controller is more robust than bang-bang control. The proportional gain (Kp) is used to tune the controller.
+1. Implement P control in the `lab_1.py` file by replacing your implementation of bang-bang control. The P controller is more robust than bang-bang control. The proportional gain (Kp) is used to tune the controller. 
 
 2. Start with Kp = 2.0
 
