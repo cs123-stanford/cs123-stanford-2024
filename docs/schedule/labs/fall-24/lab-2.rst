@@ -108,7 +108,7 @@ To test your code in simulation to make sure that the code works as expected, yo
 
       rviz2 -d lab_2.rviz
 
-The above command will load the RVIZ config file. If you just run ``rviz``, you can manually add the configuration. After running `rviz`, click the "Add" button, and then select a Robot Model type. Select the \robot_description topic. Next, add the marker by selecting "Add" again, and select a Marker type. Select the joint
+The above command will load the RVIZ config file. If you just run ``rviz``, you can manually add the configuration. After running `rviz`, click the "Add" button, and then select a Robot Model type. Select the /robot_description topic. Next, add the marker by selecting "Add" again, and select a Marker type. Select the topic /marker.
 
 Part 4: Analyzing the Results
 -----------------------------
