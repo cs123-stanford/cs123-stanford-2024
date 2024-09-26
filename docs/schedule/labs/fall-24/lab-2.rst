@@ -19,7 +19,7 @@ Part 0: Setup
       cd ~/
       git clone https://github.com/cs123-stanford/lab_2_2024.git lab_2
 
-3. Open the workspace in VSCode and examine the ``lab_2.py`` file.
+3. Open the workspace (lab_2 directory) in VSCode and examine the ``lab_2.py`` file.
 
 Part 1: Understanding the Code Structure
 ----------------------------------------
@@ -115,7 +115,7 @@ Part 4: Analyzing the Results
 
 1. Record the end-effector positions for at the front right leg configurations.
 
-2. Compare these positions with the expected positions based on the physical dimensions of your robot.
+2. Compare these positions with the expected positions based on the physical dimensions of your robot. (Why are the numbers printed in the terminal so small?)
 
 3. If there are discrepancies, try to identify the source of the errors. It could be due to:
    
