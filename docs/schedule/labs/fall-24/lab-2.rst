@@ -21,6 +21,8 @@ Part 0: Setup
 
 3. Open the workspace in VSCode and examine the ``lab_2.py`` file.
 
+4. Change all the 12 occurances of ``homing_kp`` values to ``1.0`` and ``homing_kd`` values to ``0.1`` in the ``~/ros2_ws/src/pupper_v3_description/description/components.xacro`` file.
+
 Part 1: Understanding the Code Structure
 ----------------------------------------
 
