@@ -120,7 +120,7 @@ Part 6: Analyzing the Results
    - Inaccurate joint angle readings
    - Errors in the physical measurements of the robot
 
-**Deliverable:**
+**DELIVERABLE:**
 
 1. Measuring the correct physical parameters of the robot (leg lengths, motor angles, etc) is essential to compute accurate kinematics. This process is called system identification. How would your estimate of the end effector (EEF) position change if your estimate of leg link 2 is off my 0.2 cm? What about 0.4cm, or 0.8cm? Write out the number you computed, and how you calculated them. Qualitatively, how does error in estimated EEF position change with respect to error in leg length?
 
