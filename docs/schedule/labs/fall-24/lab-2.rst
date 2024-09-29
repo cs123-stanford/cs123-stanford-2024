@@ -21,6 +21,8 @@ Part 0: Setup
 
 3. Open the workspace (lab_2 directory) in VSCode and examine the ``lab_2.py`` file.
 
+4. Follow the build instructions for lab 2: `lab 2 assembly instructions <https://drive.google.com/file/d/1xkli-Mg0iUog6XsUrviYll4hlnVv-qmk/view?usp=sharing>`_
+
 Part 1: Understanding the Code Structure
 ----------------------------------------
 
