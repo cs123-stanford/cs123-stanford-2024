@@ -19,7 +19,9 @@ Part 0: Setup
       cd ~/
       git clone https://github.com/cs123-stanford/lab_2_2024.git lab_2
 
-3. Open the workspace in VSCode and examine the ``lab_2.py`` file.
+3. Open the workspace (lab_2 directory) in VSCode and examine the ``lab_2.py`` file.
+
+4. Follow the build instructions for lab 2: `lab 2 assembly instructions <https://drive.google.com/file/d/1xkli-Mg0iUog6XsUrviYll4hlnVv-qmk/view?usp=sharing>`_
 
 4. Change all the 12 occurances of ``homing_kp`` values to ``1.0`` and ``homing_kd`` values to ``0.1`` in the ``~/ros2_ws/src/pupper_v3_description/description/components.xacro`` file.
 
@@ -108,14 +110,16 @@ To test your code in simulation to make sure that the code works as expected, yo
 
    .. code-block:: bash
 
-      rviz2 lab_2.rviz
+      rviz2 -d lab_2.rviz
+
+The above command will load the RVIZ config file. If you just run ``rviz``, you can manually add the configuration. After running `rviz`, click the "Add" button, and then select a Robot Model type. Select the /robot_description topic. Next, add the marker by selecting "Add" again, and select a Marker type. Select the topic /marker.
 
 Part 4: Analyzing the Results
 -----------------------------
 
 1. Record the end-effector positions for at the front right leg configurations.
 
-2. Compare these positions with the expected positions based on the physical dimensions of your robot.
+2. Compare these positions with the expected positions based on the physical dimensions of your robot. (Why are the numbers printed in the terminal so small?)
 
 3. If there are discrepancies, try to identify the source of the errors. It could be due to:
    
