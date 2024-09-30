@@ -28,7 +28,7 @@ Part 2: Setup
 
 4. Change all the 12 occurances of ``homing_kp`` values to ``1.0`` and ``homing_kd`` values to ``0.1`` in the ``~/ros2_ws/src/pupper_v3_description/description/components.xacro`` file. 
 
-**DELIVERABLE** Why do you think that there are 12 occurances of these values in the xacro file? What do you think that changing them from the previous value does?
+**DELIVERABLE:** Why do you think that there are 12 occurances of these values in the xacro file? What do you think that changing them from the previous value does?
 
 Part 3: Understanding the Code Structure
 ----------------------------------------
@@ -72,7 +72,7 @@ Step 2: Implement Transformation Matrices
 
    Note: The translation values may need to be adjusted based on the actual dimensions of your robot. Make sure to verify these values with your robot's specifications.
 
-**Deliverable:**
+**DELIVERABLE:**
 
 1. Write out the full equation you used to calculate the forward kinematics (in math), please use Latex and take a screenshot, or use the equation functionality in google docs
 What is the benefit of using homogeneous transformations? 
