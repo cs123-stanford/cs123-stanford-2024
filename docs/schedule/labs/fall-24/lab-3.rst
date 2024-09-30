@@ -28,6 +28,8 @@ Part 0: Setup
 
 3. Examine ``lab_3.py`` to understand the structure of the ``InverseKinematics`` class and its methods.
 
+4. Change all the 12 occurances of homing_kp values to 5.5 and homing_kd values to 0.2 in the ~/ros2_ws/src/pupper_v3_description/description/components.xacro file to undo the changes from lab 2.
+
 Part 1: Forward Kinematics (already done in lab 2)
 ------------------------------------
 
