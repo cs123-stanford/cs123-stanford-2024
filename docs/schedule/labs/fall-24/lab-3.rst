@@ -55,7 +55,7 @@ Part 2: Implement Inverse Kinematics
 
 **TODO 2:** Implement the gradient function for inverse kinematics.
 
-- Calculate the numerical gradient of the cost function with respect to each joint angle.
+- Calculate the numerical gradient of the cost function with respect to each joint angle using the finite difference method.
 - Use a small epsilon value (e.g., 1e-3) for the finite difference approximation.
 
 **TODO 3:** Implement the gradient descent algorithm for inverse kinematics.
