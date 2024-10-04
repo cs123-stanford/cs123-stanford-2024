@@ -51,7 +51,7 @@ Part 2: Implement Inverse Kinematics
 
 - Use the ``forward_kinematics`` method to get the current end-effector position.
 - Calculate the L1 distance between the current and target end-effector positions.
-- Return the sum of squared L1 distances as the cost.
+- Return the sum of squared L1 distances as the cost (AKA the squared 2-norm of the error vector).
 
 **TODO 2:** Implement the gradient function for inverse kinematics.
 
