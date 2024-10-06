@@ -72,9 +72,12 @@ Part 3: Implement Trajectory Generation
 
 **TODO 4:** Implement the interpolation for the triangular trajectory.
 
-- Use the provided ``ee_triangle_positions``, which define the 3 vertices of the triangle trajectory.
-- Implement linear interpolation between the triangle vertices based on the input time ``t``.
-- Ensure the trajectory loops every ~2 seconds approximately.
+You need to create a function that performs linear interpolation between the triangle's vertices. The trajectory should loop smoothly from vertex 1 to 2, vertex 2 to 3, and then from vertex 3 back to vertex 1 based on the time variable. The input to the function is a time variable t that dictates where along the triangle's edges the point currently lies for a given 3 second period. Each vertex transition (e.g., from vertex 1 to vertex 2) should last approximately 1 second.
+For example 0 <= t < 1 should interpolate between vertex 1 and vertex 2.
+
+- Use the provided ``ee_triangle_positions``, which define the 3 vertices of the triangle trajectory (this is a 3x3 matrix).
+- Implement linear interpolation between the triangle vertices based on the input time ``t``. Use the np.interp function from NumPy to handle the interpolation
+- Ensure the trajectory loops every ~3 seconds approximately.
 
 Part 4: Implement PD Control (already done in lab 1)
 ----------------------------
