@@ -86,19 +86,9 @@ For example 0 <= t < 1 should interpolate between vertex 1 and vertex 2.
 - Implement linear interpolation between the triangle vertices based on the input time ``t``. Use the np.interp function from NumPy to handle the interpolation
 - Ensure the trajectory loops every ~3 seconds approximately.
 
-Part 4: Implement PD Control (already done in lab 1)
-----------------------------
-
-1. Find the ``pd_timer_callback`` method in the ``InverseKinematics`` class.
-
-- Paste code from lab 1
-- Review the position error (difference between target and current joint positions).
-- Review the velocity error (assuming target velocity is zero).
-- Review computation of the torque command using the PD control law: τ = Kp * position_error - Kd * velocity_error.
-
 **DELIVERABLE:** This interpolation between the 3 points on a triangle is called the “Raibert Heuristic”, named after the founder of Boston Dynamics. How would you coordinate the movement of 4 legs on a quadruped assuming they each follow the Raibert heuristic? Specifically, which legs should be synchronized (same point of the triangle at the same time)? Feel free to draw a diagram.
 
-Part 5: Run and Test Your Implementation
+Part 4: Run and Test Your Implementation
 ----------------------------------------
 
 1. Run the launch file using the following command:
@@ -115,7 +105,7 @@ Part 5: Run and Test Your Implementation
 
 **DELIVERABLE:** Review : Why do we need the damping term in PD control? What will happen if damping is too high? Too low?
 
-Part 6: Analyze and Improve Performance
+Part 5: Analyze and Improve Performance
 ---------------------------------------
 
 1. Modify the ``ik_timer_period`` and ``pd_timer_period`` to see how they affect the system's performance.
