@@ -103,8 +103,6 @@ Part 4: Run and Test Your Implementation
 
 **DELIVERABLE:** Take a video of the robot leg tracking the triangular trajectory and submit it with your submission.
 
-**DELIVERABLE:** Review : Why do we need the damping term in PD control? What will happen if damping is too high? Too low?
-
 Part 5: Analyze and Improve Performance
 ---------------------------------------
 
