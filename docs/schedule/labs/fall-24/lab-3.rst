@@ -101,7 +101,7 @@ Part 4: Run and Test Your Implementation
 
 3. Experiment with different trajectory shapes by modifying the ``ee_triangle_positions`` in the ``__init__`` method.
 
-**DELIVERABLE:** Take a video of the robot leg tracking the triangular trajectory and submit it with your submission.
+**DELIVERABLE:** Take a video of the robot leg tracking the triangular trajectory and submit it with your submission. The triangle motion should be smooth and continuous based on your implementation.
 
 Part 5: Analyze and Improve Performance
 ---------------------------------------
