@@ -88,6 +88,11 @@ For example 0 <= t < 1 should interpolate between vertex 1 and vertex 2.
 
 **DELIVERABLE:** This interpolation between the 3 points on a triangle is called the “Raibert Heuristic”, named after the founder of Boston Dynamics. How would you coordinate the movement of 4 legs on a quadruped assuming they each follow the Raibert heuristic? Specifically, which legs should be synchronized (same point of the triangle at the same time)? Feel free to draw a diagram.
 
+.. figure:: ../../../_static/raibert.png
+    :align: center
+
+    Marc Raibert at the Spring 2023 Pupper demo day.
+
 Part 4: Run and Test Your Implementation
 ----------------------------------------
 
