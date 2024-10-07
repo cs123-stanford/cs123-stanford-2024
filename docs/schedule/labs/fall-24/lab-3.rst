@@ -65,6 +65,13 @@ Part 2: Implement Inverse Kinematics
 - Stop the iteration if the mean L1 distance is below the tolerance.
 - Bonus: Implement the (quasi-)Newton's method for faster convergence.
 
+**DELIVERABLE:** We use squared L2 norm for our cost function (AKA objective function or loss function). Why is this a useful objective? Why not use L1?
+
+**DELIVERABLE:** What happens if learning rate is too small… what if learning rate gets too big? 
+
+**DELIVERABLE:** You are using a numerical differentiation approach. However, this loss function is fairly simple and the gradient could be computed analytically (but we use finite differentiation due to simplicity). Think about different loss functions. Where would a numerical gradient come in handy, and where would an analytical gradient be better?
+
+
 Part 3: Implement Trajectory Generation
 ---------------------------------------
 
@@ -89,6 +96,8 @@ Part 4: Implement PD Control (already done in lab 1)
 - Review the velocity error (assuming target velocity is zero).
 - Review computation of the torque command using the PD control law: τ = Kp * position_error - Kd * velocity_error.
 
+**DELIVERABLE:** This interpolation between the 3 points on a triangle is called the “Raibert Heuristic”, named after the founder of Boston Dynamics. How would you coordinate the movement of 4 legs on a quadruped assuming they each follow the Raibert heuristic? Specifically, which legs should be synchronized (same point of the triangle at the same time)? Feel free to draw a diagram.
+
 Part 5: Run and Test Your Implementation
 ----------------------------------------
 
@@ -104,6 +113,8 @@ Part 5: Run and Test Your Implementation
 
 **DELIVERABLE:** Take a video of the robot leg tracking the triangular trajectory and submit it with your submission.
 
+**DELIVERABLE:** Review : Why do we need the damping term in PD control? What will happen if damping is too high? Too low?
+
 Part 6: Analyze and Improve Performance
 ---------------------------------------
 
@@ -118,6 +129,11 @@ Part 6: Analyze and Improve Performance
 - The effects of changing ``Kp`` and ``Kd`` values
 - How different timer periods affect the system's behavior
 - The impact of initial guesses on the inverse kinematics convergence
+
+**DELIVERABLE:** What will the behavior look like if the IK timer has too low of an update frequency? What will happen if update frequency is too high?
+**DELIVERABLE:** What is the behavior of the optimizer when the initial guess if very poor?
+**DELIVERABLE:** Say you are running this controller for a Pupper walking trajectory to walk. What will the behavior look like if K_p is too low?
+
 
 Additional Notes
 ----------------
