@@ -118,21 +118,18 @@ Part 5: Run and Test Your Implementation
 Part 6: Analyze and Improve Performance
 ---------------------------------------
 
-1. Experiment with different values for ``Kp`` and ``Kd`` in the PD controller.
+1. Modify the ``ik_timer_period`` and ``pd_timer_period`` to see how they affect the system's performance.
 
-2. Modify the ``ik_timer_period`` and ``pd_timer_period`` to see how they affect the system's performance.
-
-3. Try different initial guesses for the inverse kinematics algorithm and observe the convergence behavior.
+2. Try different initial guesses for the inverse kinematics algorithm and observe the convergence behavior.
 
 **DELIVERABLE:** In your lab document, report on:
 
-- The effects of changing ``Kp`` and ``Kd`` values
 - How different timer periods affect the system's behavior
 - The impact of initial guesses on the inverse kinematics convergence
 
 **DELIVERABLE:** What will the behavior look like if the IK timer has too low of an update frequency? What will happen if update frequency is too high?
 **DELIVERABLE:** What is the behavior of the optimizer when the initial guess if very poor?
-**DELIVERABLE:** Say you are running this controller for a Pupper walking trajectory to walk. What will the behavior look like if K_p is too low?
+**DELIVERABLE:** Say you are running this controller for a Pupper walking trajectory. What will the behavior look like if K_p is too low?
 
 
 Additional Notes
