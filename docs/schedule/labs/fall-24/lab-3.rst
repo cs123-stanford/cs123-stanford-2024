@@ -5,6 +5,8 @@ Goal
 ----
 Implement inverse kinematics for a robot leg and create a trajectory tracking system using ROS2.
 
+`Lab slides <https://docs.google.com/presentation/d/1NvK2dUOB0lqD47rk3x3e-lUMVMnwtgSr/edit#slide=id.g2f9b22e15a6_0_233>`_ 
+
 Please also fill out the `lab document <https://docs.google.com/document/d/1X1UOZr6DPuhhVHxnpaHo7VfXr0YNnqKPDF-i4rvzxN8/edit?usp=sharing>`_ .
 
 .. raw:: html
