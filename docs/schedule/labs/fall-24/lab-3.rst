@@ -100,7 +100,7 @@ Part 4: Run and Test Your Implementation
 
    .. code-block:: bash
 
-      ros2 launch lab_3 lab_3.launch.py
+      ros2 launch lab_3.launch.py
 
 2. Observe the robot leg's movement and the terminal output.
 
