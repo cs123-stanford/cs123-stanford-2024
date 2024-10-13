@@ -35,7 +35,6 @@ Part 1: Review Previous Implementations
 
    - ``forward_kinematics``
    - ``inverse_kinematics_single_leg``
-   - ``pd_timer_callback``
 
 2. Review the code in these methods, which should be completed from previous labs.
 
