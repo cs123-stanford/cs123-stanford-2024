@@ -87,7 +87,7 @@ Part 5: Run and Test Your Implementation
 
 3. Verify that the robot is performing a trotting gait.
 
-**DELIVERABLE:** Take a video of the robot performing the trotting gait and submit it with your submission.
+**DELIVERABLE:** Take a video of the robot performing the trotting gait and submit it with your submission. This can be taken with Pupper on the stand.
 
 Part 6: Analyze and Improve Performance
 ---------------------------------------
