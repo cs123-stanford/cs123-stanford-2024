@@ -4,6 +4,7 @@ Lab 4: Model-Based Control and Trotting Gait Implementation
 Goal
 ----
 Implement a trotting gait for a quadruped robot using inverse kinematics and trajectory tracking with ROS2.
+`Lab Slides <https://docs.google.com/presentation/d/1q9gYvI8Nxz0qwCcdz0aEdSr9FhykmAnQc7eE2721s_E/edit?usp=sharing>`_
 
 .. raw:: html
 
