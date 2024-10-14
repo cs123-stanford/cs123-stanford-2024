@@ -54,7 +54,7 @@ Part 2: Implement Forward Kinematics for All Legs
 **TODO 1:** Implement forward kinematics for the front left, back right, and back left legs.
 
 - Use the provided ``fr_leg_fk`` method as a reference.
-- Adjust the transformations to account for the different leg positions and orientations.
+- Adjust the transformations to account for the different leg positions and orientations. (*Hint:* You essentially need to do an equivalent FK on each of the other legs)
 
 **DELIVERABLE:** An underactuated system that has more degrees of freedom that can be controlled, than the number of independently controlled actuators. How many degrees of freedom does Pupper have? Is it an underactuated system?
 
