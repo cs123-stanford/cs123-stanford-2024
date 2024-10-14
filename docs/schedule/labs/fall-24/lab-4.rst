@@ -3,14 +3,7 @@ Lab 4: Model-Based Control and Trotting Gait Implementation
 
 Goal
 ----
-Implement a trotting gait for a quadruped robot using inverse kinematics and trajectory tracking with ROS2.
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/ns4-xolvo5o" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-|
+Implement a trotting gait for a quadruped robot to move forward using inverse kinematics and trajectory tracking with ROS2.
 
 Part 0: Setup
 -------------
@@ -35,7 +28,6 @@ Part 1: Review Previous Implementations
 
    - ``forward_kinematics``
    - ``inverse_kinematics_single_leg``
-   - ``pd_timer_callback``
 
 2. Review the code in these methods, which should be completed from previous labs.
 
@@ -95,15 +87,12 @@ Part 6: Analyze and Improve Performance
 
 1. Experiment with different trajectory shapes for each leg to optimize the trotting gait.
 
-2. Adjust the ``pd_timer_period`` and ``ik_timer_period`` to find the best balance between performance and computational load.
-
-3. Fine-tune the ``Kp`` and ``Kd`` values in the PD controller to improve tracking accuracy and stability.
+2. Adjust the ``ik_timer_period`` to find the best balance between performance and computational load.
 
 **DELIVERABLE:** In your lab document, report on:
 
 - The effects of different trajectory shapes on the trotting gait
 - How timer periods affect the system's performance
-- The impact of PD controller gains on the robot's stability and tracking accuracy
 
 Additional Notes
 ----------------
