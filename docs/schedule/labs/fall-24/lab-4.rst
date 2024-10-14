@@ -56,6 +56,10 @@ Part 2: Implement Forward Kinematics for All Legs
 - Use the provided ``fr_leg_fk`` method as a reference.
 - Adjust the transformations to account for the different leg positions and orientations.
 
+**DELIVERABLE:** An underactuated system that has more degrees of freedom that can be controlled, than the number of independently controlled actuators. How many degrees of freedom does Pupper have? Is it an underactuated system?
+
+**DELIVERABLE:** Why are under-actuated systems more challenging to control?
+
 Part 3: Implement Trotting Gait Trajectory
 ------------------------------------------
 
@@ -66,6 +70,8 @@ Part 3: Implement Trotting Gait Trajectory
 - Define the positions for each leg's trajectory in the trotting gait.
 - Set the appropriate values for ``rf_ee_triangle_positions``, ``lf_ee_triangle_positions``, ``rb_ee_triangle_positions``, and ``lb_ee_triangle_positions``.
 - Ensure that the trajectories create a trotting motion when combined.
+
+**DELIVERABLE:** You have implemented trotting. What are some other gaits that Pupper could exhibit, and why/when would they be useful? List 3 alternative gaits.
 
 Part 4: Implement Trajectory Interpolation
 ------------------------------------------
@@ -92,6 +98,10 @@ Part 5: Run and Test Your Implementation
 3. Verify that the robot is performing a trotting gait.
 
 **DELIVERABLE:** Take a video of the robot performing the trotting gait and submit it with your submission. This can be taken with Pupper on the stand.
+
+**DELIVERABLE:** The controller implemented is a “heuristic” controller. That means it follows a pre-programmed trajectory, and doesn’t use online sensor feedback outside the motor to optimize its trajectory. What are some potential pitfalls of this approach? How will Pupper react if pushed?
+
+**DELIVERABLE:** Many commercial quadrupeds used model-based controllers that solve an optimization problem online. Why would this be challenging to deploy on Pupper, which has lower cost hardware and runs computation on a Pi5?
 
 Part 6: Analyze and Improve Performance
 ---------------------------------------
