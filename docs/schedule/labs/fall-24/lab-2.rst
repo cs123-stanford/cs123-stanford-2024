@@ -5,9 +5,14 @@ Goal
 ----
 Implement forward kinematics for the right front leg of the Pupper robot using ROS2 and Python.
 
-Fill out the `lab document <https://docs.google.com/document/d/1uAoTIHvAqEqXTPVWyHrLkuw0ZJ24BPCPn_Q6XIztvR0/edit?usp=sharing>`_ as you go.
+Fill out the `lab document <https://docs.google.com/document/d/1uAoTIHvAqEqXTPVWyHrLkuw0ZJ24BPCPn_Q6XIztvR0/edit?usp=sharing>`_ as you go. Make a copy and add your responses.
 
-Part 0: Setup
+Part 1: Hardware Build
+-------------
+
+1. Follow the build instructions for lab 2: `lab 2 assembly instructions <https://drive.google.com/file/d/1xkli-Mg0iUog6XsUrviYll4hlnVv-qmk/view?usp=sharing>`_. You will build a front right leg for Pupper in this lab. Begin by checking to see that your kits contain all the pieces, if not, please ask a TA. 
+
+Part 2: Setup
 -------------
 
 1. Make sure you have completed Lab 1 and are familiar with the ROS2 environment on your Raspberry Pi 5.
@@ -21,11 +26,11 @@ Part 0: Setup
 
 3. Open the workspace (lab_2 directory) in VSCode and examine the ``lab_2.py`` file.
 
-4. Follow the build instructions for lab 2: `lab 2 assembly instructions <https://drive.google.com/file/d/1xkli-Mg0iUog6XsUrviYll4hlnVv-qmk/view?usp=sharing>`_
+4. Change all the 12 occurances of ``homing_kp`` values to ``1.0`` and ``homing_kd`` values to ``0.1`` in the ``~/ros2_ws/src/pupper_v3_description/description/components.xacro`` file. 
 
-4. Change all the 12 occurances of ``homing_kp`` values to ``1.0`` and ``homing_kd`` values to ``0.1`` in the ``~/ros2_ws/src/pupper_v3_description/description/components.xacro`` file.
+**DELIVERABLE:** Why do you think that there are 12 occurances of these values in the xacro file? What do you think that changing them from the previous value does?
 
-Part 1: Understanding the Code Structure
+Part 3: Understanding the Code Structure
 ----------------------------------------
 
 Before we start implementing the TODOs, let's understand the structure of the ``lab_2.py`` file:
@@ -36,7 +41,7 @@ Before we start implementing the TODOs, let's understand the structure of the ``
 4. The code uses NumPy for matrix operations.
 5. Note that it is convention to orient the coordinate frame so that the rotation about each motor is the z axis.
 
-Part 2: Implementing Forward Kinematics
+Part 4: Implementing Forward Kinematics
 ---------------------------------------
 
 Step 1: Implement Rotation Matrices
@@ -44,55 +49,43 @@ Step 1: Implement Rotation Matrices
 
 1. Open ``lab_2.py`` and locate the ``forward_kinematics`` method.
 
-2. Implement the rotation matrix about the y-axis:
+2. Implement the rotation matrices about the x, y, and z axes. Follow the homogeneous coordinates representation as presented in lecture.
 
-   .. code-block:: python
-
-      def rotation_y(angle):
-          return np.array([
-              [x, x, x, 0],
-              [x, x, x, 0],
-              [x, x, x, 0],
-              [0, 0, 0, 1]
-          ])
-
-3. Implement the rotation matrix about the z-axis:
-
-   .. code-block:: python
-
-      def rotation_z(angle):
-          return np.array([
-              [x, x, x, 0],
-              [x, x, x, 0],
-              [x, x, x, 0],
-              [0, 0, 0, 1]
-          ])
+**DELIVERABLE:** Which axis is typically used as the default axis for rotations in robotic systems? Why?
 
 Step 2: Implement Transformation Matrices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Note that theta is the motor angle
 
-1. Implement the transformation matrix from leg_front_r_1 to leg_front_r_2. This involves a rotation about y, then another rotation. What axis will you need to rotate about?
+1. The transformation matrix from the base link to leg_front_r_1 has been implemented for you in ``T_0_1``. This involves a translation and two rotations. Understanding this transformation will help you complete the remainder of the transformations. 
 
-   .. code-block:: python
+**DELIVERABLE** Explain the reasoning behind this implementation. What does the translation and each of the rotations do in ``T_0_1``?
 
-      T_1_2 = rotation_y(-1.57080) @ TODO
+2. Implement the transformation matrix from leg_front_r_1 to leg_front_r_2 in ``T_1_2``. Follow the same thought process as with ``T_0_1``.
 
-2. Implement the transformation matrix from leg_front_r_2 to leg_front_r_3. This will invole a translation (to move to coordinate of leg_front_r_3), then two rotations. What axes will you rotate about (and in what order / how much)?
+3. Implement the transformation matrix from leg_front_r_2 to leg_front_r_3 in ``T_2_3``.
 
-   .. code-block:: python
+4. Implement the transformation matrix from leg_front_r_3 to the end effectorin ``T_3_ee``.
 
-      T_2_3 = translation(TODO) @ TODO @ TODO
+5. Compute the final transformation matrix following the described process from lecture in ``T_0_ee``. Remember that the end effector position is not in homogeneous coordinates. Calculate ``end_effector_position`` from ``T_0_ee``.
 
    Note: The translation values may need to be adjusted based on the actual dimensions of your robot. Make sure to verify these values with your robot's specifications.
 
-Part 3: Testing Your Implementation
+**DELIVERABLE:**
+
+1. Write out the full equation you used to calculate the forward kinematics (in math), please use Latex and take a screenshot, or use the equation functionality in google docs
+What is the benefit of using homogeneous transformations? 
+
+2. Why is there a 1 in the bottom-right corner of a homogeneous transformation matrix?
+
+
+Part 5: Testing Your Implementation
 -----------------------------------
 
 1. Save your changes to ``lab_2.py``.
 
-2. Run the ROS2 node:
+2. Run the ROS2 nodes:
 
    .. code-block:: bash
 
@@ -114,7 +107,7 @@ To test your code in simulation to make sure that the code works as expected, yo
 
 The above command will load the RVIZ config file. If you just run ``rviz``, you can manually add the configuration. After running `rviz`, click the "Add" button, and then select a Robot Model type. Select the /robot_description topic. Next, add the marker by selecting "Add" again, and select a Marker type. Select the topic /marker.
 
-Part 4: Analyzing the Results
+Part 6: Analyzing the Results
 -----------------------------
 
 1. Record the end-effector positions for at the front right leg configurations.
@@ -127,17 +120,12 @@ Part 4: Analyzing the Results
    - Inaccurate joint angle readings
    - Errors in the physical measurements of the robot
 
-Deliverables
-------------
+**DELIVERABLE:**
 
-1. Submit your completed ``lab_2.py`` file.
+1. Measuring the correct physical parameters of the robot (leg lengths, motor angles, etc) is essential to compute accurate kinematics. This process is called system identification. How would your estimate of the end effector (EEF) position change if your estimate of leg link 2 is off my 0.2 cm? What about 0.4cm, or 0.8cm? Write out the number you computed, and how you calculated them, for both 0 degrees rotation in each of the joints, and 45 degrees rotation in each of the joints. Qualitatively, how does error in estimated EEF position change with respect to error in leg length? 
 
-2. Provide a brief report (maximum 1 page) that includes:
-   
-   - A description of your implementation process
-   - The recorded end-effector positions for the front right leg configurations
-   - An analysis of the accuracy of your forward kinematics implementation
-   - Any challenges you faced and how you overcame them
+2. How does computational complexity of FK scale with respect to degree of freedom (number of motor angles)? Please use big O notation.
+
 
 Additional Challenges (Optional)
 --------------------------------
