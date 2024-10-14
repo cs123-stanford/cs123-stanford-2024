@@ -6,6 +6,9 @@ Goal
 Implement a trotting gait for a quadruped robot using inverse kinematics and trajectory tracking with ROS2.
 `Lab Slides <https://docs.google.com/presentation/d/1q9gYvI8Nxz0qwCcdz0aEdSr9FhykmAnQc7eE2721s_E/edit?usp=sharing>`_
 
+Please fill out the `lab document <https://docs.google.com/document/d/1_ZpwR8OAQS39QISJryON0GBG1AbQ2RqVT3LJr9OzBZ8/edit?usp=sharing>`_
+
+
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
