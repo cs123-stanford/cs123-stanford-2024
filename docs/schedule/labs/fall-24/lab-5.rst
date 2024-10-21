@@ -6,6 +6,7 @@ Lab 5: How to Train Your Dog
 Step 1. Colab setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Make a copy of the Colab notebook `HERE <https://colab.research.google.com/drive/1QBtJ09hNInqNqKPVRThbv_yppSlQ9qd2#scrollTo=cHJCbESGA7Rk>`_
+#. Purchase Colab Pro and set the GPU to A100
 #. Create a wandb account (https://wandb.ai/), navigate to User Settings, and generate an API key
 #. Set up your wandb key by running cell 2 and inserting your key
 #. Run all cells up until Config to install dependencies
