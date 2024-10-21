@@ -23,7 +23,7 @@ Step 2. Velocity tracking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's implement a naive reward function for Pupper velocity tracking
 
-#. Run everything up the "Update the configs" cell. Change the tracking_lin_vel and tracking_ang_vel values to be nonzero to get Pupper to follow a velocity command. Refer to the `reward definitions <https://github.com/Nate711/pupperv3-mjx/blob/main/pupperv3_mjx/rewards.py>`_ 
+#. Run everything up the "Update the configs" cell. Change the tracking_lin_vel and tracking_ang_vel values to be nonzero to get Pupper to follow a velocity command. Refer to the `reward definitions <https://github.com/Nate711/pupperv3-mjx/blob/main/pupperv3_mjx/rewards.py>`_ . In practive the linear velocity tracking coefficient should be around double the angular velocity tracking
 #. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to follow a desired velocity
 #. Pupper should take around 5-10 minutes to train. 
 
