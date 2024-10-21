@@ -100,7 +100,7 @@ Transfer policy from local machine to pupper
 #. Download the `deploy script <https://drive.google.com/file/d/1QGo_Xxu2WMjDWeD3gIkbu1fEC68U6osG/view?usp=sharing>`_ on your local machine 
 #. Make it executable: chmod +x deploy_policy.sh
 #. Download the policy you trained in colab
-#. Connect your remote controller with the USB cable to give Pupper position commands
+#. Connect your remote controller with the USB cable to give Pupper velocity commands
 #. Run the policy: ./deploy_policy.sh /path/to/your/policy.json
 
 DELIVERABLE: In what ways is this policy different on the physical robot (compared to sim)
