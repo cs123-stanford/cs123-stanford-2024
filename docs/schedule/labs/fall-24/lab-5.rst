@@ -94,12 +94,12 @@ Step 5. Deploy your walking policy
 
 |
 Transfer policy from local machine to pupper
-#. When you train a policy that can standup and stay stable, you are ready to transfer the policy to the physical Pupper robot
-#. Navigate to archive in wandb, and download the .json from the policy you trained
-#. ‘scp [path_to_model_name.json] pi@pupper.local:’ (note the colon at the end)
 
-#. In local neural_controller repo, change the policy called in policy.py (ros2_ws folder) to your policy name (your .json file)
-#. On the pi, run the launch.py script
+#. Download the `deploy script <https://drive.google.com/file/d/1QGo_Xxu2WMjDWeD3gIkbu1fEC68U6osG/view?usp=sharing>`_ on your local machine 
+#. Make it executable: chmod +x deploy_policy.sh
+#. Download the policy you trained in colab
+#. Connect your remote controller with the USB cable to give Pupper position commands
+#. Run the policy: ./deploy_policy.sh /path/to/your/policy.json
 
 DELIVERABLE: In what ways is this policy different on the physical robot (compared to sim)
 
@@ -120,7 +120,8 @@ Okay, so Pupper looks pretty good in sim, but the policy doesn't look so great i
 You will need to add randomization to the sim environment so your policy successfully transfers. Consider randomizing parameters such as Pupper mass, environment heighfields, or PID gains.
 
 #. Edit the environment config to adequately represent all the situations Pupper might encounter in the real world
-#. Test your policy on the obstacle course in office hours
+#. Try several magntidues of the domain randomization terms to see what works
+#. Iterate many times tuning the domain randomization and rewards for the best policy possible! An agile policy should be fast, efficient, stable, and robust to disturbances. Train the bes policy you can!
 
 .. figure:: ../../../_static/good_walk_terrain.gif
    :align: center
@@ -128,6 +129,7 @@ You will need to add randomization to the sim environment so your policy success
 
    Your sim environment should expose Pupper to a variety of possible scenarios
 
+DELIVERABLE: Comment on what happens if you add too much domain randomization
 
 DELIVERABLE: Record a video on the obstacle course and record a video
 
