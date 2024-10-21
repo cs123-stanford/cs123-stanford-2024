@@ -3,10 +3,13 @@ Lab 5: How to Train Your Dog
 
 *Goal: Train Pupper to walk using reinforcement learning!*
 
+`Lab slides <https://docs.google.com/presentation/d/1APi029vOGI_dR0Vrvh3glQ0Bw61qV4XP/edit?usp=sharing&ouid=117110374750562018236&rtpof=true&sd=true
+>`_
+
 Step 1. Colab setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Make a copy of the Colab notebook `HERE <https://colab.research.google.com/drive/1QBtJ09hNInqNqKPVRThbv_yppSlQ9qd2#scrollTo=cHJCbESGA7Rk>`_
-#. Purchase Colab Pro and set the GPU to A100
+#. Purchase Colab Pro and set the GPU to A100. Select runtime in top panel -> change runtime type -> A100
 #. Create a wandb account (https://wandb.ai/), navigate to User Settings, and generate an API key
 #. Set up your wandb key by running cell 2 and inserting your key
 #. Run all cells up until Config to install dependencies
