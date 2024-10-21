@@ -6,9 +6,9 @@ Lab 6: Do What I Say (LLMs and Voice Control)
 Step 1. Clone the starter code into the Pupper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-```
-cd ~
-git clone https://github.com/cs123-stanford/pupper_llm_student.git ~/pupper_llm
-```
+.. code-block:: bash
+  cd ~
+  git clone https://github.com/cs123-stanford/pupper_llm_student.git ~/pupper_llm
+
 
 
