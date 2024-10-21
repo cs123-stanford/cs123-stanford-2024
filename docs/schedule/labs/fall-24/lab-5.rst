@@ -58,7 +58,9 @@ Step 3. Effort function
 #. Pupper should take around 5-10 minutes to train. 
 
 DELIVERABLE: What is your reward function (in math)? Why did you choose this function? What existing reward terms could be used be used to make Pupper conserve energy, and what are their potential pros and cons? Are there any rewards that could be used that are not listed?
+
 DELIVERABLE: Qualitatively, how does this Pupper policy compare to the previous one?
+
 DELIVERABLE: Screen recording of stand-up in simulation
 
 .. figure:: ../../../_static/effortless_walk.gif
