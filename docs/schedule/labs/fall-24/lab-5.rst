@@ -7,7 +7,7 @@ Lab 5: How to Train Your Dog
 
 Step 1. Colab setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Make a copy of the Colab notebook `HERE <https://colab.research.google.com/drive/1QBtJ09hNInqNqKPVRThbv_yppSlQ9qd2#scrollTo=cHJCbESGA7Rk>`_
+#. Make a copy of the Colab notebook `HERE <https://colab.research.google.com/drive/1QBtJ09hNInqNqKPVRThbv_yppSlQ9qd2?usp=sharing>`_
 #. Purchase Colab Pro and set the GPU to A100. Select runtime in top panel -> change runtime type -> A100
 #. Create a wandb account (https://wandb.ai/), navigate to User Settings, and generate an API key
 #. Set up your wandb key by running cell 2 and inserting your key
@@ -19,15 +19,16 @@ Step 1. Colab setup
    Insert your wandb key here
 
 
-Step 2. Pupper forward
+Step 2. Velocity tracking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Edit tracking_lin_vel in the reward config to make Pupper walk forward!
-#. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to stand up
+Let's implement a naive reward function for Pupper velocity tracking
+#. Run everything up the "Update the configs" cell. Change the tracking_lin_vel and tracking_ang_vel values to be nonzero to get Pupper to follow a velocity command. Refer to the `reward definitions <https://github.com/Nate711/pupperv3-mjx/blob/main/pupperv3_mjx/rewards.py>`_ 
+#. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to follow a desired velocity
 #. Pupper should take around 5-10 minutes to train. 
 
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
 
-DELIVERABLE: Screen recording of stand-up in simulation
+DELIVERABLE: Screen recording of walking in simulation
 
 .. figure:: ../../../_static/random_walk.gif
    :align: center
@@ -49,11 +50,11 @@ DELIVERABLE: Screen recording of stand-up in simulation
 
 Step 3. Effort function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Complete the reward config cell to write a reward function that helps Pupper conserve effort. Which rewards should be nonzero to encourage Pupper to conserve energy?
+#. Edit configs cell to write a reward function that helps Pupper conserve effort. Which rewards should be nonzero to encourage Pupper to conserve energy?
 #. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to walk forward more efficiently
 #. Pupper should take around 5-10 minutes to train. 
 
-DELIVERABLE: What is your reward function (in math)? Why did you choose this function? What existing rewart terms could be used be used to make Pupper conserve energy, and what are their potential pros and cons? Are there any rewards that could be used that are not listed?
+DELIVERABLE: What is your reward function (in math)? Why did you choose this function? What existing reward terms could be used be used to make Pupper conserve energy, and what are their potential pros and cons? Are there any rewards that could be used that are not listed?
 DELIVERABLE: Qualitatively, how does this Pupper policy compare to the previous one?
 DELIVERABLE: Screen recording of stand-up in simulation
 
@@ -67,7 +68,7 @@ DELIVERABLE: Screen recording of stand-up in simulation
 Step 4. Reward tuning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Write a reward function that makes Pupper move forward in the reward config. Feel free to use any rewards you like
+#. Edit the config to Pupper smoothly follow velocities with a natural gait. Feel free to use any rewards you like
 #. Reload the environment, and train Pupper to walk in sim
 #. Pupper should take around 10-15 minutes to train. 
 
@@ -127,6 +128,8 @@ DELIVERABLE: Record a video on the obstacle course and record a video
 
 Resources
 -----------
+`Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning <https://arxiv.org/pdf/2109.11978>`_
+
 `Sim-to-Real: Learning Agile Locomotion For Quadruped Robots <https://arxiv.org/abs/1804.10332>`_
 
 `Minimizing Energy Consumption Leads to the
