@@ -27,6 +27,8 @@ Let's implement a naive reward function for Pupper velocity tracking
 #. Run the ENVIRONMENT and TRAIN cells to load in the Pupper flat environment and train Pupper to follow a desired velocity
 #. Pupper should take around 5-10 minutes to train. 
 
+DELIVERABLE: We use a exponential tracking function for Pupper to track a desired velocity. Since Pupper needs to maximize this function, should the reward coefficient be positive or negative? How else could you implement a velocity tracking function? Write it down in math.
+
 DELIVERABLE: Visualize Pupper's progress every ~100 episodes. How does Pupper look 100 episodes in? How does this relate to the reward you coded?
 
 DELIVERABLE: Screen recording of walking in simulation
