@@ -111,7 +111,7 @@ DELIVERABLE: Take video of walking
    Deploy your policy on Pupper v3
 
 
-Step 5. Domain randomization
+Step 6. Domain randomization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
@@ -132,6 +132,8 @@ You will need to add randomization to the sim environment so your policy success
 DELIVERABLE: Comment on what happens if you add too much domain randomization
 
 DELIVERABLE: Record a video on the obstacle course and record a video
+
+DELIVERABLE: Describe your approach to training an agile Pupper policy. What parameters were key? Did you use a heightfield? Why/why not?
 
 Resources
 -----------
