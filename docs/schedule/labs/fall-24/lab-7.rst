@@ -163,7 +163,7 @@ In a third terminal, run the commands
       cd ~/pupper_llm/pupper_llm/Robot_Commands
       python3 inference_publisher.py
 
-When the inference_publisher script asks for input, select the CNN option. If you are prompted with the option to select an audio device, select the option corresponding to the UAC microphone. 
+When the inference_publisher script asks for input, select either the CNN or the ResNet option. If you are prompted with the option to select an audio device, select the option corresponding to the UAC microphone. 
 
 **DELIVERABLE** Command Pupper using this method. What are the drawbacks and benefits as compared to the method using LLMs? What do you think these drawbacks and benefits are caused by?
 
