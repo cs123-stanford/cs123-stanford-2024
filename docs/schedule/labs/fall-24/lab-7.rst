@@ -1,4 +1,4 @@
-Lab 6: Seeing is Believing
+Lab 7: Seeing is Believing
 ======================================
 
 *Goal: Use computer vision to give your Pupper a sense of sight. At the end of this lab, Pupper should be able to track a person using its camera.*
