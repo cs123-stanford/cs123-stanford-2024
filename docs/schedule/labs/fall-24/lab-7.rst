@@ -97,7 +97,7 @@ In a second terminal, run the commands
 
 You should now be able to speak into the microphone transmitter, and see the second terminal output the speech-to-text response from the Whisper API, and ChatGPT's response in the first terminal.
 
-*DELIVERABLE* Do you notice any latency problems with the Whisper API? Try to increase/decrease the `dur` variable in `main.py` to see the effect on latency. Report your findings in the lab document, and why you think your changes led to your empirical findings.
+**DELIVERABLE** Do you notice any latency problems with the Whisper API? Try to increase/decrease the `dur` variable in `main.py` to see the effect on latency. Report your findings in the lab document, and why you think your changes led to your empirical findings.
 
 Step 5. Make ChatGPT command the KarelPupper API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -129,9 +129,9 @@ Now, you can use either `whisper_ping.py` or `command_line_publisher.py` to send
 
 You should now be able to command Pupper to move based on user input! 
 
-*DELIVERABLE* Now that you have implemented the full voice command pipeline, comment on the shortcomings of using this method in a human-robot interaction environment. Do you have suggestions on how to improve these capabilities? (We are not looking for a very specific answer here, but are more so looking for general takeaways from what you have experienced when using this pipeline, and how it can be improved on)
+**DELIVERABLE** Now that you have implemented the full voice command pipeline, comment on the shortcomings of using this method in a human-robot interaction environment. Do you have suggestions on how to improve these capabilities? (We are not looking for a very specific answer here, but are more so looking for general takeaways from what you have experienced when using this pipeline, and how it can be improved on)
 
-*DELIVERABLE* As an extension of this method, use these code examples to implement a pipeline where ChatGPT can make Pupper do more complex actions by chaining together multiple KarelPupper API Commands. Create a new script based on `karel_chat_gpt_commander.py` that performs this capability (you will likely need to modify the prompt to do this among how you process the commands). Comment about how you did this. 
+**DELIVERABLE** As an extension of this method, use these code examples to implement a pipeline where ChatGPT can make Pupper do more complex actions by chaining together multiple KarelPupper API Commands. Create a new script based on `karel_chat_gpt_commander.py` that performs this capability (you will likely need to modify the prompt to do this among how you process the commands). Comment about how you did this. 
 
 Step 6. Benchmark Against CNN and ResNet Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -140,7 +140,7 @@ Step 6. Benchmark Against CNN and ResNet Method
 
 2. Open the files `inference_publisher` at `~/pupper_llm/pupper_llm/Robot_Commands` and `karel_cnn_commander.py`. This approach essentially used a pretrained CNN or ResNet neural network spot keywords in a stream of audio, which are then used to command Pupper. Inference is run real-time using the pre-trained model. Inspect these files.
 
-*DELIVERABLE* From inspection, do you notice any drawbacks of using this method? Report on what they could be. 
+**DELIVERABLE** From inspection, do you notice any drawbacks of using this method? Report on what they could be. 
 
 3. Run the CNN Method. In a first terminal, run the commands
 
@@ -165,6 +165,6 @@ In a third terminal, run the commands
 
 When the inference_publisher script asks for input, select the CNN option. If you are prompted with the option to select an audio device, select the option corresponding to the UAC microphone. 
 
-*DELIVERABLE* Command Pupper using this method. What are the drawbacks and benefits as compared to the method using LLMs? What do you think these drawbacks and benefits are caused by?
+**DELIVERABLE** Command Pupper using this method. What are the drawbacks and benefits as compared to the method using LLMs? What do you think these drawbacks and benefits are caused by?
 
 Congrats! You have now implemented voice control on Pupper and benchmarked two different methods. Feel free to build upon this for your final project!
