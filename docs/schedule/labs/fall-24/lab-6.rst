@@ -24,9 +24,11 @@ Step 2. Use the Karel Pupper API
 
 1. For much of this lab, we will be using the KarelPupper API. Much like the CS106A programming introduction, we use the KarelPupper API to do basic commands to control Pupper. In our case, using this API abstracts away the minute motor control commands and makes code much more readable for something like an LLM. The following excercises will help you get familiar with the API, which is something that many students build on top of for their final projects.
 
+
 .. figure:: ../../../_static/karel_pupper.png
     :align: center
-    :width: 50%
+
+    Pupper in the Karel Environment.
 
 2. Experiment with the KarelPupper API by running the `karel_test.py` script. Take a look at the script, and see if you can understand what Pupper should do before you run the script, and then run the script to validate your thoughts. In a first terminal, run
 
