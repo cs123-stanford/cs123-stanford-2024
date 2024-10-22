@@ -22,8 +22,14 @@ Step 2. Use the Karel Pupper API
 
 1. For much of this lab, we will be using the KarelPupper API. Much like the CS106A programming introduction, we use the KarelPupper API to do basic commands to control Pupper. In our case, using this API abstracts away the minute motor control commands and makes code much more readable for something like an LLM. The following excercises will help you get familiar with the API, which is something that many students build on top of for their final projects.
 
-2. Experiment with the KarelPupper API by running the `karel_test.py` script. Take a look at the script, and see if you can understand what Pupper should do before you run the script, and then run the script to validate your thoughts.
+2. Experiment with the KarelPupper API by running the `karel_test.py` script. Take a look at the script, and see if you can understand what Pupper should do before you run the script, and then run the script to validate your thoughts. In a first terminal, run
 
+   .. code-block:: bash
+
+      cd ~/pupper_llm/launch
+      ros2 launch launch.py
+
+In a second, run
    .. code-block:: bash
 
       cd ~/pupper_llm/pupper_llm/karel
@@ -108,15 +114,16 @@ Step 5. Make ChatGPT command the KarelPupper API
 
    .. code-block:: bash
 
-      cd ~/pupper_llm/pupper_llm/simple_scripts
-      python3 karel_chat_gpt_commander.py
+      cd ~/pupper_llm/launch
+      ros2 launch launch.py
+
 
 In a second terminal, run the commands
 
    .. code-block:: bash
 
-      cd ~/pupper_llm/launch
-      ros2 launch launch.py
+      cd ~/pupper_llm/pupper_llm/simple_scripts
+      python3 karel_chat_gpt_commander.py
 
 Now, you can use either `whisper_ping.py` or `command_line_publisher.py` to send commands. Run either one following the above directions. 
 
@@ -139,10 +146,17 @@ Step 6. Benchmark Against CNN and ResNet Method
 
    .. code-block:: bash
 
+      cd ~/pupper_llm/launch
+      ros2 launch launch.py
+
+In a second terminal, run the commands
+
+   .. code-block:: bash
+
       cd ~/pupper_llm/pupper_llm/karel
       python3 karel_cnn_commander.py
 
-In a second terminal, run the commands
+In a third terminal, run the commands
 
    .. code-block:: bash
 
