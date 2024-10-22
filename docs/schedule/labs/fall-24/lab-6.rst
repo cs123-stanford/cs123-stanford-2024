@@ -3,7 +3,7 @@ Lab 6: Do What I Say
 
 *Goal: Explore how we can use LLMs and speech recognition to control Pupper to do a variety of tasks! Benchmark this method against using a pre-trained CNN or Resnet architecture for speech recognition.*
 
-For this lab, we are going to implement a speech recognition pipeline to command Pupper with voice/speech input. To do so, we will be implementing various capabilities in ROS, which is a skill you will likely need for your final projects as well. If anything is not working as expected or you have any questions, please ask a TA.
+For this lab, we are going to implement a speech recognition pipeline to command Pupper with voice/speech input. To do so, we will hone ROS implementation skills to add various capabilities to Pupper, which will also be helpful for your final project. If anything is not working as expected or you have any questions, please ask a TA.
 
 Step 1. Getting Started
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
