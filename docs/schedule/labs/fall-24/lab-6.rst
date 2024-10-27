@@ -21,6 +21,13 @@ TODO: Add photo of the USB Stick in RPI
 
 Step 2. Use the Karel Pupper API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+0. Install the related python packages
+
+   .. code-block:: bash
+
+      pip install pygame
+      pip install simpleaudio
+      pip install openai
 
 1. For much of this lab, we will be using the KarelPupper API. Much like the CS106A programming introduction, we use the KarelPupper API to do basic commands to control Pupper. In our case, using this API abstracts away the minute motor control commands and makes code much more readable for something like an LLM. The following excercises will help you get familiar with the API, which is something that many students build on top of for their final projects.
 
@@ -82,6 +89,12 @@ You should now be able to send queries through the second terminal, and see resp
 
 Step 4. Use the Whisper API to Send Voice Input to ChatGPT
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+0. Install the related python packages for voice input
+
+   .. code-block:: bash
+
+      pip install openai-whisper
+      pip install sounddevice
 
 1. The Whisper API is a state-of-the-art automatic speech recognition (ASR) system. The Whisper API enables developers to integrate speech-to-text capabilities into their applications by sending audio files to the API and receiving a transcription of the spoken content. We will use Whisper to send voice commands to Pupper. Paste the API key from the Canvas announcent to line 7. 
 
