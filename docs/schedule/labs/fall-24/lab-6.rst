@@ -36,7 +36,10 @@ Step 1. Getting Started
 
 1. Before turning on your Pupper, plug in your USB memory stick to the Pupper in the right side, top row port. Plug in the USB Splitter to the right side, bottom row port. Plug the keyboard and mouse into each end of the USB splitter. 
 
-TODO: Add photo of the USB Stick in RPI
+.. figure:: ../../../_static/mic_cable.png
+    :align: center
+
+    Microphone cable inserted into the Raspberry Pi.
 
 2. Clone the starter code into the Pupper
 
@@ -130,11 +133,7 @@ Step 4. Use the Whisper API to Send Voice Input to ChatGPT
 
 2. Copy your implementation of `publish_message` in the file `whisper_ping.py` in the folder `~/pupper_llm/pupper_llm/simple_scripts`. The rest of the code is implemented for you. The code essentially receives input from a USB microphone, parses it at regular intervals, and sends that to `user_query_topic` (just as `command_line_publisher.py`)
 
-3. Plug in your USB microphone receiver to the Pi, using the USB-A to USB-C adapter. Plug it into the left side top row of the USB ports (with the right side above the memory stick). Plug in the USB speaker to the remaining port (left side bottom row). Turn on the microphone transmitter. Check that audio is being received by opening the Settings app, and navigate to the Sound menu. See if the bar for the microphone moves when you speak into the transmitter.
-
-TODO: Add photo of the USB Stick in RPI
-
-TODO: Add photo of button for Mic
+3. Plug in your USB microphone receiver to the Pi, using the USB-A to USB-C adapter (refer to the beginning image). Plug it into the left side top row of the USB ports (with the right side above the memory stick). Plug in the USB speaker to the remaining port (left side bottom row). Turn on the microphone transmitter. Check that audio is being received by opening the Settings app, and navigate to the Sound menu. See if the bar for the microphone moves when you speak into the transmitter.
 
 4. Run your code. In a first terminal, run the commands
 
