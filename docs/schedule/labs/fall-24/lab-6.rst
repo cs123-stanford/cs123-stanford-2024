@@ -5,10 +5,34 @@ Lab 6: Do What I Say
 
 For this lab, we are going to implement a speech recognition pipeline to command Pupper with voice/speech input. To do so, we will hone ROS implementation skills to add various capabilities to Pupper, which will also be helpful for your final project. If anything is not working as expected or you have any questions, please ask a TA.
 
+Step 0. Revert to Default Policy from Lab 5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`You only need to complete this step if you have completed Lab 5 recently, and overwrote the default walking policy on the robot. This step is to point the robot to run the default policy rather than the walking policy you trained last lab. If you would like to run any of your own policys again in the future, you must do the inverse of this step and build the workspace again.`
+
+1. Turn on your Pupper, and go to this link to find the default walking policy: https://github.com/G-Levine/neural_controller/blob/main/launch/policy.json. Download the file ``policy.json``. Find the file in the `Downloads` directory of the Pi, and rename the file to ``default_policy.json``. 
+
+2. Run the fllowing command
+
+   .. code-block:: bash
+
+      cd ~/Downloads
+      mv default_policy.json ~/ros2_ws/src/neural_controller/launch/
+
+3. Open the file `~/ros2_ws/src/neural_controller/launch/config.yaml` in VSCode. In line 105, change the line to point to ``default_policy.json``. It should now say ``model_path: "$(find-pkg-share neural_controller)/launch/policy.json"``. Save the file
+
+4. Open the file `~/.bashrc` in VSCode. Add the following line to the end of the file:
+
+   .. code-block:: bash
+
+      alias build="cd $HOME/ros2_ws && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && cd -"
+
+5. In a terminal, run ``source ~/.bashrc``. Then, run ``build`` to build the workspace packages to make the change to run the default policy. Close and reopen any terminals to make sure that the changes persist in all shells. 
+
 Step 1. Getting Started
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Before turning on your Pupper, plug in your USB stick to the Pupper in the right side, top row port. Plug in the USB Splitter to the right side, bottom row port. Plug the keyboard and mouse into each end of the USB splitter. 
+1. Before turning on your Pupper, plug in your USB memory stick to the Pupper in the right side, top row port. Plug in the USB Splitter to the right side, bottom row port. Plug the keyboard and mouse into each end of the USB splitter. 
 
 TODO: Add photo of the USB Stick in RPI
 
