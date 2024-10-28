@@ -161,6 +161,8 @@ You should now be able to command Pupper to move based on user input!
 
 **DELIVERABLE** As an extension of this method, use these code examples to implement a pipeline where ChatGPT can make Pupper do more complex actions by chaining together multiple KarelPupper API Commands. Create a new script based on `karel_chat_gpt_commander.py` that performs this capability (you will likely need to modify the prompt to do this among how you process the commands). Comment about how you did this. 
 
+**EXTRA CREDIT:** As you have probably noticed, the `whisper_ping.py` script runs once, and then you have to run it again entirely to run new voice input. We can modify this script in the main loop to run a continuous loop, by adding a ``while`` loop conditioned on ``rclpy.ok()``. While starting the loop seems simple, this causes some latency issues where the publisher and subscriber may not necessarily be aligned where inputs may be played more than once or not at all. Make this run in a continuous loop and improve the latency for extra credit. Record a video with your submission.
+
 Step 6. Benchmark Against CNN and ResNet Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
