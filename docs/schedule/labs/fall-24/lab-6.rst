@@ -150,7 +150,7 @@ In a second terminal, run the commands
 
    .. code-block:: bash
 
-      cd ~/pupper_llm/pupper_llm/simple_scripts
+      cd ~/pupper_llm/pupper_llm/karel
       python3 karel_chat_gpt_commander.py
 
 Now, you can use either `whisper_ping.py` or `command_line_publisher.py` to send commands. Run either one following the above directions. 
