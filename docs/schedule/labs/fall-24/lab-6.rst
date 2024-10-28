@@ -19,7 +19,7 @@ Step 0. Revert to Default Policy from Lab 5
       cd ~/Downloads
       mv policy.json ~/ros2_ws/src/neural_controller/launch/default_policy.json
 
-3. Open the file `~/ros2_ws/src/neural_controller/launch/config.yaml` in VSCode. In line 105, change the line to point to ``default_policy.json``. It should now say ``model_path: "$(find-pkg-share neural_controller)/launch/policy.json"``. Save the file
+3. Open the file `~/ros2_ws/src/neural_controller/launch/config.yaml` in VSCode. In line 105, change the line to point to ``default_policy.json``. It should now say ``model_path: "$(find-pkg-share neural_controller)/launch/default_policy.json"``. Save the file
 
 4. Open the file `~/.bashrc` in VSCode. Add the following line to the end of the file, and save:
 
