@@ -36,7 +36,7 @@ Step 1. Getting Started
 
 1. Before turning on your Pupper, plug in your USB memory stick to the Pupper in the right side, top row port. Plug in the USB Splitter to the right side, bottom row port. Plug the keyboard and mouse into each end of the USB splitter. 
 
-.. figure:: ../../../_static/mic_cable.png
+.. figure:: ../../../_static/mic_cable.jpg
     :align: center
 
     Microphone cable inserted into the Raspberry Pi.
