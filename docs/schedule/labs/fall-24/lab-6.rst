@@ -69,8 +69,6 @@ Step 3. Create a Simple Chat with GPT Through the Command Line
 
 4. When we call the ChatGPT API, we need to pass in a default prompt. Tuning this prompt to use ChatGPT as a helpful assistant is a process called `prompt engineering <https://platform.openai.com/docs/guides/prompt-engineering>`_. Fill out the `prompt` variable with a Python string containing your prompt. In the following lines, this is used in the response variable to start your conversation with ChatGPT.
 
-**DELIVERABLE:** Experiment with different prompts. Engineer a prompt that you can use to control Pupper at a high level. Include your prompt in the Lab Document.
-
 5. Open the file `command_line_publisher` at `~/pupper_llm/pupper_llm/Robot_Commands/`. This script will be used to send queries to the ChatGPT API at the `user_query_topic` that the `simple_gpt_chat.py` script subscribes to. 
 
 6. Similarly to the Step 3, implement the `publish_message` method according to the description in the file. 
@@ -88,6 +86,9 @@ In a second terminal, run the commands
 
       cd ~/pupper_llm/pupper_llm/Robot_Commands
       python3 command_line_publisher.py
+
+**DELIVERABLE:** Experiment with different prompts. Engineer a prompt that you can use to control Pupper at a high level. Include your prompt in the Lab Document.
+
 
 You should now be able to send queries through the second terminal, and see responses from the ChatGPT API in the first terminal (with the debug statements in your implemented methods uncommented). Congrats! You have now just ROSified ChatGPT!
 
