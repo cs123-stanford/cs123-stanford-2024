@@ -10,7 +10,7 @@ Step 0. Revert to Default Policy from Lab 5
 
 `You only need to complete this step if you have completed Lab 5 recently, and overwrote the default walking policy on the robot. This step is to point the robot to run the default policy rather than the walking policy you trained last lab. If you would like to run any of your own policys again in the future, you must do the inverse of this step and build the workspace again.`
 
-1. Turn on your Pupper, and go to this link to find the default walking policy: https://github.com/G-Levine/neural_controller/blob/main/launch/policy.json. Download the file ``policy.json``. 
+1. Turn on your Pupper, and go to this link to find the default walking policy: https://github.com/G-Levine/neural_controller/blob/main/launch/policy.json. Download the file ``policy.json``, and ensure it is in your `Downloads` directory.
 
 2. Run the fllowing command
 
