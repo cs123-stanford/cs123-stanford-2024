@@ -32,7 +32,11 @@ Step 2. Use the Karel Pupper API
       pip install sounddevice
       pip install pyttsx3
 
-Navigate to the folder `~/pupper_llm/pupper_llm/Robot_Commands/` and run 
+Navigate to the folder `~/pupper_llm/pupper_llm/Robot_Commands/` and run the following command. If some dependencies are not working, please let a TA know!
+
+   ..code-block:: bash
+
+      pip install -r requirements.txt
 
 
 1. For much of this lab, we will be using the KarelPupper API. Much like the CS106A programming introduction, we use the KarelPupper API to do basic commands to control Pupper. In our case, using this API abstracts away the minute motor control commands and makes code much more readable for something like an LLM. The following excercises will help you get familiar with the API, which is something that many students build on top of for their final projects.
@@ -91,7 +95,6 @@ In a second terminal, run the commands
 
 **DELIVERABLE:** Experiment with different prompts. Engineer a prompt that you can use to control Pupper at a high level. Include your prompt in the Lab Document.
 
-
 You should now be able to send queries through the second terminal, and see responses from the ChatGPT API in the first terminal (with the debug statements in your implemented methods uncommented). Congrats! You have now just ROSified ChatGPT!
 
 Step 4. Use the Whisper API to Send Voice Input to ChatGPT
@@ -142,7 +145,6 @@ Step 5. Make ChatGPT command the KarelPupper API
 
       cd ~/pupper_llm/launch
       ros2 launch launch.py
-
 
 In a second terminal, run the commands
 
