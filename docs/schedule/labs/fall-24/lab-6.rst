@@ -32,6 +32,8 @@ Step 2. Use the Karel Pupper API
       pip install sounddevice
       pip install pyttsx3
 
+Navigate to the folder `~/pupper_llm/pupper_llm/Robot_Commands/` and run 
+
 
 1. For much of this lab, we will be using the KarelPupper API. Much like the CS106A programming introduction, we use the KarelPupper API to do basic commands to control Pupper. In our case, using this API abstracts away the minute motor control commands and makes code much more readable for something like an LLM. The following excercises will help you get familiar with the API, which is something that many students build on top of for their final projects.
 
