@@ -78,7 +78,7 @@ Step 2. Use the Karel Pupper API
 
 2. Experiment with the KarelPupper API by running the `karel_test.py` script. Take a look at the script, and see if you can understand what Pupper should do before you run the script, and then run the script to validate your thoughts. In a first terminal, run
 
-**IMPORTANT NOTE:** To run a script on this step, you should uncomment the line that has ``rclpy.init()`` in Line 14 of `~/pupper_llm/pupper_llm/karel/karel.py. After completing this step, comment the line again.
+**IMPORTANT NOTE:** To run a script on this step, you should uncomment the line that has ``rclpy.init()`` in Line 14 of `~/pupper_llm/pupper_llm/karel/karel.py`. After completing this step, comment the line again.
 
    .. code-block:: bash
 
