@@ -5,6 +5,8 @@ Lab 6: Do What I Say
 
 For this lab, we are going to implement a speech recognition pipeline to command Pupper with voice/speech input. To do so, we will hone ROS implementation skills to add various capabilities to Pupper, which will also be helpful for your final project. If anything is not working as expected or you have any questions, please ask a TA.
 
+Fill out the lab document as you complete this lab: https://docs.google.com/document/d/1dU70gedHd83s3HA9g-nIzRdMnL8tlony3w4H7Th0NOA/edit?usp=sharing.
+
 Step 0. Revert to Default Policy from Lab 5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -86,7 +88,7 @@ In a second, run
 
 3. Use the KarelPupper API to control Pupper to do a new action in a new python file. Do this by chaining together many commands together, which you can see available in the `karel.py` file. If required, you can further tune the hardcoded numbers for moving Pupper in `karel.py` or implement your own high-level commands.
 
-**DELIVERABLE:** Submit your new python file to control Pupper with the KarelPupper API to Gradescope. Write a short blurb about what you commanded Pupper to do. Write about any tuning or new command implementations you made. 
+**DELIVERABLE:** Submit your new python file to control Pupper with the KarelPupper API to Gradescope. Write a short blurb about what you commanded Pupper to do. Write about any tuning or new command implementations you made. Tkae a video and upload to Gradescope with your submission.
 
 Step 3. Create a Simple Chat with GPT Through the Command Line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -128,7 +130,7 @@ Step 4. Use the Whisper API to Send Voice Input to ChatGPT
 
 2. Copy your implementation of `publish_message` in the file `whisper_ping.py` in the folder `~/pupper_llm/pupper_llm/simple_scripts`. The rest of the code is implemented for you. The code essentially receives input from a USB microphone, parses it at regular intervals, and sends that to `user_query_topic` (just as `command_line_publisher.py`)
 
-3. Plug in your USB microphone receiver to the Pi, using the USB-A to USB-C adapter. Plug it into the left side top row of the USB ports (with the right side above the memory stick). Plug in the USB speaker to the remaining port (left side bottom row). Turn on the microphone transmitter.
+3. Plug in your USB microphone receiver to the Pi, using the USB-A to USB-C adapter. Plug it into the left side top row of the USB ports (with the right side above the memory stick). Plug in the USB speaker to the remaining port (left side bottom row). Turn on the microphone transmitter. Check that audio is being received by opening the Settings app, and navigate to the Sound menu. See if the bar for the microphone moves when you speak into the transmitter.
 
 TODO: Add photo of the USB Stick in RPI
 
