@@ -41,16 +41,7 @@ Step 1. Getting Started
 
     Microphone cable inserted into the Raspberry Pi.
 
-2. Clone the starter code into the Pupper
-
-   .. code-block:: bash
-
-      cd ~/
-      git clone https://github.com/cs123-stanford/pupper_llm_student.git pupper_llm
-
-Step 2. Use the Karel Pupper API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-0. Install the related python packages
+2. Turn on the Pupper, and install the related python packages
 
    .. code-block:: bash
 
@@ -67,6 +58,15 @@ Navigate to the folder `~/pupper_llm/pupper_llm/Robot_Commands/` and run the fol
 
       pip install -r requirements.txt
 
+3. Clone the starter code into the Pupper
+
+   .. code-block:: bash
+
+      cd ~/
+      git clone https://github.com/cs123-stanford/pupper_llm_student.git pupper_llm
+
+Step 2. Use the Karel Pupper API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. For much of this lab, we will be using the KarelPupper API. Much like the CS106A programming introduction, we use the KarelPupper API to do basic commands to control Pupper. In our case, using this API abstracts away the minute motor control commands and makes code much more readable for something like an LLM. The following excercises will help you get familiar with the API, which is something that many students build on top of for their final projects.
 
@@ -78,6 +78,8 @@ Navigate to the folder `~/pupper_llm/pupper_llm/Robot_Commands/` and run the fol
 
 2. Experiment with the KarelPupper API by running the `karel_test.py` script. Take a look at the script, and see if you can understand what Pupper should do before you run the script, and then run the script to validate your thoughts. In a first terminal, run
 
+**IMPORTANT NOTE:** To run a script on this step, you should uncomment the line that has ``rclpy.init()`` in Line 14 of `~/pupper_llm/pupper_llm/karel/karel.py. After completing this step, comment the line again.
+
    .. code-block:: bash
 
       cd ~/pupper_llm/launch
@@ -88,6 +90,8 @@ In a second, run
 
       cd ~/pupper_llm/pupper_llm/karel
       python3 karel_test.py
+
+
 
 3. Use the KarelPupper API to control Pupper to do a new action in a new python file. Do this by chaining together many commands together, which you can see available in the `karel.py` file. If required, you can further tune the hardcoded numbers for moving Pupper in `karel.py` or implement your own high-level commands.
 
@@ -165,6 +169,8 @@ Step 5. Make ChatGPT command the KarelPupper API
 4. Implement the `exectute_robot_command` method. Based on the response argument, this method should control Pupper with the KarelPupper object `self.pupper` in a big if-else statement. 
 
 5. Run your code. In a first terminal, run the commands
+
+**IMPORTANT NOTE:** Remember to comment the line that has ``rclpy.init()`` in Line 14 of `~/pupper_llm/pupper_llm/karel/karel.py if you have not already done so to run the GPT commander.
 
    .. code-block:: bash
 
