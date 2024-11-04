@@ -12,7 +12,7 @@ Step 0. Setup
 
 1. **Prepare the Environment**  
    
-   If needed, download and flash the latest image onto the Pi (TAs can assist with this step).
+   Flash `the image <https://drive.google.com/file/d/1Zp5iIhjWvLM06CZOQXeZ1I0SiMEy3qEF/view>`_ using balenaEtcher: https://etcher.balena.io/
 
 2. **Run Foxglove**  
    
