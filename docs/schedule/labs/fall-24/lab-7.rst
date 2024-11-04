@@ -67,12 +67,12 @@ In this section, you’ll work on extracting and processing target position info
 
 1. **Inspect Detection Messages**  
    
-   Add a breakpoint in `detection_callback` to examine the `detections` message.  
+   Add a breakpoint in `detection_callback` to examine the `detections` message (use ``breakpoint() to open pdb``).  
    Observe the structure of each detection, noting how the position of each bounding box is stored. Check the `ROS Message Documentation <http://docs.ros.org/en/kinetic/api/vision_msgs/html/msg/Detection2DArray.html>`_ to understand the fields of the message.
 
 2. **Extract Bounding Box Positions**  
    
-   Print the `x` coordinate of each detected bounding box to see where each detected object appears within the image.
+   Print the `x` coordinate of each detected bounding box to see where each detected object appears within the image, following the documentation on how to find the x of each detections object (this is a valuable skill for determining how to find the fields of ROS messages). 
 
 3. **Normalize X Position**  
    
@@ -80,11 +80,11 @@ In this section, you’ll work on extracting and processing target position info
 
 4. **Verify Position**  
    
-   Print the normalized `x` value and observe how it changes in Foxglove as you move in front of the camera.
+   Print the normalized `x` value and observe how it changes in Foxglove as you move in front of the camera. Make sure that the frame is bounded by the normalization and your value does not extend beyond that range. 
 
 5. **Identify the Most Centered Bounding Box**  
    
-   Find the bounding box that is closest to the center of the image (i.e., with an `x` value nearest to 0). This will be your target, and you should save its `x` position in a member variable for use in control logic.
+   Find the bounding box that is closest to the center of the image (i.e., with an `x` value nearest to 0). This will be your target, and you should save its `x` position in a member variable for use in control logic. *Hint* `msg` of `detection_callback` contains a list of detections. We do a naiive approach where we only want to track the most central of all the detected objects. 
 
 6. **Track the Time of Last Detection**  
    
