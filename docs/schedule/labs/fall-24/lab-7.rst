@@ -12,7 +12,7 @@ Step 0. Setup
 
 1. **Prepare the Environment**  
    
-   Flash `the image <https://drive.google.com/file/d/1Zp5iIhjWvLM06CZOQXeZ1I0SiMEy3qEF/view>`_ using balenaEtcher: https://etcher.balena.io/
+   Download the `the image <https://drive.google.com/file/d/1Zp5iIhjWvLM06CZOQXeZ1I0SiMEy3qEF/view>`_ on your local machine. Then download `balenaEtcher < https://etcher.balena.io/>`_. Use this to flash the new image onto your Pupper's USB by connecting it to your computer.
 
 2. **Run Foxglove**  
    
