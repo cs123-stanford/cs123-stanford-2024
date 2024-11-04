@@ -29,7 +29,7 @@ Step 0. Setup
 
 5. **Connect Foxglove to the Pi**  
    
-   In Foxglove, connect to the Pi and visualize the “annotated_image” topic to see the camera feed with bounding boxes around detected people.  
+   Connect the Pi to your laptop with an Ethernet cable/adapter. In Foxglove, connect to the Pi and visualize the “annotated_image” topic to see the camera feed with bounding boxes around detected people.  
    Confirm that the bounding boxes are appearing correctly, as shown in the last image below.
 
 .. figure:: ../../../_static/lab7_1.png
