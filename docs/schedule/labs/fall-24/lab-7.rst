@@ -1,7 +1,7 @@
 Lab 7: Seeing is Believing
 =============================================
 
-*Goal: Use computer vision to enable Pupper to follow a person by processing camera input!*
+*Goal: Use computer vision to enable Pupper to follow a person by processing (fisheye) camera input!*
 
 In this lab, you’ll leverage computer vision to detect a person in Pupper's field of view and control its movement to follow that person. You’ll implement a simple tracking and searching behavior using a state machine, allowing Pupper to maintain focus on the target when visible and initiate a search if the target moves out of view.
 
@@ -90,6 +90,12 @@ In this section, you’ll work on extracting and processing target position info
    
    In `detection_callback`, update a member variable to store the time of the most recent detection. This variable will later be used in `timer_callback` to determine whether to switch Pupper’s state to "searching" if too much time has passed without a detection.
 
+**DELIVERABLE:** Take a video of you moving across the frame (left/right, up/down), and show the numbers changing within the normalization range. Upload this video with your submission to Gradescope. 
+
+**DELIVERABLE:** To implement this method, we always choose the most central object within the camera frame to have Pupper track. However, there are a number of cases where we Pupper should actually continue tracking the same person, regardless of if they are moving out of the frame, which may not necessarily always be the same person. Can you come up with another method that might accomplish this? How would you make sure that you are tracking the same object (the detections array may change the object index between any given frame)? Write the algorithm you come up with in pseudocode. 
+
+**EXTRA CREDIT** Implement your algorithm from the above deliverable on the Pupper and see how the behavior changes. Take a video and upload to Gradescope. 
+
 Step 2. Visual Servoing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -106,6 +112,8 @@ Now that you can detect and locate the target, you’ll implement a control mech
 3. **Tune on Floor**  
    
    Place Pupper on the floor and adjust the proportional gain for smooth turning. Aim to have it follow you naturally as you move around.
+
+**DELIVERABLE:** Tune the gain so that Pupper is able to keep up with the normal pace of a person walking. How did you go about tuning the gain for smooth turning? Take a video and upload to Gradescope. 
 
 Step 3. Search and Track
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -138,5 +146,7 @@ Here, you’ll add a search behavior to help Pupper look for you if it loses sig
 4. **Tune Constants**  
    
    Experiment with different values for the proportional gain, timeout threshold, search yaw velocity, and forward velocity to make Pupper’s behavior smooth and responsive.
+
+**DELIVERABLE:** Upload a video of Pupper tracking a person using the camera. Write about some of the deficiencies in the current implementation, and what you think may help fix it. 
 
 By the end of this lab, you will have implemented a basic computer vision-based tracking system that enables Pupper to autonomously follow a person. The simple state machine will allow Pupper to handle target loss by searching for the target, making the tracking behavior more robust. Experiment with tuning to optimize Pupper’s performance. Enjoy watching Pupper follow you around!
