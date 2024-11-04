@@ -16,12 +16,12 @@ Step 0. Setup
 
 2. **Run Foxglove**  
    
-   Open `Foxglove <https://foxglove.dev/>`_ in your browser or install it locally. 
+   Open `Foxglove <https://foxglove.dev/>`_ in your browser or install it locally on your own computer. 
    You’ll use Foxglove to visualize Pupper's camera feed, which helps verify and debug object detection.
 
 3. **Clone the Starter Code**  
    
-   Clone the starter repository from `lab_7_2024 GitHub Repo <https://github.com/cs123-stanford/lab_7_2024>`_.
+   Clone the starter repository from `lab_7_2024 GitHub Repo <https://github.com/cs123-stanford/lab_7_2024>`_ on Pupper.
 
 4. **Start the Necessary Processes**  
    
