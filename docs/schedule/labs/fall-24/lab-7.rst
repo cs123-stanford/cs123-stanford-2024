@@ -7,6 +7,11 @@ In this lab, you’ll leverage computer vision to detect a person in Pupper's fi
 
 **Note:** The object detector used in this lab can detect multiple types of objects. However, for simplicity in this lab, the detection array has already been filtered to only include detections of people. This ensures that Pupper will respond solely to human targets.
 
+`Lab slides <https://docs.google.com/presentation/d/1B9dPRIVNvwTZaD_4BA07pDRL4pYIENYV/edit?usp=sharing&ouid=117110374750562018236&rtpof=true&sd=true>`_
+
+`Lab document <https://docs.google.com/document/d/1GJTvKj6Lzb_mLpU9AYKbbvarJ1d-B2B0UuI5HPmaRoE/edit?usp=sharing>`_
+
+
 Step 0. Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
