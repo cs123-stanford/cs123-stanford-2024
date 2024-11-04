@@ -30,7 +30,26 @@ Step 0. Setup
 5. **Connect Foxglove to the Pi**  
    
    In Foxglove, connect to the Pi and visualize the “annotated_image” topic to see the camera feed with bounding boxes around detected people.  
-   Confirm that the bounding boxes are appearing correctly, as shown in the example image in the lab instructions.
+   Confirm that the bounding boxes are appearing correctly, as shown in the last image below.
+
+.. figure:: ../../../_static/lab7_1.png
+    :align: center
+
+    Connecting Foxglove to the Raspberry Pi.
+
+.. figure:: ../../../_static/lab7_2.png
+    :align: center
+
+    Select the gear icon on the top right panel that says "/camera/image_raw" to configure it. Under "General", set the topic to "/annotated_image" and the calibration to "None". 
+
+.. figure:: ../../../_static/lab7_3.png
+    :align: center
+
+    Click the icon with the 3 dots in the top right corner of the window and select "fullscreen".
+
+.. figure:: ../../../_static/lab7_4.png
+    :align: center
+
 
 6. **Review the Starter Code**  
    
