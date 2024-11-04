@@ -12,12 +12,12 @@ Step 0. Setup
 
 1. **Prepare the Environment**  
    
-   Download the `the image <https://drive.google.com/file/d/1Zp5iIhjWvLM06CZOQXeZ1I0SiMEy3qEF/view>`_ on your local machine. Then download `balenaEtcher < https://etcher.balena.io/>`_. Use this to flash the new image onto your Pupper's USB by connecting it to your computer.
+   Download the `the image <https://drive.google.com/file/d/1Zp5iIhjWvLM06CZOQXeZ1I0SiMEy3qEF/view>`_ on your local machine. Then download `balenaEtcher < https://etcher.balena.io/>`_. Use this to flash the new image onto your Pupper's USB by connecting it to your computer (select the flash from file option and select the corresponding Samsung drive).
 
 2. **Run Foxglove**  
    
    Open `Foxglove <https://foxglove.dev/>`_ in your browser or install it locally on your own computer. 
-   You’ll use Foxglove to visualize Pupper's camera feed, which helps verify and debug object detection.
+   You’ll use Foxglove (better RVIZ) to visualize Pupper's camera feed, which helps verify and debug object detection.
 
 3. **Clone the Starter Code**  
    
