@@ -74,6 +74,8 @@ In this section, you’ll work on extracting and processing target position info
    
    Print the `x` coordinate of each detected bounding box to see where each detected object appears within the image, following the documentation on how to find the x of each detections object (this is a valuable skill for determining how to find the fields of ROS messages). 
 
+**DELIVERABLE:** How do you get the `x` value of the detection from `msg`. Write out the full line of Python code.
+
 3. **Normalize X Position**  
    
    Convert the `x` position to a range between -1.0 and 1.0 using the `IMAGE_WIDTH` constant, with 0 representing the center of the image. This will help you interpret the target’s position more easily.
