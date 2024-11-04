@@ -38,7 +38,7 @@ Gates B08
     * Jaden: 9:30-11:00 AM M
     * Josh: 7:00-8:30 Tu
     * Akemi: 4:00-5:30 W
-    * Ankush:: 7:00-8:30  W
+    * Ankush:: 10:00-11:30  W
     * Zara: 4:00-5:30  Th
     * Zipeng: 5:00-6:30 F
 
