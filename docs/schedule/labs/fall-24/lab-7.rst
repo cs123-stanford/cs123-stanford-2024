@@ -21,7 +21,9 @@ Step 0. Setup
 
 3. **Clone the Starter Code**  
    
-   Clone the starter repository from `lab_7_2024 GitHub Repo <https://github.com/cs123-stanford/lab_7_2024>`_ on Pupper.
+   Clone the starter repository from `lab_7_2024 GitHub Repo <https://github.com/cs123-stanford/lab_7_2024>`_ on Pupper ``git clone https://github.com/cs123-stanford/lab_7_2024.git``.
+
+
 
 4. **Start the Necessary Processes**  
    
