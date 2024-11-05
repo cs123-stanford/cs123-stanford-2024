@@ -11,7 +11,7 @@ In this lab, you’ll leverage computer vision to detect a person in Pupper's fi
 
 `Lab document <https://docs.google.com/document/d/1GJTvKj6Lzb_mLpU9AYKbbvarJ1d-B2B0UuI5HPmaRoE/edit?usp=sharing>`_
 
-We have installed an Arducam fisheye camera with a Raspberry Pi AI Kit module with the HAILO-8L chip to accelerate CV computations. Feel free to check out the specs here: https://github.com/hailo-ai/hailort.
+We have installed an Arducam fisheye camera with a Raspberry Pi AI Kit module with the HAILO-8L chip to accelerate CV computations on your Puppers. Feel free to check out the specs here: https://github.com/hailo-ai/hailort.
 
 Step 0. Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
