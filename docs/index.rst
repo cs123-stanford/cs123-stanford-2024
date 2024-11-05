@@ -40,7 +40,7 @@ Gates B08
     * Akemi: 4:00-5:30 W
     * Ankush:: 7:00-8:30  W
     * Zara: 4:00-5:30  Th
-    * Zipeng: 5:00-6:30 F
+    * Zipeng: 5:30-7:00 F
 
 
 **Prerequisites:**
