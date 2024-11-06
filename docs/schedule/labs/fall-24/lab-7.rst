@@ -22,8 +22,10 @@ Step 0. Setup
 
 2. **Run Foxglove**  
    
-   Open `Foxglove <https://foxglove.dev/>`_ in your browser or install it locally on your own computer. 
-   You’ll use Foxglove (better RVIZ) to visualize Pupper's camera feed, which helps verify and debug object detection.
+   Open `Foxglove <https://foxglove.dev/>`_. Make sure to install it locally on your own computer, as the browser version may not work. 
+   You’ll use Foxglove (better RVIZ) to visualize Pupper's camera feed, which helps verify and debug object detection. 
+
+   If you are having trouble connecting, try turning internet sharing off, enabling all options, and then turning it back on.
 
 3. **Clone the Starter Code**  
    
