@@ -35,7 +35,7 @@ Gates B08
 
 **TA Office Hours:**
 
-    * Jaden: 9:30-11:00 AM M
+    * Jaden: 10:30-12:00  M
     * Josh: 7:00-8:30 Tu
     * Akemi: 4:00-5:30 W
     * Ankush: 10:00-11:30 Th
