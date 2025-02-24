@@ -7,12 +7,14 @@ CS 123: A Hands-On Introduction to Building AI-Enabled Robots
 
     Pupper Robot
 
-**2024 Teaching team:** 
+**2024-2025 Spring Teaching team:** 
 
 * Instructors: `Prof. Karen Liu <https://tml.stanford.edu/people/karen-liu>`_ (Stanford CS), `Jie Tan <https://www.jie-tan.net/>`_ (Google DeepMind), `Stuart Bowers <https://handsonrobotics.org/>`_ (Apple, Hands-On Robotics)
 * Co-Instructors: `Wenhao Yu <https://wenhaoyu.weebly.com/>`_ (Google DeepMind), `Tingnan Zhang <https://www.linkedin.com/in/tingnanzhang/>`_ (Google DeepMind)
-* Head TAs: `Ankush Dhawan <https://www.linkedin.com/in/ankush-dhawan/>`_ (MS EE 2025), `Zipeng Fu <https://zipengfu.github.io/>`_ (PhD CS 2025)
-* TAs: `Jaden Clark <https://jadenvc.github.io/>`_ (CS 2024), `Josh Francis <https://www.linkedin.com/in/josh--francis/>`_ (CS 2024), `Akemi Sabatier <https://www.linkedin.com/in/akemisab/>`_ (ME 2026), `Zara Rutherford <https://www.linkedin.com/in/zara-rutherford-2a18a31b2/?originalSubdomain=be>`_ (EE 2026), 
+* Head TA: `Ankush Dhawan <https://www.linkedin.com/in/ankush-dhawan/>`_ (MS EE 2025)
+* Co-TA: Jiacheng Hu (CS 2025)
+
+**Sign-Up Form:** `This form <https://docs.google.com/forms/d/e/1FAIpQLScDPi8bazMjzMV2KLJAHexqzImbAnLQojnsOLfJG0dlEXDcjg/viewform?usp=sharing>`_ will open on Friday, 3/7/2025 at 9AM PST for applications. Please fill out this form if you are interested in enrolling for our Spring offering!
 
 **Overview:**
 
