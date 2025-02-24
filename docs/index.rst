@@ -7,14 +7,14 @@ CS 123: A Hands-On Introduction to Building AI-Enabled Robots
 
     Pupper Robot
 
-**2024-2025 Spring Teaching team:** 
+**2024-2025 Fall Teaching team:** 
 
 * Instructors: `Prof. Karen Liu <https://tml.stanford.edu/people/karen-liu>`_ (Stanford CS), `Jie Tan <https://www.jie-tan.net/>`_ (Google DeepMind), `Stuart Bowers <https://handsonrobotics.org/>`_ (Apple, Hands-On Robotics)
 * Co-Instructors: `Wenhao Yu <https://wenhaoyu.weebly.com/>`_ (Google DeepMind), `Tingnan Zhang <https://www.linkedin.com/in/tingnanzhang/>`_ (Google DeepMind)
-* Head TA: `Ankush Dhawan <https://www.linkedin.com/in/ankush-dhawan/>`_ (MS EE 2025)
-* Co-TA: `Jiacheng (JC) Hu <https://www.linkedin.com/in/jc-hu-838150233/>`_ (CS 2025)
+* Head TAs: `Ankush Dhawan <https://www.linkedin.com/in/ankush-dhawan/>`_ (MS EE 2025), `Zipeng Fu <https://zipengfu.github.io/>`_ (PhD CS 2025)
+* TAs: `Jaden Clark <https://jadenvc.github.io/>`_ (CS 2024), `Josh Francis <https://www.linkedin.com/in/josh--francis/>`_ (CS 2024), `Akemi Sabatier <https://www.linkedin.com/in/akemisab/>`_ (ME 2026), `Zara Rutherford <https://www.linkedin.com/in/zara-rutherford-2a18a31b2/?originalSubdomain=be>`_ (EE 2026), 
 
-**Sign-Up Form:** `This form <https://docs.google.com/forms/d/e/1FAIpQLScDPi8bazMjzMV2KLJAHexqzImbAnLQojnsOLfJG0dlEXDcjg/viewform?usp=sharing>`_ will open on Friday, 3/7/2025 at 9AM PST for applications. Please fill out this form if you are interested in enrolling for our Spring offering!
+**This is a previous offering of the course. Navigate `here <https://cs123-stanford-sp2425.readthedocs.io/en/latest/>`_ for the current offering
 
 **Overview:**
 
@@ -24,22 +24,25 @@ This course offers a hands-on introduction to AI-powered robotics. Unlike most i
 
 *“Empowering robots with AI is essential to make them smart and useful in people’s daily life. It is one of the most important research directions in both academia and industry. This class teaches the most relevant skills, gives students hands-on experiences, and prepares them for a career in the area of AI and robotics.”* - Jie Tan, Staff Research Scientist at Google DeepMind
 
-**Time:** Monday, TBD
+**Time:** Monday, 3:30-6:20pm
 
-**Lecture Location:** TBD, *in-person attendance required*
+**Lecture Location:** 320-109, *in-person attendance required*
 
 **Instructor Office Hours:**
-    * Karen: TBD
+    * Karen: 9:15-10:15am Th, Gates 368
     * Stuart, Jie, Wenhao, Tingnan: Office hours by appointment. Reach out to the teaching team to schedule. 
 
 **TA Office Hours Location:**
-TBD
+Gates B08
 
 **TA Office Hours:**
 
-    * Ankush: TBD
-    * JC: TBD
-
+    * Jaden: 9:30-11:00 AM M
+    * Josh: 7:00-8:30 Tu
+    * Akemi: 4:00-5:30 W
+    * Ankush:: 7:00-8:30  W
+    * Zara: 4:00-5:30  Th
+    * Zipeng: 5:00-6:30 F
 
 **Prerequisites:**
 
