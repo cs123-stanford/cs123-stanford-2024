@@ -24,25 +24,21 @@ This course offers a hands-on introduction to AI-powered robotics. Unlike most i
 
 *“Empowering robots with AI is essential to make them smart and useful in people’s daily life. It is one of the most important research directions in both academia and industry. This class teaches the most relevant skills, gives students hands-on experiences, and prepares them for a career in the area of AI and robotics.”* - Jie Tan, Staff Research Scientist at Google DeepMind
 
-**Time:** Monday, 3:30-6:20pm
+**Time:** Monday, TBD
 
-**Lecture Location:** 320-109, *in-person attendance required*
+**Lecture Location:** TBD, *in-person attendance required*
 
 **Instructor Office Hours:**
-    * Karen: 9:15-10:15am Th, Gates 368
+    * Karen: TBD
     * Stuart, Jie, Wenhao, Tingnan: Office hours by appointment. Reach out to the teaching team to schedule. 
 
 **TA Office Hours Location:**
-Gates B08
+TBD
 
 **TA Office Hours:**
 
-    * Jaden: 10:30-12:00  M
-    * Josh: 7:00-8:30 Tu
-    * Akemi: 4:00-5:30 W
-    * Ankush: 10:00-11:30 Th
-    * Zara: 4:00-5:30  Th
-    * Zipeng: 5:30-7:00 F
+    * Ankush: TBD
+    * JC: TBD
 
 
 **Prerequisites:**
